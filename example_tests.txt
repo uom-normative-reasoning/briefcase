@@ -1,0 +1,48 @@
+# Briefcase Tests
+
+The preliminaries:
+    >>> from pathlib import Path
+    >>> import yaml
+    >>> from briefcase import Case, CaseBase
+
+
+# Simple cases
+
+We can load from dictionaries or from YAML strings. The latter are a bit easier to write, so...
+
+    >>> simple = yaml.safe_load('''
+    ... -
+    ...     name: case1
+    ...     pi: [p1]
+    ...     delta: [d1]
+    ...     decision: pi
+    ...     reason: [p1]
+    ... -
+    ...     name: case2
+    ...     pi: [p1]
+    ...     delta: [d2]
+    ...     decision: delta
+    ...     reason: [d2]
+    ... - 
+    ...     name: case3
+    ...     pi: [p1]
+    ...     delta: [d1]
+    ...     decision: delta
+    ...     reason: [d1] ''')
+   
+    >>> simple = [Case.from_dict(c) for c in simple]
+    >>> cb1 = CaseBase([simple[0]])
+    >>> cb1.is_consistent_with(simple[1])
+    True
+    >>> cb1.is_consistent_with(simple[2])
+    False
+    >>> cb1.add_case(simple[1])
+    >>> cb1.is_consistent()
+    True
+    >>> cb1.is_consistent_with(simple[1])
+    True
+    >>> cb1.is_consistent_with(simple[2])
+    False
+    >>> cb1.add_case(simple[2])
+    >>> cb1.is_consistent()
+    False
