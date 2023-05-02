@@ -10,7 +10,9 @@ The preliminaries:
 
 We can load from dictionaries or from YAML strings. The latter are a bit easier to write, so...
 
-    >>> simple = yaml.safe_load('''
+The key in this round is no "extra" factors. The reason and the winning factors are all the same. Only one factor per side!
+
+    >>> cases = yaml.safe_load('''
     ... -
     ...     name: case1
     ...     pi: [p1]
@@ -30,19 +32,60 @@ We can load from dictionaries or from YAML strings. The latter are a bit easier 
     ...     decision: delta
     ...     reason: [d1] ''')
    
-    >>> simple = [Case.from_dict(c) for c in simple]
-    >>> cb1 = CaseBase([simple[0]])
-    >>> cb1.is_consistent_with(simple[1])
+    >>> cases = [Case.from_dict(c) for c in cases]
+    >>> cb1 = CaseBase([cases[0]])
+    >>> cb1.is_consistent_with(cases[1])
     True
-    >>> cb1.is_consistent_with(simple[2])
+    >>> cb1.is_consistent_with(cases[2])
     False
-    >>> cb1.add_case(simple[1])
+    >>> cb1.add_case(cases[1])
     >>> cb1.is_consistent()
     True
-    >>> cb1.is_consistent_with(simple[1])
+    >>> cb1.is_consistent_with(cases[1])
     True
-    >>> cb1.is_consistent_with(simple[2])
+    >>> cb1.is_consistent_with(cases[2])
     False
-    >>> cb1.add_case(simple[2])
+    >>> cb1.add_case(cases[2])
+    >>> cb1.is_consistent()
+    False
+   
+   # Distractors
+   
+   We can have extra stuff, but no subset reasonign.
+   
+    >>> cases = yaml.safe_load('''
+    ... -
+    ...     name: case1
+    ...     pi: [p1, p2]
+    ...     delta: [d1]
+    ...     decision: pi
+    ...     reason: [p1]
+    ... -
+    ...     name: case2
+    ...     pi: [p1]
+    ...     delta: [d2, d3]
+    ...     decision: delta
+    ...     reason: [d2]
+    ... - 
+    ...     name: case3
+    ...     pi: [p1]
+    ...     delta: [d1, d3]
+    ...     decision: delta
+    ...     reason: [d1] ''')
+   
+    >>> cases = [Case.from_dict(c) for c in cases]
+    >>> cb1 = CaseBase([cases[0]])
+    >>> cb1.is_consistent_with(cases[1])
+    True
+    >>> cb1.is_consistent_with(cases[2])
+    False
+    >>> cb1.add_case(cases[1])
+    >>> cb1.is_consistent()
+    True
+    >>> cb1.is_consistent_with(cases[1])
+    True
+    >>> cb1.is_consistent_with(cases[2])
+    False
+    >>> cb1.add_case(cases[2])
     >>> cb1.is_consistent()
     False
