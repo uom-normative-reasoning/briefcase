@@ -9,7 +9,7 @@ from collections import defaultdict
 decision = Enum('Decision', ['pi', 'delta', 'un'])
 
 class Factor:
-    def __init__(self, name, polarity):
+    def __init__(self, name, polarity='un'):
         self.name = name
         self.polarity = polarity
     
@@ -54,7 +54,12 @@ class Case:
             return self.pi_factors
         else:
             return set() #TODO: Throw error?
-            
+    
+    def relevant_diff_from(self, other_case):
+        """All factors have a singleton dimension and thus
+        any individual factor"""
+        if self.decision == other_case.decision:
+            pass
 class PriorityOrder:
     def __init__(self):
         self.order = defaultdict(set)

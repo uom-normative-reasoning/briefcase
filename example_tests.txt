@@ -51,13 +51,54 @@ The key in this round is no "extra" factors. The reason and the winning factors 
    
    # Distractors
    
-   We can have extra stuff, but no subset reasonign.
+   We can have extra stuff, but no subset reasoning.
    
     >>> cases = yaml.safe_load('''
     ... -
     ...     name: case1
     ...     pi: [p1, p2]
     ...     delta: [d1]
+    ...     decision: pi
+    ...     reason: [p1]
+    ... -
+    ...     name: case2
+    ...     pi: [p1]
+    ...     delta: [d2, d3]
+    ...     decision: delta
+    ...     reason: [d2]
+    ... - 
+    ...     name: case3
+    ...     pi: [p1]
+    ...     delta: [d1, d3]
+    ...     decision: delta
+    ...     reason: [d1] ''')
+   
+    >>> cases = [Case.from_dict(c) for c in cases]
+    >>> cb1 = CaseBase([cases[0]])
+    >>> cb1.is_consistent_with(cases[1])
+    True
+    >>> cb1.is_consistent_with(cases[2])
+    False
+    >>> cb1.add_case(cases[1])
+    >>> cb1.is_consistent()
+    True
+    >>> cb1.is_consistent_with(cases[1])
+    True
+    >>> cb1.is_consistent_with(cases[2])
+    False
+    >>> cb1.add_case(cases[2])
+    >>> cb1.is_consistent()
+    False
+    
+   # Subsets
+   
+   We can have  subset reasoning.
+   
+    >>> cases = yaml.safe_load('''
+    ... -
+    ...     name: case1
+    ...     pi: [p1, p2]
+    ...     delta: [d1, d3, d4]
     ...     decision: pi
     ...     reason: [p1]
     ... -
