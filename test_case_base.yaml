@@ -1,12 +1,90 @@
+# base case
+one_case:
+   pi: [p1]
+   delta: [d1]
+   decision: pi
+   reason: [p1]
+
+# simple test cases
+simple_small:
 -
-   name: case1
+   pi: [p1]
+   delta: [d1]
+   decision: pi
+   reason: [p1]
+- # inconsistent to case 1 - different polarity, same factors
+   pi: [p1]
+   delta: [d1]
+   decision: delta
+   reason: [d1]
+
+# big test cases
+simple_big: # simple test case, one factor per side, reason = winning factor
+-
    pi: [p1,p2,p3,p4]
    delta: [d1, d2, d3]
    decision: pi
    reason: [p1, p3]
 -
-   name: case2
    pi: [p1,p3,p7]
    delta: [d5, d2, d3]
    decision: delta
    reason: [d5, d2, d3]
+- # inconsistent to case 1 - different polarity, same factors
+   pi: [p1,p3,p7]
+   delta: [d5, d2, d3]
+   decision: pi
+   reason: [p1]
+
+# distractors, extra stuff but no subset reasoning
+distractor_small:
+-
+   pi: [p1, p2]
+   delta: [d1]
+   decision: pi
+   reason: [p1]
+-
+   pi: [p1]
+   delta: [d2, d3]
+   decision: delta
+   reason: [d2]
+- # inconsistent with case 1 - same case with distractors, different decisions
+   pi: [p1]
+   delta: [d1, d3]
+   decision: delta
+   reason: [d1]
+
+# subset reasoning
+subset_small:
+-
+   pi: [p1, p2]
+   delta: [d1, d3, d4]
+   decision: pi
+   reason: [p1]
+-
+   pi: [p1]
+   delta: [d2, d3]
+   decision: delta
+   reason: [d2]
+- # inconsistent with case 1 - cycle - p1 defeats d1, d3 - d1 defeats p1
+   pi: [p1]
+   delta: [d1, d3]
+   decision: delta
+   reason: [d1]
+
+subset_big:
+-
+   pi: [p1, p2, p3, p4]
+   delta: [d1, d3, d4]
+   decision: pi
+   reason: [p1, p3]
+-
+   pi: [p1]
+   delta: [d2, d3]
+   decision: delta
+   reason: [d2]
+- # inconsistent with case 1
+   pi: [p1, p3, p6, p7]
+   delta: [d1, d2, d3, d4]
+   decision: delta
+   reason: [d1, d3]
