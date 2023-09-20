@@ -5,6 +5,20 @@ one_case:
    decision: pi
    reason: [p1]
 
+# error cases
+error_case_bad_decision:
+   pi: [p1]
+   delta: [d1]
+   decision: pies
+   reason: [p1]
+
+error_case_bad_reason:
+   pi: [p1]
+   delta: [d1]
+   decision: pi
+   reason: [p3]
+
+
 # simple test cases
 simple_small:
 -

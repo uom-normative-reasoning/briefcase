@@ -12,6 +12,15 @@ def test_cases():
         return yaml.safe_load(f)
 
 
+@pytest.mark.parametrize(
+    "test_name, error_type",
+    [("error_case_bad_decision", KeyError), ("error_case_bad_reason", ValueError)],
+)
+def test_errors_case_from_dict(test_cases, test_name, error_type):
+    with pytest.raises(error_type):
+        Case.from_dict(test_cases[test_name])
+
+
 def test_base_case_consistency(test_cases):
     cb1 = CaseBase([])  # no cases
     assert cb1.is_consistent()
@@ -35,4 +44,5 @@ def test_consistency(test_cases, test_case_name):
 
     assert not cb1.is_consistent_with(inconsistent_case)
     cb1.add_case(inconsistent_case)
+    print("\n\n here")
     assert not cb1.is_consistent()
