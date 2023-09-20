@@ -32,7 +32,16 @@ def test_base_case_consistency(test_cases):
 # Define the tests using the loaded test cases
 @pytest.mark.parametrize(
     "test_case_name",
-    ["simple_small", "simple_big", "distractor_small", "subset_small", "subset_big"],
+    [
+        "simple_small",
+        "simple_big",
+        "distractor_small",
+        "subset_small",
+        "subset_big",
+        "multi_defeated_small",
+        "multi_defeated_big",
+        "mega_case_10",
+    ],
 )
 def test_consistency(test_cases, test_case_name):
     cs = test_cases[test_case_name]
