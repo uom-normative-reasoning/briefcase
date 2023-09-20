@@ -185,17 +185,20 @@ class PriorityOrder:
         """
         @return : True/False if current ordering is consistent
         """
-        print("\n\nstart of consistent overall")
-        print(self.str_order())
-        # Can't do list() here, because it will add random empty values into the dict - not sure why
+        # Can't do list() here, because it will add random empty set() values into the dict
+        # Probably makes calls to keys that don't exist under the hood
         for U, Vs in self.order.items():
             for V in Vs:  # loop through defeated items (Vs)
-                # We know U > V. Check for reverse!
-                # Must deepcopy here otherwise triggers frozenset modification error
-                for u in copy.deepcopy(self.order)[V]:
-                    if U.issubset(u):
-                        # i.e., U < u, since then U < V since  u < V and subset rule
-                        return False
+                # Get values where the keys are subsets of the given defeated set
+                filtered_vs = [
+                    value for key, value in self.order.items() if key.issubset(V)
+                ]
+
+                for V2s in filtered_vs:
+                    for v2 in V2s:
+                        if U.issubset(v2):
+                            # i.e., U < u, since then U < V since  u < V and subset rule
+                            return False
         return True
 
     def is_consistent_with(self, case):
@@ -203,19 +206,12 @@ class PriorityOrder:
         @param case: a new case
         @return: True/False if current casebase ordering would be consistent with the new case added
         """
-        print("\n \n start of is consistent with")
-        print(self.str_order())
         assert self.is_consistent()  # TODO: is this what we want?
 
         reason = case.reason
         defeated = case.defeated()
         # It's only one step, so we don't have to chase long cycles.
         # Check every defeated value for which the winning key is contained within the defeated factors of the case
-        # simple case:
-        # winning old: p1,
-        # defeated old: d1, d2
-        # defeated new: p1, p2
-        # reason new: d1
         for U in [self.order[r] for r in self.order.keys() if r.issubset(defeated)]:
             for u in U:  # loop through each defeated reason
                 if reason.issubset(u):  # oh no a cycle!
@@ -229,16 +225,12 @@ class PriorityOrder:
         Adds pairs of reasons to the priority order dictionary, where stronger reason : weaker reason
         within the dictionary 'order'
         """
-        # TODO: How does this work with the case where the reasons are of opposite polarity? You wouldn't be checking
-        #  subsets then, but be checking if the premise/reason is contained within the other reason,
-        #  then clearly U is at least as strong as V
         if r1 == r2:
             return
         if r1.issubset(r2):  # then r2 is at least as strong as r1
             # Potentially a bit slow for large reasons? could check for polarity first.
             self.order[r2].add(r1)
             # ds has to be of opposite polarity thus disjoint from the reason
-            # TODO: what does this mean?
         elif r2.issubset(r1):
             self.order[r1].add(r2)
 
@@ -286,11 +278,8 @@ class CaseBase:
         self.order.unsafe_add_cases(self.cases)
 
     def add_case(self, case):
-        print("\n\n add case")
         self.cases.append(case)
-        print(self.order.str_order())
         self.order.unsafe_add_case(case)
-        print(self.order.str_order())
 
     def is_consistent(self):
         return self.order.is_consistent()

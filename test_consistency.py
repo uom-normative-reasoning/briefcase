@@ -44,5 +44,5 @@ def test_consistency(test_cases, test_case_name):
 
     assert not cb1.is_consistent_with(inconsistent_case)
     cb1.add_case(inconsistent_case)
-    print("\n\n here")
+
     assert not cb1.is_consistent()

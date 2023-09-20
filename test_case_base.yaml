@@ -92,13 +92,9 @@ subset_big:
    delta: [d1, d3, d4]
    decision: pi
    reason: [p1, p3]
--
-   pi: [p1]
-   delta: [d2, d3]
-   decision: delta
-   reason: [d2]
+
 - # inconsistent with case 1
-   pi: [p1, p3, p6, p7]
+   pi: [p1, p3, p5, p6]
    delta: [d1, d2, d3, d4]
    decision: delta
    reason: [d1, d3]
