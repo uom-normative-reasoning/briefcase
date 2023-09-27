@@ -180,43 +180,51 @@ class PriorityOrder:
     def __init__(self):
         # default-dict does not error when referencing a key which doesn't exist
         self.order = defaultdict(set)
+        self.subsets = defaultdict(set)
 
-    def is_consistent(self):
+    def is_consistent(self, reason, defeated):
         """
-        @return : True/False if current ordering is consistent
+        @param reason: a frozenset of factors
+        @param defeated: a frozenset of factors, weaker than the reason
+        @return: True/False if this reason being stronger than this defeated is consistent with
+                the cb order
         """
-        # Can't do list() here, because it will add random empty set() values into the dict
-        # Probably makes calls to keys that don't exist under the hood
-        for U, Vs in self.order.items():
-            for V in Vs:  # loop through defeated items (Vs)
-                # Get values where the keys are subsets of the given defeated set
-                filtered_vs = [
-                    value for key, value in self.order.items() if key.issubset(V)
-                ]
+        # Focus on the new defeated, is this a superset of any existing case's reason?
+        # Get these cases using the subset dict
+        for factor in defeated:
+            d_supersets = {r for r in self.subsets[factor] if r.issubset(defeated)}
+            # loop through these supersets, looking for the case in the keys of the casebase (reasons)
+            # then check if the new reason is a subset of the existing defeated... inconsistent
+            for d in d_supersets:
+                old_defeated = self.order[d]
+                if any(reason.issubset(d) for d in old_defeated):
+                    return False
 
-                for V2s in filtered_vs:
-                    for v2 in V2s:
-                        if U.issubset(v2):
-                            # i.e., U < u, since then U < V since  u < V and subset rule
-                            return False
         return True
 
-    def is_consistent_with(self, case):
+    def is_cb_consistent(self):
         """
-        @param case: a new case
-        @return: True/False if current casebase ordering would be consistent with the new case added
+        @return : True/False if current ordering of the cb order is consistent
         """
-        assert self.is_consistent()  # TODO: is this what we want?
-
-        reason = case.reason
-        defeated = case.defeated()
-        # It's only one step, so we don't have to chase long cycles.
-        # Check every defeated value for which the winning key is contained within the defeated factors of the case
-        for U in [self.order[r] for r in self.order.keys() if r.issubset(defeated)]:
-            for u in U:  # loop through each defeated reason
-                if reason.issubset(u):  # oh no a cycle!
+        # loop through all cases in order
+        for reason, defeated_set in self.order.items():
+            for defeated in defeated_set:
+                if not self.is_consistent(reason, defeated):
                     return False
         return True
+
+    def is_case_consistent_with(self, case):
+        """
+        @param case: a new case
+        @return: True/False if the current cb order would be consistent with a new case added
+        """
+        # assert self.is_consistent()  # TODO: is this what we want?
+
+        # New case
+        reason = case.reason
+        defeated = case.defeated()
+
+        return self.is_consistent(reason, defeated)
 
     def add_pair_as_appropriate(self, r1, r2):
         """
@@ -229,12 +237,17 @@ class PriorityOrder:
             return
         if r1.issubset(r2):  # then r2 is at least as strong as r1
             # Potentially a bit slow for large reasons? could check for polarity first.
-            self.order[r2].add(r1)
+            self.add_order_with_subsets(r2, r1)
+            # self.order[r2].add(r1)
             # ds has to be of opposite polarity thus disjoint from the reason
         elif r2.issubset(r1):
-            self.order[r1].add(r2)
+            self.add_order_with_subsets(r1, r2)
+            # self.order[r1].add(r2)
 
     def unsafe_add_cases(self, cases):
+        """
+        @param cases: multiple cases to add to the order
+        """
         for c in cases:
             self.unsafe_add_case(c)
 
@@ -243,9 +256,9 @@ class PriorityOrder:
         @param case: the new case to be added to the priority order
         Adds a new case to order dict with no safety checks.
         """
-
         # case 1: we know the winning reason is at least as strong as the defeated factors, since it won
-        self.order[case.reason].add(case.defeated())
+        # self.order[case.reason].add(case.defeated())
+        self.add_order_with_subsets(case.reason, case.defeated())
         for r, ds in list(self.order.items()):
             # case 2: check if winning reason is stronger than other winning reasons in the dictionary
             self.add_pair_as_appropriate(case.reason, r)
@@ -253,6 +266,18 @@ class PriorityOrder:
             for d in ds:
                 # case 3: check if winning reason is stronger than other defeated reasons in the dictionary
                 self.add_pair_as_appropriate(case.reason, d)
+
+    def add_order_with_subsets(self, reason, defeated):
+        """
+        @param reason: a frozenset of factors
+        @param defeated: a frozenset of factors, weaker than the reason
+        Adds reason: defeated to the cb order.
+        Adds for all factors within the reason as keys to subsets
+        """
+        self.order[reason].add(defeated)
+
+        for factor in reason:
+            self.subsets[factor].add(reason)
 
     def newly_inconsistent_with(self, case):
         pass
@@ -282,10 +307,10 @@ class CaseBase:
         self.order.unsafe_add_case(case)
 
     def is_consistent(self):
-        return self.order.is_consistent()
+        return self.order.is_cb_consistent()
 
     def is_consistent_with(self, case):
-        return self.order.is_consistent_with(case)
+        return self.order.is_case_consistent_with(case)
 
     def __str__(self):
         """

@@ -204,3 +204,21 @@ mega_case_10:
    delta: [d10, d4]
    decision: pi
    reason: [p1]
+
+combined_factors:
+-
+   pi: [p1, p3, p5]
+   delta: [d1, d2, d3]
+   decision: pi
+   reason: [p1]
+-
+   pi: [p2]
+   delta: [d1, d2]
+   decision: delta
+   reason: [d1]
+- # inconsistent with case 1
+   pi: [p1, p2]
+   delta: [d1, d2, d3]
+   decision: delta
+   reason: [d1, d3]
+

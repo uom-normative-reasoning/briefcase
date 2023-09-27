@@ -1,7 +1,7 @@
 import pytest
 import yaml
 from pathlib import Path
-from briefcase import Case, CaseBase
+from briefcase import Case, CaseBase, PriorityOrder
 
 
 # Define a fixture to load test cases from the YAML file
@@ -41,6 +41,7 @@ def test_base_case_consistency(test_cases):
         "multi_defeated_small",
         "multi_defeated_big",
         "mega_case_10",
+        "combined_factors"
     ],
 )
 def test_consistency(test_cases, test_case_name):
@@ -55,3 +56,24 @@ def test_consistency(test_cases, test_case_name):
     cb1.add_case(inconsistent_case)
 
     assert not cb1.is_consistent()
+
+
+# test add order with subsets references the same object to the order
+@pytest.mark.parametrize(
+    "test_case_name",
+    [
+        "simple_small",
+        "simple_big"
+    ],
+)
+def test_add_order_with_subsets_id(test_cases, test_case_name):
+    cs = test_cases[test_case_name]
+    case = Case.from_dict(cs[0])  # get first case
+    order = PriorityOrder()  # blank priority order
+    order.add_order_with_subsets(case.reason, case.defeated())  # add one element
+    # check if items added, and that the id is the same id
+    assert any(case.reason is obj for obj in order.order.keys())
+    assert any(case.reason is obj for subset in order.subsets.values() for obj in subset)
+
+
+
