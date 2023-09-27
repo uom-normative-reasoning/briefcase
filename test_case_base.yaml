@@ -1,12 +1,224 @@
+# base case
+one_case:
+   pi: [p1]
+   delta: [d1]
+   decision: pi
+   reason: [p1]
+
+# error cases
+error_case_bad_decision:
+   pi: [p1]
+   delta: [d1]
+   decision: pies
+   reason: [p1]
+
+error_case_bad_reason:
+   pi: [p1]
+   delta: [d1]
+   decision: pi
+   reason: [p3]
+
+
+# simple test cases
+simple_small:
 -
-   name: case1
+   pi: [p1]
+   delta: [d1]
+   decision: pi
+   reason: [p1]
+- # inconsistent to case 1 - different polarity, same factors
+   pi: [p1]
+   delta: [d1]
+   decision: delta
+   reason: [d1]
+
+# big test cases
+simple_big: # simple test case, one factor per side, reason = winning factor
+-
    pi: [p1,p2,p3,p4]
    delta: [d1, d2, d3]
    decision: pi
    reason: [p1, p3]
 -
-   name: case2
    pi: [p1,p3,p7]
    delta: [d5, d2, d3]
    decision: delta
    reason: [d5, d2, d3]
+- # inconsistent to case 1 - different polarity, same factors
+   pi: [p1,p3,p7]
+   delta: [d5, d2, d3]
+   decision: pi
+   reason: [p1]
+
+# distractors, extra stuff but no subset reasoning
+distractor_small:
+-
+   pi: [p1, p2]
+   delta: [d1]
+   decision: pi
+   reason: [p1]
+-
+   pi: [p1]
+   delta: [d2, d3]
+   decision: delta
+   reason: [d2]
+- # inconsistent with case 1 - same case with distractors, different decisions
+   pi: [p1]
+   delta: [d1, d3]
+   decision: delta
+   reason: [d1]
+
+# subset reasoning
+subset_small:
+-
+   pi: [p1, p2]
+   delta: [d1, d3, d4]
+   decision: pi
+   reason: [p1]
+-
+   pi: [p1]
+   delta: [d2, d3]
+   decision: delta
+   reason: [d2]
+- # inconsistent with case 1 - cycle - p1 defeats d1, d3 - d1 defeats p1
+   pi: [p1]
+   delta: [d1, d3]
+   decision: delta
+   reason: [d1]
+
+subset_big:
+-
+   pi: [p1, p2, p3, p4]
+   delta: [d1, d3, d4]
+   decision: pi
+   reason: [p1, p3]
+
+-
+   pi: [p1]
+   delta: [d2, d3]
+   decision: delta
+   reason: [d2]
+
+- # inconsistent with case 1
+   pi: [p1, p3, p5, p6]
+   delta: [d1, d2, d3, d4]
+   decision: delta
+   reason: [d1, d3]
+
+# replicate when multiple entries will be in the self.order
+# dict for the same reason
+multi_defeated_small:
+-
+   pi: [p1]
+   delta: [d1]
+   decision: pi
+   reason: [p1]
+
+-
+   pi: [p1]
+   delta: [d2]
+   decision: pi
+   reason: [p1]
+
+- # inconsistent with case 2, same factors, different polarity
+   pi: [p1]
+   delta: [d2]
+   decision: delta
+   reason: [d2]
+
+multi_defeated_big:
+-
+   pi: [p1, p2, p3, p4]
+   delta: [d1, d3, d4]
+   decision: pi
+   reason: [p1, p3]
+
+-
+   pi: [p1, p3, p5]
+   delta: [d2, d3]
+   decision: pi
+   reason: [p1, p3]
+
+- # inconsistent with case 1, subset
+   pi: [p1, p2, p3, p5]
+   delta: [d1, d3]
+   decision: delta
+   reason: [d1, d3]
+
+mega_case_10:
+-
+   pi: [p1]
+   delta: [d1]
+   decision: pi
+   reason: [p1]
+
+-
+   pi: [p2]
+   delta: [d2]
+   decision: delta
+   reason: [d2]
+
+-
+   pi: [p1]
+   delta: [d3]
+   decision: pi
+   reason: [p1]
+
+-
+   pi: [p1, p2]
+   delta: [d4]
+   decision: delta
+   reason: [d4]
+
+-
+   pi: [p1, p2, p5]
+   delta: [d4]
+   decision: pi
+   reason: [p2, p5]
+
+-
+   pi: [p10, p1, p2, p3, p4, p5, p6, p7, p8, p9]
+   delta: [d10, d1, d2, d3, d4, d5, d6, d7, d8, d9]
+   decision: delta
+   reason: [d10]
+-
+   pi: [p1, p2, p3]
+   delta: [d1, d5]
+   decision: pi
+   reason: [p1]
+
+-
+   pi: [p8]
+   delta: [d8, d10]
+   decision: delta
+   reason: [d10]
+
+-
+   pi: [p1, p9, p8, p5]
+   delta: [d9, d3, d4]
+   decision: delta
+   reason: [d4, d3]
+
+- # inconsistent case
+   pi: [p1, p2]
+   delta: [d10, d4]
+   decision: pi
+   reason: [p1]
+
+combined_factors:
+-
+   pi: [p1, p3, p5]
+   delta: [d1, d2, d3]
+   decision: pi
+   reason: [p1]
+-
+   pi: [p2]
+   delta: [d1, d2]
+   decision: delta
+   reason: [d1]
+- # inconsistent with case 1
+   pi: [p1, p2]
+   delta: [d1, d2, d3]
+   decision: delta
+   reason: [d1, d3]
+
