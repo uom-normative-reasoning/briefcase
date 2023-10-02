@@ -33,7 +33,7 @@ simple_small:
    reason: [d1]
 
 # big test cases
-simple_big: # simple test case, one factor per side, reason = winning factor
+simple_big:
 -
    pi: [p1,p2,p3,p4]
    delta: [d1, d2, d3]

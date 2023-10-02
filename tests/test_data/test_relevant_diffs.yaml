@@ -1,5 +1,5 @@
 # simple test cases
-simple_small_same_outcome:
+small_same_outcome:
    case1:
       pi: [p1]
       delta: [d1]
@@ -13,7 +13,7 @@ simple_small_same_outcome:
    diff:
       p2: pi
 
-simple_small_different_outcome:
+small_different_outcome:
    case1:
       pi: [p1]
       delta: [d1]
@@ -28,4 +28,35 @@ simple_small_different_outcome:
       d2: delta
 
 
+# big test cases
+big_same_outcome:
+   case1:
+      pi: [p1,p2,p3,p4]
+      delta: [d1, d2, d3]
+      decision: pi
+      reason: [p1, p3]
+   case2:
+      pi: [p1,p2,p5,p6]
+      delta: [d5, d2, d3]
+      decision: pi
+      reason: [p1, p2, p5, p6]
+   diff:
+      p2: pi
+      p5: pi
+      p6: pi
+
+big_different_outcome:
+   case1:
+      pi: [p1,p2,p3,p4]
+      delta: [d1, d2, d3]
+      decision: pi
+      reason: [p1, p3]
+   case2:
+      pi: [p1,p2,p5,p6]
+      delta: [d5, d2, d3, d6]
+      decision: delta
+      reason: [d5, d2, d3, d6]
+   diff:
+      d5: delta
+      d6: delta
 

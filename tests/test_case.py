@@ -19,6 +19,8 @@ def test_cases():
     [
         "simple_small_same_outcome",
         "simple_small_different_outcome",
+        "simple_big_same_outcome",
+        "simple_big_different_outcome"
     ],
 )
 def test_relevant_differences(test_cases, test_case_name):
