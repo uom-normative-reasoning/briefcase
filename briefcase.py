@@ -1,4 +1,6 @@
 import argparse
+import copy
+
 import yaml
 import networkx as nx
 
@@ -9,7 +11,7 @@ from collections import defaultdict
 # Decisions are either for side pi, for side delta, or undecided
 # Pi = child can have dessert
 # Delta = child cannot have dessert# Undecided = ?
-decision = Enum("Decision", ["pi", "delta", "un"])
+decision_enum = Enum("Decision", ["pi", "delta", "un"])
 
 
 class Factor:
@@ -71,41 +73,46 @@ class Case:
         """
         @param dic: a dictionary of 'pi', 'delta' and 'reason' factor lists, and a 'decision'
         @return: An instance of the Case class based on the dic.
-        Converts pi, delta, and reason factor lists to frozensets (immutable sets) of tuples of each factor
-        name and the polarity.
+        Converts pi, delta, and reason factor lists to frozensets (immutable sets) of tuples of each
+        factor name and the polarity.
         """
-        # Convert 'pi', 'delta', and 'reason' lists to frozensets of tuples
-        pi_factors = frozenset((Factor(f, decision.pi) for f in dic["pi"]))
-        # TODO: Change these to correct polarity of factors
-        delta_factors = frozenset((Factor(f, decision.pi) for f in dic["delta"]))
-        decision_value = decision[
-            dic["decision"]
-        ]  # Will throw a Key error if decision not a member of enum
-        reason_factors = frozenset(
-            (Factor(f, decision_value.pi) for f in dic["reason"])
+        pi_factors = frozenset((Factor(f, decision_enum.pi) for f in dic["pi"]))
+        delta_factors = frozenset(
+            (Factor(f, decision_enum.delta) for f in dic["delta"])
         )
-        # Determine the winning factors based on the decision polarity
-        winning_factors = pi_factors if decision_value == decision.pi else delta_factors
-        # TODO: Sanity check: Ensure 'reason' is a subset of the winning factors
+
+        # Check decision is valid
+        try:
+            decision_value = decision_enum[dic["decision"]]
+        except KeyError as e:
+            raise KeyError(
+                f"The key 'decision' with value '{dic['decision']}' is not found in the decision_enum (pi/delta)."
+            ) from e
+
+        reason_factors = frozenset((Factor(f, decision_value) for f in dic["reason"]))
+
+        # Check reason is valid
+        winning_factors = (
+            pi_factors if decision_value == decision_enum.pi else delta_factors
+        )
         if not reason_factors.issubset(winning_factors):
             raise ValueError(
-                f"""'reason_factors' is not a subset of the 'winning_factors' with the
-                                 polarity {decision_value}"""
+                f"reason_factors is not a subset of the winning_factors with the polarity {decision_value}"
             )
+
         return cls(pi_factors, delta_factors, decision_value, reason_factors)
 
     def __init__(
         self,
         pi_factors=frozenset(),
         delta_factors=frozenset(),
-        decision=decision.un,
+        decision=decision_enum.un,
         reason=frozenset(),
     ):
-        # TODO: what is nominal typing
         """I think we can have as a degenerate case a pure decision, that is, one with no factors
         and thus no reasons. Alternatively, we could force all such to be undecided.
 
-        If we allow nominal typing, then degenerate cases can be meaninfully different. We might use
+        If we allow nominal typing, then degenerate cases can be meaningfully different. We might use
         a general rule to express burden of proof, e.g., that we default for the defense.
 
         We might want to have an additional typology of cases to allow different burden of proofs for
@@ -120,16 +127,14 @@ class Case:
         """
         @return: the factors which were defeated by the decision e.g. for a decision of polarity pi, the delta factors
         """
-        # TODO: Why not just make pi_factors always the winning set and delta always the defeated set at initialisation,
-        #       that way you don't need functions like this?
-        if self.decision == decision.pi:
+        if self.decision == decision_enum.pi:
             return self.delta_factors
-        elif self.decision == decision.delta:
+        elif self.decision == decision_enum.delta:
             return self.pi_factors
         else:
             return (
                 set()
-            )  # TODO: Throw error? Already happens further up, ths code would never be reached
+            )  # TODO: Throw error? ... Already happens further up, ths code would never be reached
 
     def relevant_diff_from(self, other_case):
         """All factors have a singleton dimension and thus
@@ -175,44 +180,51 @@ class PriorityOrder:
     def __init__(self):
         # default-dict does not error when referencing a key which doesn't exist
         self.order = defaultdict(set)
+        self.subsets = defaultdict(set)
 
-    def is_consistent(self):
+    def is_consistent(self, reason, defeated):
         """
-        @return : True/False if current ordering is consistent
+        @param reason: a frozenset of factors
+        @param defeated: a frozenset of factors, weaker than the reason
+        @return: True/False if this reason being stronger than this defeated is consistent with
+                the cb order
         """
-        # list() modifies dictionary safely, it performs a deep copy like .deepcopy()
-        # whereas .copy() is a shallow copy of the dict - still references same objects
-        for U, Vs in list(self.order.items()):
-            for V in Vs:  # loop through defeated items (Vs)
-                # We know U > V. Check for reverse!
-                for u in self.order[V]:  # check defeated items where v was the winner
-                    if U.issubset(
-                        u
-                    ):  # i.e., U < u, since then U < V since  u < V and subset rule
-                        return False
+        # Focus on the new defeated, is this a superset of any existing case's reason?
+        # Get these cases using the subset dict
+        for factor in defeated:
+            d_supersets = {r for r in self.subsets[factor] if r.issubset(defeated)}
+            # loop through these supersets, looking for the case in the keys of the casebase (reasons)
+            # then check if the new reason is a subset of the existing defeated... inconsistent
+            for d in d_supersets:
+                old_defeated = self.order[d]
+                if any(reason.issubset(d) for d in old_defeated):
+                    return False
+
         return True
 
-    def is_consistent_with(self, case):
+    def is_cb_consistent(self):
         """
-        @param case: a new case
-        @return: True/False if current casebase ordering would be consistent with the new case added
+        @return : True/False if current ordering of the cb order is consistent
         """
-        assert self.is_consistent()  # TODO: is this what we want?
-
-        reason = case.reason
-        defeated = case.defeated()
-        # It's only one step, so we don't have to chase long cycles.
-        # Check every defeated value for which the winning key is contained within the defeated factors of the case
-        # simple case:
-        # winning old: p1,
-        # defeated old: d1, d2
-        # defeated new: p1, p2
-        # reason new: d1
-        for U in [self.order[r] for r in self.order.keys() if r.issubset(defeated)]:
-            for u in U:  # loop through each defeated reason
-                if reason.issubset(u):  # oh no a cycle!
+        # loop through all cases in order
+        for reason, defeated_set in self.order.items():
+            for defeated in defeated_set:
+                if not self.is_consistent(reason, defeated):
                     return False
         return True
+
+    def is_case_consistent_with(self, case):
+        """
+        @param case: a new case
+        @return: True/False if the current cb order would be consistent with a new case added
+        """
+        # assert self.is_consistent()  # TODO: is this what we want?
+
+        # New case
+        reason = case.reason
+        defeated = case.defeated()
+
+        return self.is_consistent(reason, defeated)
 
     def add_pair_as_appropriate(self, r1, r2):
         """
@@ -221,20 +233,21 @@ class PriorityOrder:
         Adds pairs of reasons to the priority order dictionary, where stronger reason : weaker reason
         within the dictionary 'order'
         """
-        # TODO: How does this work with the case where the reasons are of opposite polarity? You wouldn't be checking
-        #  subsets then, but be checking if the premise/reason is contained within the other reason,
-        #  then clearly U is at least as strong as V
         if r1 == r2:
             return
         if r1.issubset(r2):  # then r2 is at least as strong as r1
             # Potentially a bit slow for large reasons? could check for polarity first.
-            self.order[r2].add(r1)
+            self.add_order_with_subsets(r2, r1)
+            # self.order[r2].add(r1)
             # ds has to be of opposite polarity thus disjoint from the reason
-            # TODO: what does this mean?
         elif r2.issubset(r1):
-            self.order[r1].add(r2)
+            self.add_order_with_subsets(r1, r2)
+            # self.order[r1].add(r2)
 
     def unsafe_add_cases(self, cases):
+        """
+        @param cases: multiple cases to add to the order
+        """
         for c in cases:
             self.unsafe_add_case(c)
 
@@ -243,9 +256,9 @@ class PriorityOrder:
         @param case: the new case to be added to the priority order
         Adds a new case to order dict with no safety checks.
         """
-
         # case 1: we know the winning reason is at least as strong as the defeated factors, since it won
-        self.order[case.reason].add(case.defeated())
+        # self.order[case.reason].add(case.defeated())
+        self.add_order_with_subsets(case.reason, case.defeated())
         for r, ds in list(self.order.items()):
             # case 2: check if winning reason is stronger than other winning reasons in the dictionary
             self.add_pair_as_appropriate(case.reason, r)
@@ -254,11 +267,33 @@ class PriorityOrder:
                 # case 3: check if winning reason is stronger than other defeated reasons in the dictionary
                 self.add_pair_as_appropriate(case.reason, d)
 
+    def add_order_with_subsets(self, reason, defeated):
+        """
+        @param reason: a frozenset of factors
+        @param defeated: a frozenset of factors, weaker than the reason
+        Adds reason: defeated to the cb order.
+        Adds for all factors within the reason as keys to subsets
+        """
+        self.order[reason].add(defeated)
+
+        for factor in reason:
+            self.subsets[factor].add(reason)
+
     def newly_inconsistent_with(self, case):
         pass
 
     def inconsistent_pairs(self):
         pass
+
+    def str_order(self):
+        """
+        @return: String representation of the PriorityOrder for human-readable output
+        """
+        cases_str = []
+        for winning, defeated in self.order.items():
+            cases_str.append("Reason: " + str(winning) + ", Defeated: " + str(defeated))
+        cases_formatted = "\n".join(cases_str)
+        return f"\nPriority Order:\n{cases_formatted}"
 
 
 class CaseBase:
@@ -272,10 +307,10 @@ class CaseBase:
         self.order.unsafe_add_case(case)
 
     def is_consistent(self):
-        return self.order.is_consistent()
+        return self.order.is_cb_consistent()
 
     def is_consistent_with(self, case):
-        return self.order.is_consistent_with(case)
+        return self.order.is_case_consistent_with(case)
 
     def __str__(self):
         """
@@ -316,18 +351,3 @@ if __name__ == "__main__":
     import doctest
 
     doctest.testfile("example_tests.txt")
-
-    # cases = list()
-    # for c in yaml.safe_load(args.casebase.read_text()):
-    # cases.append(Case.from_dict(c))
-    # cb = CaseBase(cases)
-    # c = yaml.safe_load('''name: case3
-# pi: [p1,p3,p7]
-# delta: [d5, d2, d3]
-# decision: pi
-# reason: [p1,p3,p7]''')
-# tc = Case.from_dict(c)
-# print("CB consistent?", cb.order.is_consistent())
-# print("Consistent with?", cb.is_consistent_with(tc))
-# cb.add_case(tc)
-# print("Consistent if we add it?", cb.order.is_consistent())
