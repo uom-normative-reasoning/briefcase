@@ -1,0 +1,31 @@
+# simple test cases
+simple_small_same_outcome:
+   case1:
+      pi: [p1]
+      delta: [d1]
+      decision: pi
+      reason: [p1]
+   case2:
+      pi: [p2]
+      delta: [d2]
+      decision: pi
+      reason: [p2]
+   diff:
+      p2: pi
+
+simple_small_different_outcome:
+   case1:
+      pi: [p1]
+      delta: [d1]
+      decision: pi
+      reason: [p1]
+   case2:
+      pi: [p2]
+      delta: [d2]
+      decision: delta
+      reason: [d2]
+   diff:
+      d2: delta
+
+
+

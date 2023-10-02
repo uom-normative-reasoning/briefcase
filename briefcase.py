@@ -137,11 +137,17 @@ class Case:
             )  # TODO: Throw error? ... Already happens further up, ths code would never be reached
 
     def relevant_diff_from(self, other_case):
-        """All factors have a singleton dimension and thus
-        any individual factor"""
-        # TODO: Look up what relevant differences are again
+        """
+        @param: other_case
+        @return: Set of factors which are relevant differences from the other_case to this case
+        """
+        # outcome is the same
         if self.decision == other_case.decision:
-            pass
+            # get all reasons for the other_case which are not in this case
+            return other_case.reason - self.reason
+        else: # outcome is different
+            # get all defeated for the other case which are not in this case
+            return other_case.reason - self.defeated()
 
     def __str__(self):
         """

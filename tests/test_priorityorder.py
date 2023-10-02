@@ -1,15 +1,16 @@
+import os
+
 import pytest
 import yaml
-from pathlib import Path
 from briefcase import Case, CaseBase, PriorityOrder
 
 
 # Define a fixture to load test cases from the YAML file
 @pytest.fixture
 def test_cases():
-    test_cases_file = Path("test_case_base.yaml")
-    with test_cases_file.open("r") as f:
-        return yaml.safe_load(f)
+    test_data_path = os.path.join(os.path.dirname(__file__), 'test_data', 'test_consistency.yaml')
+    with open(test_data_path, 'r') as file:
+        return yaml.safe_load(file)
 
 
 @pytest.mark.parametrize(
