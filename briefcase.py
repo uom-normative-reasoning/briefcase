@@ -133,7 +133,7 @@ class Case:
             return self.pi_factors
         else:
             return (
-                set()
+                frozenset()
             )  # TODO: Throw error? ... Already happens further up, ths code would never be reached
 
     def relevant_diff_from(self, other_case):
@@ -189,26 +189,26 @@ class PriorityOrder:
         @return: True/False if this reason being stronger than this defeated is consistent with
                 the cb order
         """
-        # Focus on the new defeated, is this a superset of any existing case's reason?
-        # Get these cases using the subset dict
-        for factor in defeated:
-            d_supersets = {r for r in self.subsets[factor] if r.issubset(defeated)}
-            # loop through these supersets, looking for the case in the keys of the casebase (reasons)
-            # then check if the new reason is a subset of the existing defeated... inconsistent
-            for d in d_supersets:
-                old_defeated = self.order[d]
-                if any(reason.issubset(d) for d in old_defeated):
-                    return False
+        # Focus on the new reason, is this a subset of any existing case's defeated?
+        # Save references to a frozenset within a set (not 100% sure why it needs to be a frozenset)
+        d_subsets = {frozenset(self.subsets[factor]) for factor in reason}
 
-        return True
+        # Find the intersection of all sets in the old defeated subsets exploiting the references
+        intersects = frozenset.intersection(*d_subsets)
+
+        # Search for the intersections in the existing order, retrieving the associated reasons
+        old_reasons = [self.order[old_defeated] for old_defeated in intersects]
+
+        # Check if the new defeated is a superset of the old reasons
+        return not any(any(r.issubset(defeated) for r in rs) for rs in old_reasons)
 
     def is_cb_consistent(self):
         """
         @return : True/False if current ordering of the cb order is consistent
         """
         # loop through all cases in order
-        for reason, defeated_set in self.order.items():
-            for defeated in defeated_set:
+        for defeated, reason_set in self.order.items():
+            for reason in reason_set:
                 if not self.is_consistent(reason, defeated):
                     return False
         return True
@@ -271,13 +271,13 @@ class PriorityOrder:
         """
         @param reason: a frozenset of factors
         @param defeated: a frozenset of factors, weaker than the reason
-        Adds reason: defeated to the cb order.
-        Adds for all factors within the reason as keys to subsets
+        Adds defeated: reason to the cb order.
+        Adds for all factors within the defeated as keys to subsets
         """
-        self.order[reason].add(defeated)
+        self.order[defeated].add(reason)
 
-        for factor in reason:
-            self.subsets[factor].add(reason)
+        for factor in defeated:
+            self.subsets[factor].add(defeated)
 
     def newly_inconsistent_with(self, case):
         pass
@@ -306,7 +306,7 @@ class CaseBase:
         self.cases.append(case)
         self.order.unsafe_add_case(case)
 
-    def is_consistent(self):
+    def is_cb_consistent(self):
         return self.order.is_cb_consistent()
 
     def is_consistent_with(self, case):
