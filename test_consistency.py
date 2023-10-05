@@ -73,7 +73,7 @@ def test_add_order_with_subsets_id(test_cases, test_case_name):
     order.add_order_with_subsets(case.reason, case.defeated())  # add one element
     # check if items added, and that the id is the same id
     assert any(case.defeated() is obj for obj in order.order.keys())
-    assert any(case.defeated() is obj for subset in order.subsets.values() for obj in subset)
+    assert any(case.defeated() is obj for subset in order.defeated_subsets.values() for obj in subset)
 
 
 

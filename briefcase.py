@@ -62,10 +62,10 @@ class Case:
     """
     Class describing a case
     e.g. case 1
-    pi_factors = [name="The child ate their dinner", polarity=pi]
-    delta_factors = [name="The child didn't do their homework", polarity=delta]
+    pi_factors = frozenset{name="The child ate their dinner", polarity=pi}
+    delta_factors = frozenset{name="The child didn't do their homework", polarity=delta}
     the decision = pi
-    reason = [name="The child ate their dinner", polarity=pi]
+    reason = name="The child ate their dinner", polarity=pi
     """
 
     @classmethod
@@ -103,11 +103,11 @@ class Case:
         return cls(pi_factors, delta_factors, decision_value, reason_factors)
 
     def __init__(
-        self,
-        pi_factors=frozenset(),
-        delta_factors=frozenset(),
-        decision=decision_enum.un,
-        reason=frozenset(),
+            self,
+            pi_factors=frozenset(),
+            delta_factors=frozenset(),
+            decision=decision_enum.un,
+            reason=frozenset(),
     ):
         """I think we can have as a degenerate case a pure decision, that is, one with no factors
         and thus no reasons. Alternatively, we could force all such to be undecided.
@@ -180,27 +180,36 @@ class PriorityOrder:
     def __init__(self):
         # default-dict does not error when referencing a key which doesn't exist
         self.order = defaultdict(set)
-        self.subsets = defaultdict(set)
+        self.defeated_subsets = defaultdict(set)
 
-    def is_consistent(self, reason, defeated):
+    def is_consistent(self, new_reason, new_defeated):
         """
-        @param reason: a frozenset of factors
-        @param defeated: a frozenset of factors, weaker than the reason
-        @return: True/False if this reason being stronger than this defeated is consistent with
-                the cb order
+        @param new_reason: a frozenset of factors
+        @param new_defeated: a frozenset of factors, weaker than the reason
+        @return: True/False if for the new_reason being stronger than the new_defeated,
+                this causes inconsistency with the existing Case Base order
         """
-        # Focus on the new reason, is this a subset of any existing case's defeated?
-        # Save references to a frozenset within a set (not 100% sure why it needs to be a frozenset)
-        d_subsets = {frozenset(self.subsets[factor]) for factor in reason}
 
-        # Find the intersection of all sets in the old defeated subsets exploiting the references
-        intersects = frozenset.intersection(*d_subsets)
+        # Focus on the new_reason
+        # Retrieve all entries in defeated_subsets for all factors within new_reason - supersets
+        # I.e. all supersets which exist in the case base of the new_reason with the
+        # opposite polarity to the new_reason. All supersets will be defeated.
+        # Cast existing set of references to a frozenset within a set
+        supersets = {frozenset(self.defeated_subsets[factor]) for factor in new_reason}
 
-        # Search for the intersections in the existing order, retrieving the associated reasons
-        old_reasons = [self.order[old_defeated] for old_defeated in intersects]
+        # Find the intersection of all sets in the supersets retrieved above, exploiting the references property
+        # This gives us all sets of factors which are stronger than our reason - stronger_supersets
+        # To optimise this, we order by size so that initially smaller sets are compared for intersections
+        sorted_supersets = sorted(supersets, key=lambda x: len(x))
+        stronger_supersets = frozenset.intersection(*sorted_supersets)
 
-        # Check if the new defeated is a superset of the old reasons
-        return not any(any(r.issubset(defeated) for r in rs) for rs in old_reasons)
+        # Looking at each (defeated) superset within the set of stronger_supersets,
+        # retrieve the (reason) entry in the existing order dictionary - this will be a set of reasons for each superset
+        existing_reasons = [self.order[stronger_superset] for stronger_superset in stronger_supersets]
+
+        # If for any of the existing reasons retrieved, if the new defeated is a superset of one of
+        # the sets of old reasons, return True (inconsistent)
+        return not any(any(r.issubset(new_defeated) for r in rs) for rs in existing_reasons)
 
     def is_cb_consistent(self):
         """
@@ -272,12 +281,13 @@ class PriorityOrder:
         @param reason: a frozenset of factors
         @param defeated: a frozenset of factors, weaker than the reason
         Adds defeated: reason to the cb order.
-        Adds for all factors within the defeated as keys to subsets
+        Adds all factors within the defeated set to the defeated_subsets dictionary with the
+        defeated frozenset as key and a set of frozensets as values
         """
         self.order[defeated].add(reason)
 
         for factor in defeated:
-            self.subsets[factor].add(defeated)
+            self.defeated_subsets[factor].add(defeated)
 
     def newly_inconsistent_with(self, case):
         pass
