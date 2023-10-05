@@ -140,13 +140,14 @@ class Case:
         """
         @param: other_case
         @return: Set of factors which are relevant differences from the other_case to this case
+        This returns a set of relevant differences for factors of binary dimensions
         """
         # outcome is the same
         if self.decision == other_case.decision:
             # get all reasons for the other_case which are not in this case
             return other_case.reason - self.reason
-        else: # outcome is different
-            # get all defeated for the other case which are not in this case
+        else:  # outcome is different
+            # get all defeated for the other_case which are not in this case
             return other_case.reason - self.defeated()
 
     def __str__(self):
