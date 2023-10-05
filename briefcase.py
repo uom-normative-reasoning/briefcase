@@ -180,7 +180,7 @@ class PriorityOrder:
     def __init__(self):
         # default-dict does not error when referencing a key which doesn't exist
         self.order = defaultdict(set)
-        self.defeated_subsets = defaultdict(set)
+        self.defeated_factor_index = defaultdict(set)
 
     def is_consistent(self, new_reason, new_defeated):
         """
@@ -191,25 +191,26 @@ class PriorityOrder:
         """
 
         # Focus on the new_reason
-        # Retrieve all entries in defeated_subsets for all factors within new_reason - supersets
-        # I.e. all supersets which exist in the case base of the new_reason with the
-        # opposite polarity to the new_reason. All supersets will be defeated.
+        # Retrieve all entries in defeated_factor_index for all factors within new_reason (defeats_that_intersect)
+        # I.e. all factor_sets which exist in the case base opposite polarity to the new_reason.
         # Cast existing set of references to a frozenset within a set
-        supersets = {frozenset(self.defeated_subsets[factor]) for factor in new_reason}
+        defeats_that_intersect = {frozenset(self.defeated_factor_index[factor]) for factor in new_reason}
 
-        # Find the intersection of all sets in the supersets retrieved above, exploiting the references property
-        # This gives us all sets of factors which are stronger than our reason - stronger_supersets
+        # Find the intersection of all sets retrieved above, exploiting the references property
+        # This gives us all sets of factors which are stronger than our reason - supersets
         # To optimise this, we order by size so that initially smaller sets are compared for intersections
-        sorted_supersets = sorted(supersets, key=lambda x: len(x))
-        stronger_supersets = frozenset.intersection(*sorted_supersets)
+        sorted_defeats_that_intersect = sorted(defeats_that_intersect, key=lambda x: len(x))
+        supersets = frozenset.intersection(*sorted_defeats_that_intersect)
 
-        # Looking at each (defeated) superset within the set of stronger_supersets,
-        # retrieve the (reason) entry in the existing order dictionary - this will be a set of reasons for each superset
-        existing_reasons = [self.order[stronger_superset] for stronger_superset in stronger_supersets]
+        # Looking at each (defeated) superset within the set of supersets,
+        # Retrieve the (reason) entry in the existing order dictionary - this will be a set of reasons for each
+        # Intersecting case
 
-        # If for any of the existing reasons retrieved, if the new defeated is a superset of one of
+        reasons_sets = [self.order[superset] for superset in supersets]
+
+        # If for any of the existing reasons sets retrieved, if the new defeated is a superset of one of
         # the sets of old reasons, return True (inconsistent)
-        return not any(any(r.issubset(new_defeated) for r in rs) for rs in existing_reasons)
+        return not any(any(reason.issubset(new_defeated) for reason in reasons) for reasons in reasons_sets)
 
     def is_cb_consistent(self):
         """
@@ -287,7 +288,7 @@ class PriorityOrder:
         self.order[defeated].add(reason)
 
         for factor in defeated:
-            self.defeated_subsets[factor].add(defeated)
+            self.defeated_factor_index[factor].add(defeated)
 
     def newly_inconsistent_with(self, case):
         pass
