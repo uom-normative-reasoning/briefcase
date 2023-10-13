@@ -17,10 +17,10 @@ def test_cases():
 @pytest.mark.parametrize(
     "test_case_name",
     [
-        "simple_small_same_outcome",
-        "simple_small_different_outcome",
-        "simple_big_same_outcome",
-        "simple_big_different_outcome"
+        "small_same_outcome",
+        "small_different_outcome",
+        "big_same_outcome",
+        "big_different_outcome"
     ],
 )
 def test_relevant_differences(test_cases, test_case_name):

@@ -1,0 +1,12 @@
+The three data sets used in the experiment are included as csv-files.
+
+All other files are Jupyter Notebooks using Python. 
+
+There are three general files:
+Data_preparation: prepares the raw data sets
+Classes: defines objects used by all algorithms, such as Case and CB
+Feature selection: algorithm to reduce the number of features
+
+The other three files are devoted to specific methods:
+AA-CBR, AF-CBA and the four algorithms discussed in CH7.
+
