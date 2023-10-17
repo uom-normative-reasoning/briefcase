@@ -103,11 +103,11 @@ class Case:
         return cls(pi_factors, delta_factors, decision_value, reason_factors)
 
     def __init__(
-        self,
-        pi_factors=frozenset(),
-        delta_factors=frozenset(),
-        decision=decision_enum.un,
-        reason=frozenset(),
+            self,
+            pi_factors=frozenset(),
+            delta_factors=frozenset(),
+            decision=decision_enum.un,
+            reason=frozenset(),
     ):
         """I think we can have as a degenerate case a pure decision, that is, one with no factors
         and thus no reasons. Alternatively, we could force all such to be undecided.
@@ -220,6 +220,20 @@ class PriorityOrder:
                     return False
         return True
 
+    def count_inconsistencies(self):
+        """
+        @return : number of inconsistent cases in current cb
+        """
+
+        # TODO: what should we be counting, need to think through it.
+        # loop through all cases in order
+        count = 0
+        for reason, defeated_set in self.order.items():
+            for defeated in defeated_set:
+                if not self.is_consistent(reason, defeated):
+                    count = count + 1
+        return count
+
     def is_case_consistent_with(self, case):
         """
         @param case: a new case
@@ -245,11 +259,8 @@ class PriorityOrder:
         if r1.issubset(r2):  # then r2 is at least as strong as r1
             # Potentially a bit slow for large reasons? could check for polarity first.
             self.add_order_with_subsets(r2, r1)
-            # self.order[r2].add(r1)
-            # ds has to be of opposite polarity thus disjoint from the reason
         elif r2.issubset(r1):
             self.add_order_with_subsets(r1, r2)
-            # self.order[r1].add(r2)
 
     def unsafe_add_cases(self, cases):
         """
@@ -318,6 +329,13 @@ class CaseBase:
 
     def is_consistent_with(self, case):
         return self.order.is_case_consistent_with(case)
+
+    def metrics(self):
+        size = len(self.cases)
+        inconsistencies = self.order.count_inconsistencies()
+        print("Number of cases: ", size)
+        print("Number of inconsistencies: ", inconsistencies)
+        return size, inconsistencies
 
     def __str__(self):
         """

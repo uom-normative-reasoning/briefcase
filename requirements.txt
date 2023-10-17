@@ -1,4 +1,4 @@
-pyyaml
-networkx
+pyyaml~=6.0.1
+networkx~=3.1
 textual
-pytest
+pytest~=7.4.2
