@@ -314,7 +314,6 @@ class PriorityOrder:
                         return "EQUAL"
                     elif inconsistency == "DOMINATED":
                         print("Using DOMINANT inconsistency")
-                        # Horty inconsistency, weakest constraint
                         # if this inconsistency is already in the cb in a dominant form, continue, we accept this
                         # inconsistency. This occurs when the case already exists in cb in a dominant form
                         # Also accepts EQUALITY inconsistencies
@@ -331,6 +330,13 @@ class PriorityOrder:
                         if not self.get_dominating_cases_in_cb(new_reason, new_defeated):
                             return False
                         return "DOMINATING"
+                    elif inconsistency == "HORTY":
+                        print("using HORTY inconsistency")
+                        if self.get_dominated_cases_in_cb(new_reason, new_defeated):
+                            return "HORTY"
+                        if self.get_dominating_cases_in_cb(new_reason, new_defeated):
+                            return "HORTY"
+                        return False
                     elif inconsistency == "TAINTED":
                         # if a case is already inconsistent somewhere in the case base, accept this
                         # Accepts DOMINATING, EQUALITY, and DOMINATED inconsistencies
