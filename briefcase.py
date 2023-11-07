@@ -1,8 +1,4 @@
 import argparse
-import copy
-
-import yaml
-import networkx as nx
 
 from enum import Enum
 from pathlib import Path
@@ -10,9 +6,9 @@ from collections import defaultdict
 
 # Decisions are either for side pi, for side delta, or undecided
 # Pi = child can have dessert
-# Delta = child cannot have dessert# Undecided = ?
+# Delta = child cannot have dessert
+# Undecided = ?
 decision_enum = Enum("Decision", ["pi", "delta", "un"])
-
 
 class Factor:
     """Class describing a factor which contributes to a decision
@@ -186,10 +182,102 @@ class PriorityOrder:
 
     def __init__(self):
         # default-dict does not error when referencing a key which doesn't exist
+
+        # contains case base ordering with defeated stored as keys,
+        # and sets of reasons stored as values
         self.order = defaultdict(set)
         self.defeated_factor_index = defaultdict(set)
+        self.incon_counts = defaultdict(int)
 
-    def is_consistent(self, new_reason, new_defeated):
+    def get_dominated_cases_in_cb(self, new_reason, new_defeated):
+        """
+        @param new_reason: a frozenset of factors
+        @param new_defeated: a frozenset of factors, weaker than the reason
+        @return: all defeated factor sets of cases which are dominant to the new case in the existing case base order.
+                 Will have the same reason as new_reason, but might have more factors than the new_defeated.
+        """
+        dominant_cases = []  # tuple of (reason, defeated)
+
+        # retrieve all entries in the priority order for defeats which are stronger than the current defeat
+        defeats_supersets = self.get_stronger_defeats(new_defeated)
+
+        # if there is an entry for a reason under the defeated which is the same as current reason,
+        # this is a dominating case to the new case
+        for superset in defeats_supersets:
+            if new_reason in self.order[superset]:
+                dominant_cases.append((new_reason, superset))
+
+        return dominant_cases
+
+    def get_dominating_cases_in_cb(self, new_reason, new_defeated):
+        """
+        @param new_reason: a frozenset of factors
+        @param new_defeated: a frozenset of factors, weaker than the reason
+        @return: all defeated factor sets of cases which are dominated by the new case in the existing case base order.
+                 Will have the same reason as new_reason, but might have more factors than the new_defeated.
+        """
+        dominating_cases = []  # tuple of (reason, defeated)
+
+        # retrieve all entries in the priority order for defeats which are weaker than the current defeat
+        defeats_subsets = self.get_weaker_defeats(new_defeated)
+
+        # if there is an entry for a reason under the defeated which is the same as current reason,
+        # this is a dominant case
+        for subset in defeats_subsets:
+            if new_reason in self.order[subset]:
+                dominating_cases.append((new_reason, subset))
+
+        return dominating_cases
+
+    def is_case_tainted(self, reason, defeated):
+        """
+        @param reason: a frozenset of factors
+        @param defeated: a frozenset of factors, weaker than the reason
+        @return: if the case is either half of an inconsistency present in the case base return True
+        """
+        return not self.is_consistent(reason, defeated)
+
+    def get_stronger_defeats(self, factor_set):
+        # Retrieve all entries in defeated_factor_index for all factors within factor_set (defeats_that_intersect)
+        # Cast existing set of references to a frozenset within a set
+        defeats_that_intersect = {frozenset(self.defeated_factor_index[factor]) for factor in factor_set}
+
+        # Find the intersection of all sets retrieved above, exploiting the references property
+        # This gives us all sets of factors which are stronger than our factor_set - supersets
+        # To optimise this, we order by size so that initially smaller sets are compared for intersections
+        sorted_defeats_that_intersect = sorted(defeats_that_intersect, key=lambda x: len(x))
+        supersets = frozenset.intersection(*sorted_defeats_that_intersect)
+
+        return supersets
+
+    def get_weaker_defeats(self, factor_set):
+        # Retrieve all entries in defeated_factor_index which are weaker than a given factor set
+        # This any factor sets containing any number of the factors in the factor set
+
+
+        """
+        How do I find all subsets of a factorset e.g. {d1, d2, d3},
+        d1 ={{d1, d3}, {d1, d2}}
+        d2 = {{d1, d2}, {d2, d5}}
+        d3 = {{d1, d3}, {d4}}
+        d4 = {{d4}}
+
+        I don't think you can efficiently. Let's just loop through
+        """
+
+        # Initialize an empty set to store the union of all sets
+        weaker_defeats = set()
+
+        # Iterate through each factor in factor_set and update the union
+        for factor in factor_set:
+            candidate_weaker_defeats = self.defeated_factor_index[factor]
+            for candidate in candidate_weaker_defeats:
+                if candidate.issubset(factor_set):
+                    weaker_defeats.add(candidate)
+
+        return weaker_defeats
+
+    def is_consistent(self, new_reason, new_defeated, inconsistency="STRICT"):
         """
         @param new_reason: a frozenset of factors
         @param new_defeated: a frozenset of factors, weaker than the reason
@@ -197,65 +285,110 @@ class PriorityOrder:
                 this causes inconsistency with the existing Case Base order
         """
 
-        # Focus on the new_reason
-        # Retrieve all entries in defeated_factor_index for all factors within new_reason (defeats_that_intersect)
-        # I.e. all factor_sets which exist in the case base opposite polarity to the new_reason.
-        # Cast existing set of references to a frozenset within a set
-        defeats_that_intersect = {frozenset(self.defeated_factor_index[factor]) for factor in new_reason}
 
-        # Find the intersection of all sets retrieved above, exploiting the references property
-        # This gives us all sets of factors which are stronger than our reason - supersets
-        # To optimise this, we order by size so that initially smaller sets are compared for intersections
-        sorted_defeats_that_intersect = sorted(defeats_that_intersect, key=lambda x: len(x))
-        supersets = frozenset.intersection(*sorted_defeats_that_intersect)
+        supersets = self.get_stronger_defeats(new_reason)
 
         # Looking at each (defeated) superset within the set of supersets,
         # Retrieve the (reason) entry in the existing order dictionary - this will be a set of reasons for each
         # Intersecting case
-
-        reasons_sets = [self.order[superset] for superset in supersets]
+        case_sets = [(self.order[superset], superset) for superset in supersets]
 
         # If for any of the existing reasons sets retrieved, if the new defeated is a superset of one of
         # the sets of old reasons, return True (inconsistent)
-        return not any(any(reason.issubset(new_defeated) for reason in reasons) for reasons in reasons_sets)
+        for case in case_sets:
+            reasons = case[0]
+            defeated = case[1]
+            for reason in reasons:
+                if reason.issubset(new_defeated):
+                    if inconsistency == "STRICT":
+                        print("Using STRICT inconsistency")
+                        # Strongest inconsistency constraint, don't accept anything
+                        return False
+                    elif inconsistency == "EQUAL":
+                        print("Using EQUAL inconsistency")
+                        # Horty inconsistency, weakest constraint
+                        # if this inconsistency is already in the cb in a dominant form, continue, we accept this
+                        # inconsistency. This occurs when the case already exists in cb in a dominant form
+                        if not (new_reason in self.order[new_defeated]):
+                            return False
+                        return "EQUAL"
+                    elif inconsistency == "DOMINATED":
+                        print("Using DOMINANT inconsistency")
+                        # Horty inconsistency, weakest constraint
+                        # if this inconsistency is already in the cb in a dominant form, continue, we accept this
+                        # inconsistency. This occurs when the case already exists in cb in a dominant form
+                        # Also accepts EQUALITY inconsistencies
+                        if not self.get_dominated_cases_in_cb(new_reason, new_defeated):
+                            return False
+                        return "DOMINATED"
+                    elif inconsistency == "DOMINATING":
+                        print("using DOMINATED inconsistency")
+                        # if there is an inconsistency in the cb and the new case dominates this, accept this
+                        # If it is dominating of existing tainted case, can conclude we should accept inconsistency
+                        # If it is dominating of any case, can conclude we should accept anyway
+                        # Keep this here, so we can track how many inconsistencies we accept which are dominating
+                        # Also accepts EQUALITY inconsistencies
+                        if not self.get_dominating_cases_in_cb(new_reason, new_defeated):
+                            return False
+                        return "DOMINATING"
+                    elif inconsistency == "TAINTED":
+                        # if a case is already inconsistent somewhere in the case base, accept this
+                        # Accepts DOMINATING, EQUALITY, and DOMINATED inconsistencies
+                        print("Using TAINTED inconsistency")
+                        if not self.is_case_tainted(reason, defeated):
+                            return False
+                        return "TAINTED"
+                    elif inconsistency == "ALL":
+                        # Allows all inconsistencies in the casebase
+                        # Keep this here so we can track how many inconsistencies we accept
+                        return "ALL"
+
+        return "CONSISTENT-CASE"
 
     def is_cb_consistent(self):
         """
         @return : True/False if current ordering of the cb order is consistent
+        Inconsistency must be strict
         """
         # loop through all cases in order
         for defeated, reason_set in self.order.items():
             for reason in reason_set:
-                if not self.is_consistent(reason, defeated):
+                if not self.is_consistent(reason, defeated, "STRICT"):
                     return False
         return True
 
-    def count_inconsistencies(self):
-        """
-        @return : number of inconsistent cases in current cb
-        """
-
-        # TODO: what should we be counting, need to think through it.
-        # loop through all cases in order
-        count = 0
-        for reason, defeated_set in self.order.items():
-            for defeated in defeated_set:
-                if not self.is_consistent(reason, defeated):
-                    count = count + 1
-        return count
-
-    def is_case_consistent_with(self, case):
+    def is_cb_consistent_with(self, case, inconsistency="STRICT"):
         """
         @param case: a new case
         @return: True/False if the current cb order would be consistent with a new case added
         """
-        # assert self.is_consistent()  # TODO: is this what we want?
+        # assert self.is_consistent()  # TODO: is this what we want? Probably not...
+        # if any inconsistency other than strict, the cb will have inconsistencies in but case may not be inconsistent
 
         # New case
         reason = case.reason
         defeated = case.defeated()
 
-        return self.is_consistent(reason, defeated)
+        return self.is_consistent(reason, defeated, inconsistency)
+
+    def count_tainted_cases(self):
+        """
+        @return : number of cases which are associated with an inconsistency in current cb
+        """
+
+        # loop through all cases in order
+        count = 0
+        for reason, defeated_set in self.order.items():
+            for defeated in defeated_set:
+                if not self.is_consistent(reason, defeated, "STRICT"):
+                    count = count + 1
+        return count
+
+    def count_new_inconsistency_types(self):
+        """
+        @return : number of cases which were accepted due to an inconsistency strategy in current cb
+        """
+        return self.incon_counts
 
     def add_pair_as_appropriate(self, r1, r2):
         """
@@ -272,20 +405,14 @@ class PriorityOrder:
         elif r2.issubset(r1):
             self.add_order_with_subsets(r1, r2)
 
-    def unsafe_add_cases(self, cases):
-        """
-        @param cases: multiple cases to add to the order
-        """
-        for c in cases:
-            self.unsafe_add_case(c)
 
     def unsafe_add_case(self, case):
         """
         @param case: the new case to be added to the priority order
-        Adds a new case to order dict with no safety checks.
+        Adds a new case to order dict with no safety checks for inconsistency
         """
+        self.incon_counts["IGNORE"] += 1
         # case 1: we know the winning reason is at least as strong as the defeated factors, since it won
-        # self.order[case.reason].add(case.defeated())
         self.add_order_with_subsets(case.reason, case.defeated())
         for r, ds in list(self.order.items()):
             # case 2: check if winning reason is stronger than other winning reasons in the dictionary
@@ -294,6 +421,19 @@ class PriorityOrder:
             for d in ds:
                 # case 3: check if winning reason is stronger than other defeated reasons in the dictionary
                 self.add_pair_as_appropriate(case.reason, d)
+
+
+    def safe_add_case(self, case, inconsistency):
+        """
+        @param case: the new case to be added to the priority order
+        Adds a new case to order dict with no safety checks for inconsistency
+        """
+        type = self.is_cb_consistent_with(case, inconsistency)
+        if type:
+            print(type)
+            self.incon_counts[type] += 1
+            return self.unsafe_add_case(case)
+
 
     def add_order_with_subsets(self, reason, defeated):
         """
@@ -329,23 +469,37 @@ class CaseBase:
     def __init__(self, caselist=[]):
         self.cases = caselist
         self.order = PriorityOrder()
-        self.order.unsafe_add_cases(self.cases)
+        self.add_cases(self.cases)
+
+    def add_cases(self, cases):
+        for c in cases:
+            self.order.unsafe_add_case(c)
 
     def add_case(self, case):
-        self.cases.append(case)
         self.order.unsafe_add_case(case)
+
+    def safe_add_cases(self, cases, inconsistency="STRICT"):
+        for c in cases:
+            self.order.safe_add_case(c, inconsistency)
+
+    def safe_add_case(self, case, inconsistency="STRICT"):
+        self.cases.append(case)
+        self.order.safe_add_case(case, inconsistency)
 
     def is_cb_consistent(self):
         return self.order.is_cb_consistent()
 
-    def is_consistent_with(self, case):
-        return self.order.is_case_consistent_with(case)
+    def is_consistent_with(self, case, consistency="STRICT"):
+        return self.order.is_cb_consistent_with(case, consistency)
 
     def metrics(self):
         size = len(self.cases)
-        inconsistencies = self.order.count_inconsistencies()
+        inconsistencies = self.order.count_tainted_cases()
+        types = self.order.count_new_inconsistency_types()
+
         print("Number of cases: ", size)
-        print("Number of inconsistencies: ", inconsistencies)
+        print("Number of tainted cases: ", inconsistencies)
+        print("Type of newly inconsistent cases: ", types)
         return size, inconsistencies
 
     def __str__(self):

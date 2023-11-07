@@ -1,4 +1,4 @@
-import os
+from pathlib import Path
 import pytest
 import yaml
 
@@ -8,7 +8,7 @@ from briefcase import Case, Factor
 # Define a fixture to load test cases from the YAML file
 @pytest.fixture
 def test_cases():
-    test_data_path = os.path.join(os.path.dirname(__file__), 'test_data', 'test_relevant_diffs.yaml')
+    test_data_path = Path(__file__).parent / 'test_data' / 'test_relevant_diffs.yaml'
     with open(test_data_path, 'r') as file:
         return yaml.safe_load(file)
 

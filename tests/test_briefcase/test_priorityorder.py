@@ -1,5 +1,4 @@
-import os
-
+from pathlib import Path
 import pytest
 import yaml
 from briefcase import Case, CaseBase, PriorityOrder
@@ -8,7 +7,7 @@ from briefcase import Case, CaseBase, PriorityOrder
 # Define a fixture to load test cases from the YAML file
 @pytest.fixture
 def test_cases():
-    test_data_path = os.path.join(os.path.dirname(__file__), 'test_data', 'test_consistency.yaml')
+    test_data_path = Path(__file__).parent / 'test_data' / 'test_consistency.yaml'
     with open(test_data_path, 'r') as file:
         return yaml.safe_load(file)
 
@@ -78,3 +77,109 @@ def test_add_order_with_subsets_id(test_cases, test_case_name):
 
 
 
+# Define the tests using the loaded test cases
+@pytest.mark.parametrize(
+    "test_case_name",
+    [
+        "dominated_inconsistency_small",
+        "inconsistency_equality"
+    ],
+)
+def test_dominated_consistency(test_cases, test_case_name):
+    cs = test_cases[test_case_name]
+    cases = [Case.from_dict(c) for c in cs[:-1]]  # don't include last case
+    cb1 = CaseBase(cases)
+    inconsistent_case = Case.from_dict(cs[-1])
+    assert not cb1.is_cb_consistent()
+    assert not cb1.is_consistent_with(inconsistent_case, "STRICT")
+    assert cb1.is_consistent_with(inconsistent_case, "DOMINATED") == "DOMINATED"
+
+
+# Define the tests using the loaded test cases
+@pytest.mark.parametrize(
+    "test_case_name",
+    [
+        "not_dominated_inconsistency_but_dominated"
+    ],
+)
+def test_dominated_consistency_dominated_not_inconsistent(test_cases, test_case_name):
+    cs = test_cases[test_case_name]
+    cases = [Case.from_dict(c) for c in cs[:-1]]  # don't include last case
+    cb1 = CaseBase(cases)
+    inconsistent_case = Case.from_dict(cs[-1])
+    assert not cb1.is_cb_consistent()
+    assert cb1.is_consistent_with(inconsistent_case, "STRICT") == "CONSISTENT-CASE"
+    assert cb1.is_consistent_with(inconsistent_case, "DOMINATED") == "CONSISTENT-CASE"
+
+
+
+@pytest.mark.parametrize(
+    "test_case_name",
+    [
+        "dominating_inconsistency_small",
+        "inconsistency_equality"
+    ],
+)
+def test_dominating_consistency(test_cases, test_case_name):
+    cs = test_cases[test_case_name]
+    cases = [Case.from_dict(c) for c in cs[:-1]]  # don't include last case
+    cb1 = CaseBase(cases)
+    inconsistent_case = Case.from_dict(cs[-1])
+    assert not cb1.is_cb_consistent()
+    assert not cb1.is_consistent_with(inconsistent_case, "STRICT")
+    assert cb1.is_consistent_with(inconsistent_case, "DOMINATING") == "DOMINATING"
+
+@pytest.mark.parametrize(
+    "test_case_name",
+    [
+        "dominated_inconsistency_small",
+        "dominating_inconsistency_small",
+        "inconsistency_equality"
+    ],
+)
+def test_consistency_all(test_cases, test_case_name):
+    cs = test_cases[test_case_name]
+    cases = [Case.from_dict(c) for c in cs[:-1]]  # don't include last case
+    cb1 = CaseBase(cases)
+    assert not cb1.is_cb_consistent()
+
+    inconsistent_case = Case.from_dict(cs[-1])
+
+    assert cb1.is_consistent_with(inconsistent_case, "ALL") == "ALL"
+    cb1.safe_add_case(inconsistent_case, "ALL")
+
+@pytest.mark.parametrize(
+    "test_case_name",
+    [
+        "inconsistency_equality"
+    ],
+)
+def test_equality_consistency(test_cases, test_case_name):
+    cs = test_cases[test_case_name]
+    cases = [Case.from_dict(c) for c in cs[:-1]]  # don't include last case
+    cb1 = CaseBase(cases)
+    inconsistent_case = Case.from_dict(cs[-1])
+
+    assert not cb1.is_cb_consistent()
+    assert cb1.is_consistent_with(inconsistent_case, "EQUAL") == "EQUAL"
+    cb1.safe_add_case(inconsistent_case, "EQUAL")
+
+
+
+
+@pytest.mark.parametrize(
+    "test_case_name",
+    [
+        "tainted_inconsistency_small",
+        "inconsistency_equality",
+        "dominated_inconsistency_small",
+        "dominating_inconsistency_small",
+    ],
+)
+def test_tainted_consistency(test_cases, test_case_name):
+    cs = test_cases[test_case_name]
+    cases = [Case.from_dict(c) for c in cs[:-1]]  # don't include last case
+    cb1 = CaseBase(cases)
+    inconsistent_case = Case.from_dict(cs[-1])
+    assert not cb1.is_cb_consistent()
+    assert cb1.is_consistent_with(inconsistent_case, "TAINTED") == "TAINTED"
