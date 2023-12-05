@@ -10,6 +10,7 @@ from collections import defaultdict
 # Undecided = ?
 decision_enum = Enum("Decision", ["pi", "delta", "un"])
 
+
 class Factor:
     """Class describing a factor which contributes to a decision
     e.g. factor 1, name = "child ate their dinner", polarity = pi (child can have dessert)
@@ -194,18 +195,23 @@ class PriorityOrder:
         @param new_reason: a frozenset of factors
         @param new_defeated: a frozenset of factors, weaker than the reason
         @return: all defeated factor sets of cases which are dominant to the new case in the existing case base order.
-                 Will have the same reason as new_reason, but might have more factors than the new_defeated.
+                 Will have the same or a superset of the reason, but might have more factors than the new_defeated.
         """
+        # Used by Horty
+
         dominant_cases = []  # tuple of (reason, defeated)
 
         # retrieve all entries in the priority order for defeats which are stronger than the current defeat
         defeats_supersets = self.get_stronger_defeats(new_defeated)
-
-        # if there is an entry for a reason under the defeated which is the same as current reason,
+        # if there is an entry for a reason under the defeated which is a superset of the current reason,
         # this is a dominating case to the new case
-        for superset in defeats_supersets:
-            if new_reason in self.order[superset]:
-                dominant_cases.append((new_reason, superset))
+        for old_defeat in defeats_supersets:
+            for old_reason in self.order[old_defeat]:
+                print()
+                print(old_reason)
+                print(new_reason)
+                if new_reason.issubset(old_reason):
+                    dominant_cases.append((old_reason, old_defeat))
 
         return dominant_cases
 
@@ -224,8 +230,9 @@ class PriorityOrder:
         # if there is an entry for a reason under the defeated which is the same as current reason,
         # this is a dominant case
         for subset in defeats_subsets:
-            if new_reason in self.order[subset]:
-                dominating_cases.append((new_reason, subset))
+            for old_reason in self.order[subset]:
+                if new_reason.issubset(old_reason):
+                    dominating_cases.append((old_reason, subset))
 
         return dominating_cases
 
@@ -253,7 +260,6 @@ class PriorityOrder:
     def get_weaker_defeats(self, factor_set):
         # Retrieve all entries in defeated_factor_index which are weaker than a given factor set
         # This any factor sets containing any number of the factors in the factor set
-
 
         """
         How do I find all subsets of a factorset e.g. {d1, d2, d3},
@@ -285,7 +291,6 @@ class PriorityOrder:
                 this causes inconsistency with the existing Case Base order
         """
 
-
         supersets = self.get_stronger_defeats(new_reason)
 
         # Looking at each (defeated) superset within the set of supersets,
@@ -306,14 +311,12 @@ class PriorityOrder:
                         return False
                     elif inconsistency == "EQUAL":
                         print("Using EQUAL inconsistency")
-                        # Horty inconsistency, weakest constraint
-                        # if this inconsistency is already in the cb in a dominant form, continue, we accept this
-                        # inconsistency. This occurs when the case already exists in cb in a dominant form
                         if not (new_reason in self.order[new_defeated]):
                             return False
                         return "EQUAL"
                     elif inconsistency == "DOMINATED":
                         print("Using DOMINANT inconsistency")
+                        # This is equivalent to Horty inconsistency
                         # if this inconsistency is already in the cb in a dominant form, continue, we accept this
                         # inconsistency. This occurs when the case already exists in cb in a dominant form
                         # Also accepts EQUALITY inconsistencies
@@ -325,18 +328,15 @@ class PriorityOrder:
                         # if there is an inconsistency in the cb and the new case dominates this, accept this
                         # If it is dominating of existing tainted case, can conclude we should accept inconsistency
                         # If it is dominating of any case, can conclude we should accept anyway
-                        # Keep this here, so we can track how many inconsistencies we accept which are dominating
                         # Also accepts EQUALITY inconsistencies
                         if not self.get_dominating_cases_in_cb(new_reason, new_defeated):
                             return False
                         return "DOMINATING"
                     elif inconsistency == "HORTY":
                         print("using HORTY inconsistency")
-                        if self.get_dominated_cases_in_cb(new_reason, new_defeated):
-                            return "HORTY"
-                        if self.get_dominating_cases_in_cb(new_reason, new_defeated):
-                            return "HORTY"
-                        return False
+                        if not self.get_dominated_cases_in_cb(new_reason, new_defeated):
+                            return False
+                        return "HORTY"
                     elif inconsistency == "TAINTED":
                         # if a case is already inconsistent somewhere in the case base, accept this
                         # Accepts DOMINATING, EQUALITY, and DOMINATED inconsistencies
@@ -346,7 +346,6 @@ class PriorityOrder:
                         return "TAINTED"
                     elif inconsistency == "ALL":
                         # Allows all inconsistencies in the casebase
-                        # Keep this here so we can track how many inconsistencies we accept
                         return "ALL"
 
         return "CONSISTENT-CASE"
@@ -411,7 +410,6 @@ class PriorityOrder:
         elif r2.issubset(r1):
             self.add_order_with_subsets(r1, r2)
 
-
     def unsafe_add_case(self, case):
         """
         @param case: the new case to be added to the priority order
@@ -428,7 +426,6 @@ class PriorityOrder:
                 # case 3: check if winning reason is stronger than other defeated reasons in the dictionary
                 self.add_pair_as_appropriate(case.reason, d)
 
-
     def safe_add_case(self, case, inconsistency):
         """
         @param case: the new case to be added to the priority order
@@ -439,7 +436,6 @@ class PriorityOrder:
             print(type)
             self.incon_counts[type] += 1
             return self.unsafe_add_case(case)
-
 
     def add_order_with_subsets(self, reason, defeated):
         """

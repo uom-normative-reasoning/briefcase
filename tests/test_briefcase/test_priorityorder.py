@@ -76,8 +76,6 @@ def test_add_order_with_subsets_id(test_cases, test_case_name):
     assert any(case.defeated() is obj for subset in order.defeated_factor_index.values() for obj in subset)
 
 
-
-# Define the tests using the loaded test cases
 @pytest.mark.parametrize(
     "test_case_name",
     [
@@ -92,6 +90,7 @@ def test_dominated_consistency(test_cases, test_case_name):
     inconsistent_case = Case.from_dict(cs[-1])
     assert not cb1.is_cb_consistent()
     assert not cb1.is_consistent_with(inconsistent_case, "STRICT")
+    print("here")
     assert cb1.is_consistent_with(inconsistent_case, "DOMINATED") == "DOMINATED"
 
 

@@ -222,23 +222,6 @@ combined_factors:
    decision: delta
    reason: [d1, d3]
 
-dominated_inconsistency_small:
--
-   pi: [p1, p2, p3]
-   delta: [d1, d2]
-   decision: pi
-   reason: [p1, p2, p3]
--
-   pi: [p1, p2, p3, p4] # this is already inconsistent with case 1
-   delta: [d1]
-   decision: delta
-   reason: [d1]
-- # inconsistent with case 2, and dominated by case 1
-   pi: [p1, p2, p3]
-   delta: [d1]
-   decision: pi
-   reason: [p1, p2, p3]
-
 inconsistency_equality:
 -
    pi: [p1, p2, p3]
@@ -256,6 +239,23 @@ inconsistency_equality:
    decision: pi
    reason: [p1, p2, p3]
 
+dominated_inconsistency_small:
+-
+   pi: [p1, p2, p3]
+   delta: [d1, d2]
+   decision: pi
+   reason: [p1, p2, p3]
+-
+   pi: [p1, p2, p3, p4] # this is already inconsistent with case 1
+   delta: [d1]
+   decision: delta
+   reason: [d1]
+- # inconsistent with case 2, and dominated by case 1
+   pi: [p1, p2, p3, p4]
+   delta: [d1]
+   decision: pi
+   reason: [p1, p2, p3, p4]
+
 not_dominated_inconsistency_but_dominated:
 -
    pi: [p1, p2, p3]
@@ -271,7 +271,7 @@ not_dominated_inconsistency_but_dominated:
    pi: [p1, p2, p3]
    delta: [d2]
    decision: pi
-   reason: [p1, p2, p3]
+   reason: [p1, p2, p3, p5]
 
 dominating_inconsistency_small:
 -
@@ -284,11 +284,28 @@ dominating_inconsistency_small:
    delta: [d1]
    decision: delta
    reason: [d1]
-- # inconsistent with case 2, and dominated by case 1
-   pi: [p1, p2, p3]
+- # inconsistent with case 2, and dominating case 1
+   pi: [p1, p2, p3, p4]
    delta: [d1, d2, d3]
    decision: pi
+   reason: [p1, p2, p3, p4]
+
+not_dominating_inconsistency_but_dominating:
+-
+   pi: [p1, p2, p3]
+   delta: [d1, d2]
+   decision: pi
    reason: [p1, p2, p3]
+-
+   pi: [p1, p2, p3, p4] # this is already inconsistent with case 1
+   delta: [d1]
+   decision: delta
+   reason: [d1]
+- # inconsistent with case 2, and dominating case 1
+   pi: [p1, p2, p3, p4]
+   delta: [d1, d2, d3]
+   decision: pi
+   reason: [p1, p2, p3, p5]
 
 tainted_inconsistency_small:
 -
