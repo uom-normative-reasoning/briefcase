@@ -1,0 +1,159 @@
+all:
+   name: ALL
+   cases: []
+   adds:
+      - pi: [ p1,p2,p3,p4 ]
+        delta: [ d1, d2, d3 ]
+        decision: pi
+        reason: [ p1, p3 ]
+      - pi: [ p1,p3,p7 ]
+        delta: [ d5, d2, d3 ]
+        decision: delta
+        reason: [ d5, d2, d3 ]
+      - pi: [ p1,p3,p7 ]
+        delta: [ d5, d2, d3 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+   fails: []
+
+no_new:
+   name: NO_NEW
+   cases:
+      - pi: [ p1,p2,p3,p4 ] # case 1
+        delta: [ d1, d2, d3 ]
+        decision: pi
+        reason: [ p1, p3 ]
+      - pi: [ p1,p3,p7, p8] # case 2
+        delta: [ d5, d2, d3 ]
+        decision: delta
+        reason: [ d5, d2, d3 ]
+      - pi: [ p1,p3,p7 ] # case 3
+        delta: [ d5, d2, d3 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+   adds:
+      - pi: [ p1,p3,p7 ] # inconsistent equal to case 3
+        delta: [ d5, d2, d3 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+      - pi: [ p1,p3,p7 ]  # inconsistent represented by case 3
+        delta: [ d5, d2, d3, d6 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+      - pi: [ p10] # consistent new case
+        delta: [ d8]
+        decision: pi
+        reason: [ p10]
+      - pi: [ p1,p2,p3,p4 ] # inconsistent with case 1 - FAIL
+        delta: [ d1, d2, d3 ]
+        decision: delta
+        reason: [ d1, d2, d3 ]
+      - pi: [ p1, p3 ]  # inconsistent with case 2, not represented by case 3- FAIL
+        delta: [ d5, d2, d3]
+        decision: pi
+        reason: [ p1,p3 ]
+      - pi: [ p1, p8 ]  # inconsistent with case 2, not represented by case 3- FAIL
+        delta: [ d5, d2, d3, d9 ]
+        decision: pi
+        reason: [ p1, p8  ]
+   fails:
+      - pi: [ p10] # consistent new case
+        delta: [ d8]
+        decision: pi
+        reason: [ p10]
+      - pi: [ p1,p2,p3,p4 ] # inconsistent with case 1 - FAIL
+        delta: [ d1, d2, d3 ]
+        decision: delta
+        reason: [ d1, d2, d3 ]
+      - pi: [ p1, p3 ]  # inconsistent with case 2, not represented by case 3- FAIL
+        delta: [ d5, d2, d3]
+        decision: pi
+        reason: [ p1,p3 ]
+      - pi: [ p1, p8 ]  # inconsistent with case 2, not represented by case 3- FAIL
+        delta: [ d5, d2, d3, d9 ]
+        decision: pi
+        reason: [ p1, p8 ]
+
+no_involvement:
+   name: NO_INVOLVEMENT
+   cases:
+      - pi: [ p1,p2,p3,p4 ] # case 1
+        delta: [ d1, d2, d3 ]
+        decision: pi
+        reason: [ p1, p3 ]
+      - pi: [ p1,p3,p7, p8] # case 2
+        delta: [ d5, d2, d3 ]
+        decision: delta
+        reason: [ d5, d2, d3 ]
+      - pi: [ p1,p3,p7 ] # case 3
+        delta: [ d5, d2, d3 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+   adds:
+      - pi: [ p1,p3,p7 ] # inconsistent equal to case 3
+        delta: [ d5, d2, d3 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+      - pi: [ p1,p3,p7 ]  # inconsistent represented by case 3
+        delta: [ d5, d2, d3, d6 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+      - pi: [ p10] # consistent new case
+        delta: [ d8]
+        decision: pi
+        reason: [ p10]
+   fails:
+      - pi: [ p1,p3,p7 ] # inconsistent equal to case 3
+        delta: [ d5, d2, d3 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+      - pi: [ p1,p3,p7 ]  # inconsistent represented by case 3
+        delta: [ d5, d2, d3, d6 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+
+no_corruption:
+   name: NO_CORRUPTION
+   cases:
+      - pi: [ p1,p2,p3,p4 ] # case 1
+        delta: [ d1, d2, d3 ]
+        decision: pi
+        reason: [ p1, p3 ]
+      - pi: [ p1,p3,p7, p8] # case 2
+        delta: [ d5, d2, d3 ]
+        decision: delta
+        reason: [ d5, d2, d3 ]
+      - pi: [ p1,p3,p7 ] # case 3
+        delta: [ d5, d2, d3 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+   adds:
+      - pi: [ p1,p3,p7 ] # inconsistent equal to case 3
+        delta: [ d5, d2, d3 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+      - pi: [ p1,p3,p7 ]  # inconsistent represented by case 3
+        delta: [ d5, d2, d3, d6 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+      - pi: [ p10] # consistent new case
+        delta: [ d8]
+        decision: pi
+        reason: [ p10]
+      - pi: [ p1,p2,p3,p4 ] # inconsistent with case 1 - FAIL
+        delta: [ d1, d2, d3 ]
+        decision: delta
+        reason: [ d1, d2, d3 ]
+      - pi: [ p1, p3 ]  # inconsistent with case 2, not represented by case 3- ACCEPT
+        delta: [ d5, d2, d3]
+        decision: pi
+        reason: [ p1,p3 ]
+      - pi: [ p1, p8 ]  # inconsistent with case 2, not represented by case 3- ACCEPT
+        delta: [ d5, d2, d3, d9 ]
+        decision: pi
+        reason: [ p1, p8  ]
+   fails:
+      - pi: [ p1,p2,p3,p4 ] # inconsistent with case 1 - FAIL
+        delta: [ d1, d2, d3 ]
+        decision: delta
+        reason: [ d1, d2, d3 ]
