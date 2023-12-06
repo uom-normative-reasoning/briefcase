@@ -18,7 +18,8 @@ def test_cases():
     [
         "all",
         "no_new",
-        "no_involvement"
+        "no_involvement",
+        "no_corruption"
     ],
 )
 def test_is_case_admissible(test_cases, test_case_name):
