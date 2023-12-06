@@ -1,0 +1,66 @@
+CB1:
+   cb:
+      -
+         y: 0
+         f1: 1
+         f2: 1
+         f3: 0
+      - # same as case 1 but opposite polarity
+         y: 1
+         f1: 1
+         f2: 1
+         f3: 0
+   answer_voting:
+      f1: "un"
+      f2: "un"
+      f3: "un"
+   answer_corr:
+      f1: "un"
+      f2: "un"
+      f3: "un"
+
+CB2:
+   cb:
+      -
+         y: 1
+         f1: 1
+         f2: 1
+         f3: 0
+         f4: 1
+         f5: 0
+         f6: 0
+         f7: 0
+      -
+         y: 0
+         f1: 1
+         f2: 1
+         f3: 0
+         f4: 0
+         f5: 1
+         f6: 0
+         f7: 1
+      -
+         y: 1
+         f1: 0
+         f2: 0
+         f3: 0
+         f4: 1
+         f5: 0
+         f6: 0
+         f7: 0
+   answer_voting:
+      f1: "un"
+      f2: "un"
+      f3: "un"
+      f4: "pi"
+      f5: "delta"
+      f6: "un"
+      f7: "delta"
+   answer_corr:
+      f1: "delta"
+      f2: "delta"
+      f3: "un"
+      f4: "pi"
+      f5: "delta"
+      f6: "un"
+      f7: "delta"

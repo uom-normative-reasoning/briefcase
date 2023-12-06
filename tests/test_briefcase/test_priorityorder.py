@@ -1,15 +1,16 @@
+from pathlib import Path
 import pytest
 import yaml
-from pathlib import Path
 from briefcase import Case, CaseBase, PriorityOrder
+from collections import Counter
 
 
 # Define a fixture to load test cases from the YAML file
 @pytest.fixture
 def test_cases():
-    test_cases_file = Path("test_case_base.yaml")
-    with test_cases_file.open("r") as f:
-        return yaml.safe_load(f)
+    test_data_path = Path(__file__).parent / 'test_data' / 'test_consistency.yaml'
+    with open(test_data_path, 'r') as file:
+        return yaml.safe_load(file)
 
 
 @pytest.mark.parametrize(
@@ -76,4 +77,20 @@ def test_add_order_with_subsets_id(test_cases, test_case_name):
     assert any(case.defeated() is obj for subset in order.defeated_factor_index.values() for obj in subset)
 
 
+@pytest.mark.parametrize(
+    "test_case_name",
+    [
+        "test_get_incons_pairs_with_case"
+    ],
+)
+def test_get_incons_pairs_with_case(test_cases, test_case_name):
+    cs = test_cases[test_case_name]['cases']
+    cases = [Case.from_dict(c) for c in cs[:-1]]  # don't include last three case
+    cb1 = CaseBase(cases)
+    assert cb1.is_cb_consistent()
 
+    inconsistent_case = Case.from_dict(cs[-1])
+
+    answer = [(cases[v].reason, cases[v].defeated()) for v in test_cases[test_case_name]['answer']]
+    expected = cb1.order.get_incons_pairs_with_case(inconsistent_case.reason, inconsistent_case.defeated())
+    assert Counter(expected) == Counter(answer)

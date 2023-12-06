@@ -33,7 +33,7 @@ simple_small:
    reason: [d1]
 
 # big test cases
-simple_big: # simple test case, one factor per side, reason = winning factor
+simple_big:
 -
    pi: [p1,p2,p3,p4]
    delta: [d1, d2, d3]
@@ -48,7 +48,7 @@ simple_big: # simple test case, one factor per side, reason = winning factor
    pi: [p1,p3,p7]
    delta: [d5, d2, d3]
    decision: pi
-   reason: [p1]
+   reason: [p1,p3,p7]
 
 # distractors, extra stuff but no subset reasoning
 distractor_small:
@@ -222,3 +222,29 @@ combined_factors:
    decision: delta
    reason: [d1, d3]
 
+test_get_incons_pairs_with_case:
+   cases:
+      -
+         pi: [p1,p2,p3,p4]
+         delta: [d1, d2, d3]
+         decision: pi
+         reason: [p1, p3]
+      -
+         pi: [p1,p3,p7]
+         delta: [d5, d2, d3]
+         decision: delta
+         reason: [d5, d2, d3]
+      -
+         pi: [p1,p3,p7,p8,p9]
+         delta: [d5, d2]
+         decision: delta
+         reason: [d5, d2]
+
+      - # inconsistent to case 2 - different polarity, same factors - case 3 - subsets
+         pi: [p1,p3,p7]
+         delta: [d5, d2, d3]
+         decision: pi
+         reason: [p1,p3,p7]
+   answer:
+      - 1
+      - 2
