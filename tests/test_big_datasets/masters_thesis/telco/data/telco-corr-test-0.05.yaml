@@ -1,0 +1,3982 @@
+- decision: pi
+  delta:
+  - Partner
+  - InternetService_DSL
+  pi: &id001
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id001
+- decision: delta
+  delta: &id002
+  - InternetService_No
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - Contract_Month-to-month
+  reason: *id002
+- decision: delta
+  delta: &id003
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id003
+- decision: pi
+  delta: []
+  pi: &id004
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id004
+- decision: delta
+  delta: &id005
+  - InternetService_DSL
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id005
+- decision: pi
+  delta:
+  - Partner
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id006
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id006
+- decision: delta
+  delta: &id007
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  - StreamingMovies_False
+  reason: *id007
+- decision: delta
+  delta: &id008
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id008
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: &id009
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - DeviceProtection_False
+  reason: *id009
+- decision: pi
+  delta:
+  - InternetService_No
+  pi: &id010
+  - Contract_Month-to-month
+  reason: *id010
+- decision: delta
+  delta: &id011
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  reason: *id011
+- decision: delta
+  delta: &id012
+  - Partner
+  - Dependents
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id012
+- decision: delta
+  delta: &id013
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - Contract_One year
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  reason: *id013
+- decision: pi
+  delta:
+  - TechSupport_True
+  pi: &id014
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id014
+- decision: delta
+  delta: &id015
+  - Partner
+  - InternetService_No
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - Contract_Month-to-month
+  reason: *id015
+- decision: pi
+  delta:
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id016
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id016
+- decision: pi
+  delta:
+  - InternetService_DSL
+  pi: &id017
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id017
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  pi: &id018
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id018
+- decision: delta
+  delta: &id019
+  - Partner
+  - Dependents
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id019
+- decision: pi
+  delta:
+  - Dependents
+  pi: &id020
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id020
+- decision: delta
+  delta: &id021 []
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id021
+- decision: delta
+  delta: &id022
+  - Partner
+  - Dependents
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id022
+- decision: delta
+  delta: &id023
+  - Partner
+  - Dependents
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id023
+- decision: delta
+  delta: &id024
+  - OnlineSecurity_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - InternetService_Fiber optic
+  - TechSupport_False
+  reason: *id024
+- decision: delta
+  delta: &id025
+  - Partner
+  - OnlineSecurity_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - TechSupport_False
+  reason: *id025
+- decision: pi
+  delta:
+  - Partner
+  - InternetService_DSL
+  - TechSupport_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id026
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id026
+- decision: pi
+  delta:
+  - PaymentMethod_Credit card (automatic)
+  pi: &id027
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id027
+- decision: delta
+  delta: &id028
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id028
+- decision: delta
+  delta: &id029 []
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id029
+- decision: delta
+  delta: &id030
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  reason: *id030
+- decision: delta
+  delta: &id031
+  - Partner
+  - OnlineSecurity_True
+  - Contract_One year
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  reason: *id031
+- decision: delta
+  delta: &id032
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id032
+- decision: delta
+  delta: &id033
+  - Partner
+  - InternetService_DSL
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  reason: *id033
+- decision: delta
+  delta: &id034
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - DeviceProtection_False
+  - StreamingTV_False
+  reason: *id034
+- decision: delta
+  delta: &id035
+  - Partner
+  - OnlineSecurity_True
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id035
+- decision: delta
+  delta: &id036
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id036
+- decision: delta
+  delta: &id037
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  reason: *id037
+- decision: pi
+  delta:
+  - Partner
+  pi: &id038
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id038
+- decision: delta
+  delta: &id039
+  - Partner
+  - Dependents
+  - Contract_One year
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  reason: *id039
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  pi: &id040
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id040
+- decision: pi
+  delta: []
+  pi: &id041
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id041
+- decision: delta
+  delta: &id042
+  - Partner
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  reason: *id042
+- decision: pi
+  delta: []
+  pi: &id043
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id043
+- decision: delta
+  delta: &id044
+  - InternetService_DSL
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id044
+- decision: pi
+  delta:
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id045
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id045
+- decision: delta
+  delta: &id046
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id046
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id047
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id047
+- decision: pi
+  delta: []
+  pi: &id048
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id048
+- decision: pi
+  delta: []
+  pi: &id049
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id049
+- decision: pi
+  delta:
+  - InternetService_DSL
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: &id050
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id050
+- decision: delta
+  delta: &id051
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  reason: *id051
+- decision: delta
+  delta: &id052
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - TechSupport_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id052
+- decision: delta
+  delta: &id053
+  - Partner
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  reason: *id053
+- decision: delta
+  delta: &id054
+  - Partner
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  reason: *id054
+- decision: delta
+  delta: &id055
+  - Partner
+  - Dependents
+  - TechSupport_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id055
+- decision: delta
+  delta: &id056
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - OnlineBackup_False
+  - DeviceProtection_False
+  reason: *id056
+- decision: delta
+  delta: &id057
+  - Partner
+  - Dependents
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - StreamingMovies_False
+  reason: *id057
+- decision: delta
+  delta: &id058
+  - Partner
+  - Dependents
+  - TechSupport_True
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id058
+- decision: delta
+  delta: &id059
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  reason: *id059
+- decision: delta
+  delta: &id060 []
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id060
+- decision: delta
+  delta: &id061
+  - Partner
+  - Dependents
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id061
+- decision: delta
+  delta: &id062
+  - InternetService_DSL
+  - TechSupport_True
+  pi:
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id062
+- decision: delta
+  delta: &id063
+  - Partner
+  - Dependents
+  - InternetService_No
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - Contract_Month-to-month
+  reason: *id063
+- decision: delta
+  delta: &id064
+  - Partner
+  - OnlineSecurity_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - TechSupport_False
+  - StreamingTV_False
+  reason: *id064
+- decision: pi
+  delta: []
+  pi: &id065
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id065
+- decision: delta
+  delta: &id066
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id066
+- decision: delta
+  delta: &id067
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  reason: *id067
+- decision: delta
+  delta: &id068
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  reason: *id068
+- decision: delta
+  delta: &id069
+  - InternetService_No
+  - Contract_One year
+  pi: []
+  reason: *id069
+- decision: delta
+  delta: &id070
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id070
+- decision: pi
+  delta: []
+  pi: &id071
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id071
+- decision: delta
+  delta: &id072
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - TechSupport_True
+  - Contract_Two year
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - PaymentMethod_Electronic check
+  reason: *id072
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  pi: &id073
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id073
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  pi: &id074
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id074
+- decision: delta
+  delta: &id075
+  - TechSupport_True
+  - Contract_One year
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - PaymentMethod_Electronic check
+  reason: *id075
+- decision: delta
+  delta: &id076
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - TechSupport_True
+  pi:
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id076
+- decision: delta
+  delta: &id077
+  - Partner
+  - OnlineSecurity_True
+  - TechSupport_True
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id077
+- decision: delta
+  delta: &id078
+  - Partner
+  - Dependents
+  - TechSupport_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - Contract_Month-to-month
+  reason: *id078
+- decision: delta
+  delta: &id079
+  - InternetService_No
+  pi:
+  - PaperlessBilling
+  - Contract_Month-to-month
+  reason: *id079
+- decision: delta
+  delta: &id080
+  - InternetService_No
+  - Contract_One year
+  pi: []
+  reason: *id080
+- decision: delta
+  delta: &id081
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id081
+- decision: pi
+  delta:
+  - Partner
+  pi: &id082
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id082
+- decision: delta
+  delta: &id083
+  - Partner
+  - InternetService_DSL
+  - TechSupport_True
+  pi:
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id083
+- decision: pi
+  delta:
+  - InternetService_DSL
+  - TechSupport_True
+  - PaymentMethod_Credit card (automatic)
+  pi: &id084
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id084
+- decision: delta
+  delta: &id085
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id085
+- decision: pi
+  delta:
+  - Dependents
+  pi: &id086
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id086
+- decision: pi
+  delta:
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id087
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  reason: *id087
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id088
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id088
+- decision: delta
+  delta: &id089
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id089
+- decision: delta
+  delta: &id090
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id090
+- decision: delta
+  delta: &id091
+  - InternetService_DSL
+  - TechSupport_True
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id091
+- decision: delta
+  delta: &id092
+  - Partner
+  - InternetService_DSL
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id092
+- decision: delta
+  delta: &id093 []
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id093
+- decision: delta
+  delta: &id094
+  - OnlineSecurity_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  reason: *id094
+- decision: delta
+  delta: &id095
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id095
+- decision: delta
+  delta: &id096
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id096
+- decision: delta
+  delta: &id097
+  - Partner
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id097
+- decision: delta
+  delta: &id098
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  reason: *id098
+- decision: pi
+  delta:
+  - Partner
+  pi: &id099
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id099
+- decision: delta
+  delta: &id100
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  pi:
+  - PaperlessBilling
+  reason: *id100
+- decision: delta
+  delta: &id101
+  - Partner
+  - Dependents
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id101
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  pi: &id102
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id102
+- decision: delta
+  delta: &id103
+  - InternetService_No
+  - Contract_One year
+  pi: []
+  reason: *id103
+- decision: delta
+  delta: &id104
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id104
+- decision: delta
+  delta: &id105
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id105
+- decision: pi
+  delta: []
+  pi: &id106
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id106
+- decision: delta
+  delta: &id107
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id107
+- decision: delta
+  delta: &id108
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id108
+- decision: delta
+  delta: &id109
+  - Partner
+  - TechSupport_True
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id109
+- decision: delta
+  delta: &id110
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  pi:
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id110
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  pi: &id111
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id111
+- decision: delta
+  delta: &id112
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - Contract_One year
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingMovies_False
+  reason: *id112
+- decision: delta
+  delta: &id113
+  - InternetService_No
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - Contract_Month-to-month
+  reason: *id113
+- decision: delta
+  delta: &id114 []
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id114
+- decision: delta
+  delta: &id115
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id115
+- decision: delta
+  delta: &id116
+  - InternetService_DSL
+  - TechSupport_True
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id116
+- decision: delta
+  delta: &id117
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id117
+- decision: delta
+  delta: &id118
+  - OnlineSecurity_True
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id118
+- decision: delta
+  delta: &id119
+  - InternetService_DSL
+  - TechSupport_True
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id119
+- decision: delta
+  delta: &id120
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - DeviceProtection_False
+  - StreamingMovies_False
+  reason: *id120
+- decision: delta
+  delta: &id121
+  - InternetService_DSL
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  reason: *id121
+- decision: delta
+  delta: &id122
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id122
+- decision: delta
+  delta: &id123
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id123
+- decision: pi
+  delta: []
+  pi: &id124
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id124
+- decision: delta
+  delta: &id125
+  - Partner
+  - InternetService_DSL
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id125
+- decision: delta
+  delta: &id126
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  reason: *id126
+- decision: pi
+  delta: []
+  pi: &id127
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id127
+- decision: pi
+  delta: []
+  pi: &id128
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id128
+- decision: delta
+  delta: &id129
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id129
+- decision: pi
+  delta:
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id130
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id130
+- decision: delta
+  delta: &id131
+  - Partner
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - StreamingMovies_False
+  reason: *id131
+- decision: pi
+  delta:
+  - PaymentMethod_Credit card (automatic)
+  pi: &id132
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id132
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  pi: &id133
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id133
+- decision: pi
+  delta:
+  - Partner
+  pi: &id134
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id134
+- decision: delta
+  delta: &id135
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  reason: *id135
+- decision: delta
+  delta: &id136
+  - Partner
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id136
+- decision: pi
+  delta:
+  - Dependents
+  - Contract_One year
+  pi: &id137
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  reason: *id137
+- decision: delta
+  delta: &id138
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_One year
+  pi: []
+  reason: *id138
+- decision: delta
+  delta: &id139
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - DeviceProtection_False
+  - StreamingTV_False
+  reason: *id139
+- decision: pi
+  delta:
+  - Partner
+  pi: &id140
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id140
+- decision: pi
+  delta:
+  - Partner
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id141
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id141
+- decision: delta
+  delta: &id142
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  reason: *id142
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  - PaymentMethod_Credit card (automatic)
+  pi: &id143
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id143
+- decision: delta
+  delta: &id144
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id144
+- decision: delta
+  delta: &id145
+  - InternetService_No
+  - Contract_Two year
+  pi:
+  - PaperlessBilling
+  reason: *id145
+- decision: delta
+  delta: &id146
+  - Dependents
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  reason: *id146
+- decision: delta
+  delta: &id147
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  reason: *id147
+- decision: delta
+  delta: &id148
+  - TechSupport_True
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id148
+- decision: delta
+  delta: &id149
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id149
+- decision: delta
+  delta: &id150
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id150
+- decision: delta
+  delta: &id151
+  - Partner
+  - Dependents
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  reason: *id151
+- decision: delta
+  delta: &id152
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  reason: *id152
+- decision: delta
+  delta: &id153 []
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id153
+- decision: delta
+  delta: &id154
+  - TechSupport_True
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - Contract_Month-to-month
+  reason: *id154
+- decision: delta
+  delta: &id155
+  - TechSupport_True
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id155
+- decision: delta
+  delta: &id156
+  - Partner
+  - Dependents
+  - TechSupport_True
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id156
+- decision: delta
+  delta: &id157
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - DeviceProtection_False
+  reason: *id157
+- decision: pi
+  delta: []
+  pi: &id158
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id158
+- decision: delta
+  delta: &id159
+  - Partner
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - PaymentMethod_Electronic check
+  reason: *id159
+- decision: delta
+  delta: &id160
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id160
+- decision: delta
+  delta: &id161
+  - Partner
+  - InternetService_DSL
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id161
+- decision: delta
+  delta: &id162
+  - Partner
+  - Dependents
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id162
+- decision: delta
+  delta: &id163
+  - OnlineSecurity_True
+  pi:
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id163
+- decision: delta
+  delta: &id164
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - StreamingMovies_False
+  reason: *id164
+- decision: delta
+  delta: &id165
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id165
+- decision: pi
+  delta: []
+  pi: &id166
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id166
+- decision: pi
+  delta:
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - PaymentMethod_Credit card (automatic)
+  pi: &id167
+  - PaperlessBilling
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id167
+- decision: delta
+  delta: &id168
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  reason: *id168
+- decision: delta
+  delta: &id169
+  - OnlineSecurity_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - InternetService_Fiber optic
+  - TechSupport_False
+  - StreamingMovies_False
+  reason: *id169
+- decision: delta
+  delta: &id170
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - DeviceProtection_False
+  - StreamingMovies_False
+  reason: *id170
+- decision: delta
+  delta: &id171
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  reason: *id171
+- decision: pi
+  delta:
+  - InternetService_No
+  pi: &id172
+  - PaperlessBilling
+  - Contract_Month-to-month
+  reason: *id172
+- decision: delta
+  delta: &id173
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  reason: *id173
+- decision: delta
+  delta: &id174
+  - Dependents
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id174
+- decision: delta
+  delta: &id175
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  pi:
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id175
+- decision: delta
+  delta: &id176
+  - Dependents
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id176
+- decision: delta
+  delta: &id177
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingMovies_False
+  reason: *id177
+- decision: delta
+  delta: &id178
+  - Partner
+  - Dependents
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  reason: *id178
+- decision: pi
+  delta: []
+  pi: &id179
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id179
+- decision: delta
+  delta: &id180
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  pi:
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id180
+- decision: pi
+  delta: []
+  pi: &id181
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id181
+- decision: delta
+  delta: &id182
+  - Partner
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id182
+- decision: delta
+  delta: &id183
+  - OnlineSecurity_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id183
+- decision: delta
+  delta: &id184
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id184
+- decision: delta
+  delta: &id185
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id185
+- decision: delta
+  delta: &id186
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id186
+- decision: pi
+  delta:
+  - InternetService_DSL
+  pi: &id187
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id187
+- decision: pi
+  delta:
+  - TechSupport_True
+  - Contract_One year
+  pi: &id188
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - PaymentMethod_Electronic check
+  reason: *id188
+- decision: pi
+  delta: []
+  pi: &id189
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id189
+- decision: delta
+  delta: &id190
+  - InternetService_DSL
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id190
+- decision: pi
+  delta:
+  - InternetService_No
+  pi: &id191
+  - PaperlessBilling
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id191
+- decision: delta
+  delta: &id192
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - TechSupport_False
+  reason: *id192
+- decision: delta
+  delta: &id193
+  - Partner
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  reason: *id193
+- decision: delta
+  delta: &id194
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id194
+- decision: delta
+  delta: &id195
+  - Contract_One year
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  reason: *id195
+- decision: delta
+  delta: &id196
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id196
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  pi: &id197
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id197
+- decision: delta
+  delta: &id198
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - StreamingMovies_False
+  reason: *id198
+- decision: delta
+  delta: &id199
+  - Partner
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  pi:
+  - InternetService_Fiber optic
+  - StreamingTV_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  reason: *id199
+- decision: delta
+  delta: &id200
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - StreamingMovies_False
+  reason: *id200
+- decision: delta
+  delta: &id201
+  - Partner
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id201
+- decision: delta
+  delta: &id202
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  reason: *id202
+- decision: delta
+  delta: &id203
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id203
+- decision: delta
+  delta: &id204
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  reason: *id204
+- decision: delta
+  delta: &id205
+  - InternetService_No
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - Contract_Month-to-month
+  reason: *id205
+- decision: pi
+  delta:
+  - InternetService_No
+  pi: &id206
+  - Contract_Month-to-month
+  reason: *id206
+- decision: delta
+  delta: &id207
+  - Partner
+  - Dependents
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id207
+- decision: delta
+  delta: &id208
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id208
+- decision: pi
+  delta: []
+  pi: &id209
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id209
+- decision: delta
+  delta: &id210
+  - InternetService_No
+  pi:
+  - PaperlessBilling
+  - Contract_Month-to-month
+  reason: *id210
+- decision: delta
+  delta: &id211
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  reason: *id211
+- decision: delta
+  delta: &id212
+  - Dependents
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  reason: *id212
+- decision: delta
+  delta: &id213
+  - Partner
+  - Dependents
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id213
+- decision: delta
+  delta: &id214
+  - Partner
+  - InternetService_DSL
+  - TechSupport_True
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id214
+- decision: pi
+  delta: []
+  pi: &id215
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id215
+- decision: delta
+  delta: &id216
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id216
+- decision: delta
+  delta: &id217
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - TechSupport_True
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id217
+- decision: delta
+  delta: &id218
+  - Partner
+  - InternetService_No
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - Contract_Month-to-month
+  reason: *id218
+- decision: delta
+  delta: &id219
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - StreamingMovies_False
+  reason: *id219
+- decision: delta
+  delta: &id220
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id220
+- decision: delta
+  delta: &id221
+  - Partner
+  - Dependents
+  - TechSupport_True
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id221
+- decision: delta
+  delta: &id222
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id222
+- decision: delta
+  delta: &id223
+  - Dependents
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  reason: *id223
+- decision: delta
+  delta: &id224
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id224
+- decision: delta
+  delta: &id225
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id225
+- decision: delta
+  delta: &id226
+  - Partner
+  - OnlineSecurity_True
+  - Contract_Two year
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  reason: *id226
+- decision: delta
+  delta: &id227
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  reason: *id227
+- decision: delta
+  delta: &id228
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id228
+- decision: pi
+  delta:
+  - Partner
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id229
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id229
+- decision: delta
+  delta: &id230
+  - Partner
+  - TechSupport_True
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id230
+- decision: delta
+  delta: &id231
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  reason: *id231
+- decision: delta
+  delta: &id232
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - DeviceProtection_False
+  - StreamingTV_False
+  reason: *id232
+- decision: pi
+  delta:
+  - TechSupport_True
+  pi: &id233
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id233
+- decision: delta
+  delta: &id234
+  - Partner
+  - Dependents
+  - TechSupport_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id234
+- decision: pi
+  delta: []
+  pi: &id235
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id235
+- decision: delta
+  delta: &id236
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id236
+- decision: pi
+  delta: []
+  pi: &id237
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id237
+- decision: delta
+  delta: &id238
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id238
+- decision: delta
+  delta: &id239
+  - Dependents
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id239
+- decision: delta
+  delta: &id240
+  - InternetService_No
+  - Contract_Two year
+  pi:
+  - PaperlessBilling
+  reason: *id240
+- decision: delta
+  delta: &id241
+  - InternetService_DSL
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  reason: *id241
+- decision: delta
+  delta: &id242
+  - InternetService_No
+  - Contract_One year
+  pi: []
+  reason: *id242
+- decision: pi
+  delta:
+  - InternetService_DSL
+  pi: &id243
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id243
+- decision: delta
+  delta: &id244
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  reason: *id244
+- decision: delta
+  delta: &id245
+  - Partner
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  reason: *id245
+- decision: delta
+  delta: &id246
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id246
+- decision: delta
+  delta: &id247
+  - InternetService_DSL
+  - TechSupport_True
+  pi:
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id247
+- decision: pi
+  delta:
+  - InternetService_DSL
+  pi: &id248
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id248
+- decision: delta
+  delta: &id249
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id249
+- decision: delta
+  delta: &id250
+  - Dependents
+  - InternetService_DSL
+  pi:
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id250
+- decision: pi
+  delta: []
+  pi: &id251
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id251
+- decision: delta
+  delta: &id252
+  - Dependents
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id252
+- decision: delta
+  delta: &id253
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - StreamingTV_False
+  reason: *id253
+- decision: delta
+  delta: &id254
+  - InternetService_DSL
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - OnlineSecurity_False
+  reason: *id254
+- decision: delta
+  delta: &id255
+  - OnlineSecurity_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id255
+- decision: pi
+  delta: []
+  pi: &id256
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id256
+- decision: delta
+  delta: &id257
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  pi:
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id257
+- decision: delta
+  delta: &id258
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id258
+- decision: delta
+  delta: &id259
+  - Partner
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  reason: *id259
+- decision: delta
+  delta: &id260
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - StreamingMovies_False
+  reason: *id260
+- decision: delta
+  delta: &id261
+  - OnlineSecurity_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - TechSupport_False
+  - StreamingMovies_False
+  reason: *id261
+- decision: pi
+  delta:
+  - InternetService_No
+  pi: &id262
+  - Contract_Month-to-month
+  reason: *id262
+- decision: delta
+  delta: &id263
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  pi:
+  - PaperlessBilling
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id263
+- decision: delta
+  delta: &id264 []
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id264
+- decision: delta
+  delta: &id265
+  - InternetService_DSL
+  - TechSupport_True
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id265
+- decision: delta
+  delta: &id266
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - OnlineSecurity_False
+  - TechSupport_False
+  reason: *id266
+- decision: delta
+  delta: &id267
+  - Dependents
+  - InternetService_DSL
+  pi:
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id267
+- decision: delta
+  delta: &id268
+  - InternetService_DSL
+  - OnlineSecurity_True
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id268
+- decision: delta
+  delta: &id269
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - DeviceProtection_False
+  - StreamingTV_False
+  reason: *id269
+- decision: pi
+  delta:
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id270
+  - PaperlessBilling
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id270
+- decision: delta
+  delta: &id271
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id271
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  pi: &id272
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id272
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  pi: &id273
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id273
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id274 []
+  reason: *id274
+- decision: delta
+  delta: &id275
+  - Partner
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id275
+- decision: delta
+  delta: &id276
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  reason: *id276
+- decision: delta
+  delta: &id277
+  - Partner
+  - InternetService_DSL
+  pi:
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id277
+- decision: delta
+  delta: &id278
+  - OnlineSecurity_True
+  - TechSupport_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id278
+- decision: delta
+  delta: &id279
+  - Partner
+  - InternetService_DSL
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id279
+- decision: delta
+  delta: &id280
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id280
+- decision: delta
+  delta: &id281
+  - Partner
+  - Dependents
+  - OnlineSecurity_True
+  - TechSupport_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id281
+- decision: delta
+  delta: &id282
+  - Partner
+  - InternetService_DSL
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - OnlineSecurity_False
+  reason: *id282
+- decision: delta
+  delta: &id283
+  - Partner
+  - InternetService_DSL
+  - Contract_One year
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - TechSupport_False
+  - StreamingTV_False
+  - PaymentMethod_Electronic check
+  reason: *id283
+- decision: delta
+  delta: &id284
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id284
+- decision: pi
+  delta:
+  - TechSupport_True
+  - Contract_Two year
+  pi: &id285
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  reason: *id285
+- decision: pi
+  delta: []
+  pi: &id286
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id286
+- decision: pi
+  delta: []
+  pi: &id287
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id287
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  pi: &id288
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id288
+- decision: delta
+  delta: &id289 []
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id289
+- decision: delta
+  delta: &id290
+  - Partner
+  - Dependents
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  reason: *id290
+- decision: delta
+  delta: &id291
+  - Partner
+  - InternetService_DSL
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id291
+- decision: delta
+  delta: &id292
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  reason: *id292
+- decision: delta
+  delta: &id293
+  - Partner
+  - OnlineSecurity_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingMovies_False
+  reason: *id293
+- decision: delta
+  delta: &id294
+  - Partner
+  - Dependents
+  - InternetService_No
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - Contract_Month-to-month
+  reason: *id294
+- decision: delta
+  delta: &id295
+  - Partner
+  - Dependents
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  reason: *id295
+- decision: pi
+  delta:
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id296
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id296
+- decision: delta
+  delta: &id297
+  - Partner
+  - Dependents
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id297
+- decision: pi
+  delta:
+  - Partner
+  - TechSupport_True
+  - Contract_One year
+  pi: &id298
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - PaymentMethod_Electronic check
+  reason: *id298
+- decision: delta
+  delta: &id299
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id299
+- decision: pi
+  delta:
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id300
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id300
+- decision: delta
+  delta: &id301
+  - Partner
+  - TechSupport_True
+  - Contract_One year
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - PaymentMethod_Electronic check
+  reason: *id301
+- decision: delta
+  delta: &id302
+  - InternetService_DSL
+  - OnlineSecurity_True
+  pi:
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id302
+- decision: delta
+  delta: &id303
+  - Partner
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  reason: *id303
+- decision: delta
+  delta: &id304
+  - OnlineSecurity_True
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id304
+- decision: delta
+  delta: &id305
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - OnlineBackup_False
+  - TechSupport_False
+  reason: *id305
+- decision: delta
+  delta: &id306
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  pi:
+  - PaperlessBilling
+  reason: *id306
+- decision: delta
+  delta: &id307
+  - Partner
+  - Dependents
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id307
+- decision: delta
+  delta: &id308
+  - Partner
+  - Dependents
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  reason: *id308
+- decision: delta
+  delta: &id309
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - Contract_One year
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - PaymentMethod_Electronic check
+  reason: *id309
+- decision: pi
+  delta: []
+  pi: &id310
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id310
+- decision: delta
+  delta: &id311
+  - InternetService_DSL
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id311
+- decision: delta
+  delta: &id312
+  - Partner
+  - InternetService_No
+  - Contract_Two year
+  pi: []
+  reason: *id312
+- decision: delta
+  delta: &id313
+  - Partner
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  reason: *id313
+- decision: pi
+  delta:
+  - Partner
+  - InternetService_DSL
+  - TechSupport_True
+  - Contract_One year
+  pi: &id314
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id314
+- decision: delta
+  delta: &id315
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id315
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id316
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id316
+- decision: delta
+  delta: &id317
+  - Partner
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id317
+- decision: delta
+  delta: &id318
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  reason: *id318
+- decision: pi
+  delta:
+  - TechSupport_True
+  pi: &id319
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - DeviceProtection_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id319
+- decision: delta
+  delta: &id320
+  - Partner
+  - InternetService_No
+  - Contract_Two year
+  pi:
+  - PaperlessBilling
+  reason: *id320
+- decision: delta
+  delta: &id321
+  - Partner
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id321
+- decision: delta
+  delta: &id322
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - DeviceProtection_False
+  reason: *id322
+- decision: delta
+  delta: &id323
+  - Partner
+  pi:
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id323
+- decision: delta
+  delta: &id324
+  - Partner
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id324
+- decision: delta
+  delta: &id325
+  - Partner
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id325
+- decision: delta
+  delta: &id326
+  - Partner
+  - Dependents
+  - OnlineSecurity_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id326
+- decision: pi
+  delta:
+  - Partner
+  - InternetService_DSL
+  pi: &id327
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id327
+- decision: delta
+  delta: &id328
+  - Partner
+  - Dependents
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id328
+- decision: delta
+  delta: &id329
+  - InternetService_DSL
+  - OnlineSecurity_True
+  pi:
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id329
+- decision: delta
+  delta: &id330
+  - Partner
+  - Dependents
+  - InternetService_No
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - Contract_Month-to-month
+  reason: *id330
+- decision: delta
+  delta: &id331
+  - Contract_One year
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  reason: *id331
+- decision: delta
+  delta: &id332
+  - InternetService_No
+  pi:
+  - PaperlessBilling
+  - Contract_Month-to-month
+  reason: *id332
+- decision: pi
+  delta:
+  - InternetService_DSL
+  - OnlineSecurity_True
+  pi: &id333
+  - PaperlessBilling
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id333
+- decision: pi
+  delta: []
+  pi: &id334
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id334
+- decision: delta
+  delta: &id335
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  reason: *id335
+- decision: delta
+  delta: &id336
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id336
+- decision: delta
+  delta: &id337
+  - OnlineSecurity_True
+  - TechSupport_True
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - DeviceProtection_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id337
+- decision: delta
+  delta: &id338
+  - InternetService_No
+  pi:
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id338
+- decision: delta
+  delta: &id339
+  - Partner
+  - Dependents
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id339
+- decision: delta
+  delta: &id340
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - OnlineBackup_False
+  - TechSupport_False
+  - StreamingMovies_False
+  reason: *id340
+- decision: delta
+  delta: &id341
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id341
+- decision: delta
+  delta: &id342
+  - OnlineSecurity_True
+  - Contract_One year
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  reason: *id342
+- decision: delta
+  delta: &id343
+  - InternetService_No
+  - Contract_One year
+  pi: []
+  reason: *id343
+- decision: pi
+  delta:
+  - Partner
+  pi: &id344
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id344
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - Contract_One year
+  pi: &id345
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  reason: *id345
+- decision: delta
+  delta: &id346
+  - Partner
+  - TechSupport_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  reason: *id346
+- decision: delta
+  delta: &id347
+  - Partner
+  - InternetService_DSL
+  pi:
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id347
+- decision: delta
+  delta: &id348
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - PaymentMethod_Credit card (automatic)
+  pi:
+  - PaperlessBilling
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  reason: *id348
+- decision: delta
+  delta: &id349
+  - Partner
+  - OnlineSecurity_True
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  reason: *id349
+- decision: delta
+  delta: &id350
+  - Partner
+  - Dependents
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - TechSupport_True
+  - Contract_Two year
+  pi:
+  - PaperlessBilling
+  reason: *id350
+- decision: delta
+  delta: &id351
+  - Partner
+  pi:
+  - PaperlessBilling
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id351
+- decision: pi
+  delta:
+  - InternetService_DSL
+  - OnlineSecurity_True
+  pi: &id352
+  - PaperlessBilling
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  reason: *id352

@@ -28,7 +28,7 @@ def cluster_factors_corr(df, y_name):
     """
     # take the correlations with y
     cor_dict = zip(df.columns, df.corr()[y_name].astype(float))
-    factors = {key: "pi" if value > 0 else ("delta" if value < 0 else "un") for key, value in cor_dict}
+    factors = {key: "pi" if value > 0.1 else ("delta" if value < -0.1 else "un") for key, value in cor_dict}
     factors.pop(y_name)
     return factors
 
@@ -38,12 +38,15 @@ def cluster_factors_voting(df, y_name):
     Clusters the factors (column names) in the dataset with a voting mechanism,
     where a factor which appears in the dataset with a certain outcome more times is assigned that polarity.
     Returns: a dictionary of factor names and their polarities clustered using voting.
+
+    The dataframe needs to be balanced between the two classes, otherwise this will favour the more prominent class.
     """
     true_votes = {column: ((df[column] == True) & (df[y_name] == True)).sum() for column in df.columns}
     false_votes = {column: ((df[column] == True) & (df[y_name] == False)).sum() for column in df.columns}
 
     factors = {key: "pi" if value > false_votes[key] else ("un" if value == false_votes[key] else "delta")
                for key, value in true_votes.items()}
+
     factors.pop(y_name)
     return factors
 

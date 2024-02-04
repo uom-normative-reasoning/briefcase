@@ -1,0 +1,5592 @@
+- decision: pi
+  delta:
+  - Partner
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id001 []
+  reason: *id001
+- decision: delta
+  delta: &id002
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id002
+- decision: delta
+  delta: &id003
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id003
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id004 []
+  reason: *id004
+- decision: delta
+  delta: &id005
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id005
+- decision: pi
+  delta:
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id006 []
+  reason: *id006
+- decision: delta
+  delta: &id007
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id007
+- decision: delta
+  delta: &id008
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id008
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: &id009 []
+  reason: *id009
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id010 []
+  reason: *id010
+- decision: delta
+  delta: &id011
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id011
+- decision: delta
+  delta: &id012
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id012
+- decision: delta
+  delta: &id013
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id013
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id014 []
+  reason: *id014
+- decision: delta
+  delta: &id015
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id015
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id016 []
+  reason: *id016
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id017 []
+  reason: *id017
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id018 []
+  reason: *id018
+- decision: delta
+  delta: &id019
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id019
+- decision: pi
+  delta:
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id020 []
+  reason: *id020
+- decision: delta
+  delta: &id021
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id021
+- decision: delta
+  delta: &id022
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id022
+- decision: delta
+  delta: &id023
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id023
+- decision: delta
+  delta: &id024
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id024
+- decision: delta
+  delta: &id025
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id025
+- decision: pi
+  delta:
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id026 []
+  reason: *id026
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: &id027 []
+  reason: *id027
+- decision: delta
+  delta: &id028
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id028
+- decision: delta
+  delta: &id029
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id029
+- decision: delta
+  delta: &id030
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id030
+- decision: delta
+  delta: &id031
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id031
+- decision: delta
+  delta: &id032
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id032
+- decision: delta
+  delta: &id033
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id033
+- decision: delta
+  delta: &id034
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id034
+- decision: delta
+  delta: &id035
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id035
+- decision: delta
+  delta: &id036
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id036
+- decision: delta
+  delta: &id037
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id037
+- decision: pi
+  delta:
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id038 []
+  reason: *id038
+- decision: delta
+  delta: &id039
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id039
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id040 []
+  reason: *id040
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id041 []
+  reason: *id041
+- decision: delta
+  delta: &id042
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id042
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id043 []
+  reason: *id043
+- decision: delta
+  delta: &id044
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id044
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id045 []
+  reason: *id045
+- decision: delta
+  delta: &id046
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id046
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id047 []
+  reason: *id047
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id048 []
+  reason: *id048
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id049 []
+  reason: *id049
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: &id050 []
+  reason: *id050
+- decision: delta
+  delta: &id051
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id051
+- decision: delta
+  delta: &id052
+  - Partner
+  - Dependents
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id052
+- decision: delta
+  delta: &id053
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id053
+- decision: delta
+  delta: &id054
+  - Partner
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id054
+- decision: delta
+  delta: &id055
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id055
+- decision: delta
+  delta: &id056
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id056
+- decision: delta
+  delta: &id057
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id057
+- decision: delta
+  delta: &id058
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id058
+- decision: delta
+  delta: &id059
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id059
+- decision: delta
+  delta: &id060
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id060
+- decision: delta
+  delta: &id061
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id061
+- decision: delta
+  delta: &id062
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id062
+- decision: delta
+  delta: &id063
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id063
+- decision: delta
+  delta: &id064
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id064
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id065 []
+  reason: *id065
+- decision: delta
+  delta: &id066
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id066
+- decision: delta
+  delta: &id067
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id067
+- decision: delta
+  delta: &id068
+  - Partner
+  - Dependents
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id068
+- decision: delta
+  delta: &id069
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id069
+- decision: delta
+  delta: &id070
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id070
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id071 []
+  reason: *id071
+- decision: delta
+  delta: &id072
+  - Partner
+  - Dependents
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id072
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id073 []
+  reason: *id073
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id074 []
+  reason: *id074
+- decision: delta
+  delta: &id075
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id075
+- decision: delta
+  delta: &id076
+  - Partner
+  - Dependents
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id076
+- decision: delta
+  delta: &id077
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id077
+- decision: delta
+  delta: &id078
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id078
+- decision: delta
+  delta: &id079
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id079
+- decision: delta
+  delta: &id080
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id080
+- decision: delta
+  delta: &id081
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id081
+- decision: pi
+  delta:
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id082 []
+  reason: *id082
+- decision: delta
+  delta: &id083
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id083
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: &id084 []
+  reason: *id084
+- decision: delta
+  delta: &id085
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id085
+- decision: pi
+  delta:
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id086 []
+  reason: *id086
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id087 []
+  reason: *id087
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id088 []
+  reason: *id088
+- decision: delta
+  delta: &id089
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id089
+- decision: delta
+  delta: &id090
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id090
+- decision: delta
+  delta: &id091
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id091
+- decision: delta
+  delta: &id092
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id092
+- decision: delta
+  delta: &id093
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id093
+- decision: delta
+  delta: &id094
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id094
+- decision: delta
+  delta: &id095
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id095
+- decision: delta
+  delta: &id096
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id096
+- decision: delta
+  delta: &id097
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id097
+- decision: delta
+  delta: &id098
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id098
+- decision: pi
+  delta:
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id099 []
+  reason: *id099
+- decision: delta
+  delta: &id100
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id100
+- decision: delta
+  delta: &id101
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id101
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id102 []
+  reason: *id102
+- decision: delta
+  delta: &id103
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id103
+- decision: delta
+  delta: &id104
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id104
+- decision: delta
+  delta: &id105
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id105
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id106 []
+  reason: *id106
+- decision: delta
+  delta: &id107
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id107
+- decision: delta
+  delta: &id108
+  - Partner
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id108
+- decision: delta
+  delta: &id109
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id109
+- decision: delta
+  delta: &id110
+  - Dependents
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id110
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id111 []
+  reason: *id111
+- decision: delta
+  delta: &id112
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id112
+- decision: delta
+  delta: &id113
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id113
+- decision: delta
+  delta: &id114
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id114
+- decision: delta
+  delta: &id115
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id115
+- decision: delta
+  delta: &id116
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id116
+- decision: delta
+  delta: &id117
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id117
+- decision: delta
+  delta: &id118
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id118
+- decision: delta
+  delta: &id119
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id119
+- decision: delta
+  delta: &id120
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id120
+- decision: delta
+  delta: &id121
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id121
+- decision: delta
+  delta: &id122
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id122
+- decision: delta
+  delta: &id123
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id123
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id124 []
+  reason: *id124
+- decision: delta
+  delta: &id125
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id125
+- decision: delta
+  delta: &id126
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id126
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id127 []
+  reason: *id127
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id128 []
+  reason: *id128
+- decision: delta
+  delta: &id129
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id129
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id130 []
+  reason: *id130
+- decision: delta
+  delta: &id131
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id131
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: &id132 []
+  reason: *id132
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id133 []
+  reason: *id133
+- decision: pi
+  delta:
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id134 []
+  reason: *id134
+- decision: delta
+  delta: &id135
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id135
+- decision: delta
+  delta: &id136
+  - Partner
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id136
+- decision: pi
+  delta:
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: &id137 []
+  reason: *id137
+- decision: delta
+  delta: &id138
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id138
+- decision: delta
+  delta: &id139
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id139
+- decision: pi
+  delta:
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id140 []
+  reason: *id140
+- decision: pi
+  delta:
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id141 []
+  reason: *id141
+- decision: delta
+  delta: &id142
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id142
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: &id143 []
+  reason: *id143
+- decision: delta
+  delta: &id144
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id144
+- decision: delta
+  delta: &id145
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id145
+- decision: delta
+  delta: &id146
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id146
+- decision: delta
+  delta: &id147
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id147
+- decision: delta
+  delta: &id148
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id148
+- decision: delta
+  delta: &id149
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id149
+- decision: delta
+  delta: &id150
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id150
+- decision: delta
+  delta: &id151
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id151
+- decision: delta
+  delta: &id152
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id152
+- decision: delta
+  delta: &id153
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id153
+- decision: delta
+  delta: &id154
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id154
+- decision: delta
+  delta: &id155
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id155
+- decision: delta
+  delta: &id156
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id156
+- decision: delta
+  delta: &id157
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id157
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id158 []
+  reason: *id158
+- decision: delta
+  delta: &id159
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id159
+- decision: delta
+  delta: &id160
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id160
+- decision: delta
+  delta: &id161
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id161
+- decision: delta
+  delta: &id162
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id162
+- decision: delta
+  delta: &id163
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id163
+- decision: delta
+  delta: &id164
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id164
+- decision: delta
+  delta: &id165
+  - Partner
+  - Dependents
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id165
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id166 []
+  reason: *id166
+- decision: pi
+  delta:
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: &id167 []
+  reason: *id167
+- decision: delta
+  delta: &id168
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id168
+- decision: delta
+  delta: &id169
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id169
+- decision: delta
+  delta: &id170
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id170
+- decision: delta
+  delta: &id171
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id171
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id172 []
+  reason: *id172
+- decision: delta
+  delta: &id173
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id173
+- decision: delta
+  delta: &id174
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id174
+- decision: delta
+  delta: &id175
+  - Dependents
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id175
+- decision: delta
+  delta: &id176
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id176
+- decision: delta
+  delta: &id177
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id177
+- decision: delta
+  delta: &id178
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id178
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id179 []
+  reason: *id179
+- decision: delta
+  delta: &id180
+  - Partner
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id180
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id181 []
+  reason: *id181
+- decision: delta
+  delta: &id182
+  - Partner
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id182
+- decision: delta
+  delta: &id183
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id183
+- decision: delta
+  delta: &id184
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id184
+- decision: delta
+  delta: &id185
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id185
+- decision: delta
+  delta: &id186
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id186
+- decision: pi
+  delta:
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id187 []
+  reason: *id187
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: &id188 []
+  reason: *id188
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id189 []
+  reason: *id189
+- decision: delta
+  delta: &id190
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id190
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id191 []
+  reason: *id191
+- decision: delta
+  delta: &id192
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id192
+- decision: delta
+  delta: &id193
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id193
+- decision: delta
+  delta: &id194
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id194
+- decision: delta
+  delta: &id195
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id195
+- decision: delta
+  delta: &id196
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id196
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id197 []
+  reason: *id197
+- decision: delta
+  delta: &id198
+  - Partner
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id198
+- decision: delta
+  delta: &id199
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id199
+- decision: delta
+  delta: &id200
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id200
+- decision: delta
+  delta: &id201
+  - Partner
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id201
+- decision: delta
+  delta: &id202
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id202
+- decision: delta
+  delta: &id203
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id203
+- decision: delta
+  delta: &id204
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id204
+- decision: delta
+  delta: &id205
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id205
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id206 []
+  reason: *id206
+- decision: delta
+  delta: &id207
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id207
+- decision: delta
+  delta: &id208
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id208
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id209 []
+  reason: *id209
+- decision: delta
+  delta: &id210
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id210
+- decision: delta
+  delta: &id211
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id211
+- decision: delta
+  delta: &id212
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id212
+- decision: delta
+  delta: &id213
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id213
+- decision: delta
+  delta: &id214
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id214
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id215 []
+  reason: *id215
+- decision: delta
+  delta: &id216
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id216
+- decision: delta
+  delta: &id217
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id217
+- decision: delta
+  delta: &id218
+  - Partner
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id218
+- decision: delta
+  delta: &id219
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id219
+- decision: delta
+  delta: &id220
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id220
+- decision: delta
+  delta: &id221
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id221
+- decision: delta
+  delta: &id222
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id222
+- decision: delta
+  delta: &id223
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id223
+- decision: delta
+  delta: &id224
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id224
+- decision: delta
+  delta: &id225
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id225
+- decision: delta
+  delta: &id226
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id226
+- decision: delta
+  delta: &id227
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id227
+- decision: delta
+  delta: &id228
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id228
+- decision: pi
+  delta:
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id229 []
+  reason: *id229
+- decision: delta
+  delta: &id230
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id230
+- decision: delta
+  delta: &id231
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id231
+- decision: delta
+  delta: &id232
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id232
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id233 []
+  reason: *id233
+- decision: delta
+  delta: &id234
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id234
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id235 []
+  reason: *id235
+- decision: delta
+  delta: &id236
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id236
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id237 []
+  reason: *id237
+- decision: delta
+  delta: &id238
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id238
+- decision: delta
+  delta: &id239
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id239
+- decision: delta
+  delta: &id240
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id240
+- decision: delta
+  delta: &id241
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id241
+- decision: delta
+  delta: &id242
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id242
+- decision: pi
+  delta:
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id243 []
+  reason: *id243
+- decision: delta
+  delta: &id244
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id244
+- decision: delta
+  delta: &id245
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id245
+- decision: delta
+  delta: &id246
+  - Partner
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id246
+- decision: delta
+  delta: &id247
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id247
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id248 []
+  reason: *id248
+- decision: delta
+  delta: &id249
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id249
+- decision: delta
+  delta: &id250
+  - Dependents
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id250
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id251 []
+  reason: *id251
+- decision: delta
+  delta: &id252
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id252
+- decision: delta
+  delta: &id253
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id253
+- decision: delta
+  delta: &id254
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id254
+- decision: delta
+  delta: &id255
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id255
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id256 []
+  reason: *id256
+- decision: delta
+  delta: &id257
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id257
+- decision: delta
+  delta: &id258
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id258
+- decision: delta
+  delta: &id259
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id259
+- decision: delta
+  delta: &id260
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id260
+- decision: delta
+  delta: &id261
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id261
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id262 []
+  reason: *id262
+- decision: delta
+  delta: &id263
+  - Dependents
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id263
+- decision: delta
+  delta: &id264
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id264
+- decision: delta
+  delta: &id265
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id265
+- decision: delta
+  delta: &id266
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id266
+- decision: delta
+  delta: &id267
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id267
+- decision: delta
+  delta: &id268
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id268
+- decision: delta
+  delta: &id269
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id269
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id270 []
+  reason: *id270
+- decision: delta
+  delta: &id271
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id271
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id272 []
+  reason: *id272
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id273 []
+  reason: *id273
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id274 []
+  reason: *id274
+- decision: delta
+  delta: &id275
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id275
+- decision: delta
+  delta: &id276
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id276
+- decision: delta
+  delta: &id277
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id277
+- decision: delta
+  delta: &id278
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id278
+- decision: delta
+  delta: &id279
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id279
+- decision: delta
+  delta: &id280
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id280
+- decision: delta
+  delta: &id281
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id281
+- decision: delta
+  delta: &id282
+  - Partner
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id282
+- decision: delta
+  delta: &id283
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id283
+- decision: delta
+  delta: &id284
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id284
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Electronic check
+  pi: &id285 []
+  reason: *id285
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id286 []
+  reason: *id286
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id287 []
+  reason: *id287
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id288 []
+  reason: *id288
+- decision: delta
+  delta: &id289
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id289
+- decision: delta
+  delta: &id290
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id290
+- decision: delta
+  delta: &id291
+  - Partner
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id291
+- decision: delta
+  delta: &id292
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id292
+- decision: delta
+  delta: &id293
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id293
+- decision: delta
+  delta: &id294
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id294
+- decision: delta
+  delta: &id295
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id295
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id296 []
+  reason: *id296
+- decision: delta
+  delta: &id297
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id297
+- decision: pi
+  delta:
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: &id298 []
+  reason: *id298
+- decision: delta
+  delta: &id299
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id299
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id300 []
+  reason: *id300
+- decision: delta
+  delta: &id301
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id301
+- decision: delta
+  delta: &id302
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id302
+- decision: delta
+  delta: &id303
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id303
+- decision: delta
+  delta: &id304
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id304
+- decision: delta
+  delta: &id305
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id305
+- decision: delta
+  delta: &id306
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id306
+- decision: delta
+  delta: &id307
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id307
+- decision: delta
+  delta: &id308
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id308
+- decision: delta
+  delta: &id309
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id309
+- decision: pi
+  delta:
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: &id310 []
+  reason: *id310
+- decision: delta
+  delta: &id311
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id311
+- decision: delta
+  delta: &id312
+  - Partner
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id312
+- decision: delta
+  delta: &id313
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id313
+- decision: pi
+  delta:
+  - Partner
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Mailed check
+  pi: &id314 []
+  reason: *id314
+- decision: delta
+  delta: &id315
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id315
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: &id316 []
+  reason: *id316
+- decision: delta
+  delta: &id317
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id317
+- decision: delta
+  delta: &id318
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id318
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id319 []
+  reason: *id319
+- decision: delta
+  delta: &id320
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id320
+- decision: delta
+  delta: &id321
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id321
+- decision: delta
+  delta: &id322
+  - Partner
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id322
+- decision: delta
+  delta: &id323
+  - Partner
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id323
+- decision: delta
+  delta: &id324
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id324
+- decision: delta
+  delta: &id325
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id325
+- decision: delta
+  delta: &id326
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id326
+- decision: pi
+  delta:
+  - Partner
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id327 []
+  reason: *id327
+- decision: delta
+  delta: &id328
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id328
+- decision: delta
+  delta: &id329
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id329
+- decision: delta
+  delta: &id330
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id330
+- decision: delta
+  delta: &id331
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id331
+- decision: delta
+  delta: &id332
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id332
+- decision: pi
+  delta:
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id333 []
+  reason: *id333
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id334 []
+  reason: *id334
+- decision: delta
+  delta: &id335
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id335
+- decision: delta
+  delta: &id336
+  - PhoneService
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Two year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id336
+- decision: delta
+  delta: &id337
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id337
+- decision: delta
+  delta: &id338
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id338
+- decision: delta
+  delta: &id339
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id339
+- decision: delta
+  delta: &id340
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - Contract_Two year
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id340
+- decision: delta
+  delta: &id341
+  - Partner
+  - Dependents
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id341
+- decision: delta
+  delta: &id342
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id342
+- decision: delta
+  delta: &id343
+  - PhoneService
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_No
+  - Contract_One year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id343
+- decision: pi
+  delta:
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id344 []
+  reason: *id344
+- decision: pi
+  delta:
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Electronic check
+  pi: &id345 []
+  reason: *id345
+- decision: delta
+  delta: &id346
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_One year
+  - PaymentMethod_Bank transfer (automatic)
+  pi: []
+  reason: *id346
+- decision: delta
+  delta: &id347
+  - Partner
+  - gender_Female
+  - MultipleLines_No phone service
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id347
+- decision: delta
+  delta: &id348
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Credit card (automatic)
+  pi: []
+  reason: *id348
+- decision: delta
+  delta: &id349
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_No
+  - InternetService_Fiber optic
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_False
+  - Contract_Month-to-month
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id349
+- decision: delta
+  delta: &id350
+  - Partner
+  - Dependents
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_Yes
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_True
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Two year
+  - PaymentMethod_Mailed check
+  pi: []
+  reason: *id350
+- decision: delta
+  delta: &id351
+  - Partner
+  - PhoneService
+  - PaperlessBilling
+  - gender_Male
+  - MultipleLines_Yes
+  - InternetService_Fiber optic
+  - OnlineSecurity_False
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: []
+  reason: *id351
+- decision: pi
+  delta:
+  - PhoneService
+  - PaperlessBilling
+  - gender_Female
+  - MultipleLines_No
+  - InternetService_DSL
+  - OnlineSecurity_True
+  - OnlineBackup_False
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  - PaymentMethod_Electronic check
+  pi: &id352 []
+  reason: *id352
