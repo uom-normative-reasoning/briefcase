@@ -12,6 +12,7 @@ small_same_outcome:
       reason: [p2]
    diff:
       p2: pi
+      d1: delta
 
 small_different_outcome:
    case1:
@@ -26,6 +27,7 @@ small_different_outcome:
       reason: [d2]
    diff:
       d2: delta
+      p1: pi
 
 
 # big test cases
@@ -44,6 +46,7 @@ big_same_outcome:
       p2: pi
       p5: pi
       p6: pi
+      d1: delta
 
 big_different_outcome:
    case1:
@@ -59,4 +62,5 @@ big_different_outcome:
    diff:
       d5: delta
       d6: delta
+      p3: pi
 

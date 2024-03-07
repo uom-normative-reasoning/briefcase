@@ -1,14 +1,17 @@
 from pathlib import Path
 import pytest
 import yaml
-from briefcase import Case, CaseBase, PriorityOrder
+from briefcase.case import Case
+from briefcase.priority_order import PriorityOrder
+from briefcase.case_base import CaseBase
+
 from collections import Counter
 
 
 # Define a fixture to load test cases from the YAML file
 @pytest.fixture
 def test_cases():
-    test_data_path = Path(__file__).parent / 'test_data' / 'test_consistency.yaml'
+    test_data_path = Path(__file__).parent / 'test_data' / 'test_priority_order.yaml'
     with open(test_data_path, 'r') as file:
         return yaml.safe_load(file)
 
