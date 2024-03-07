@@ -65,6 +65,12 @@ class AdmissibilityConstraints:
             return True
 
         for case_pairs in incons:
-            if not self.priority_order.is_consistent(case_pairs[0], case_pairs[1]):
-                return True
-        return False
+            if self.priority_order.is_consistent(case_pairs[0], case_pairs[1]):
+                return False
+        return True
+
+    def mrd(self, new_reason, new_defeated):
+        """Minimal relevant differences admissibility constraint
+         4. For all cases in the CB the new case must be minimally relevant different to
+            a case with the same polarity"""
+        pass

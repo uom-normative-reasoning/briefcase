@@ -85,20 +85,20 @@ class Case:
         @param: other_case
         @return: Set of factors which are relevant differences from the other_case to this case
         This returns a set of relevant differences for factors of binary dimensions
+        diff(other_case, this)
         """
         # outcome is the same
         if self.decision == other_case.decision:
-            # get all reasons for this case which are in this case but not the other
-            reasons = self.reason - other_case.reason
-            # get all defeated for other case which are in other case but not in this case
-            defeated = other_case.defeated() - self.defeated()
+            # get all reasons for this case which are in other case but not in this case
+            reasons = other_case.reason - self.reason
+            # get all defeated for this case which are in this case but not in other case
+            defeated = self.defeated() - other_case.defeated()
         else:  # outcome is different
-            # get all reasons for this case which are in this case but not the other
-            reasons = self.reason - other_case.defeated()
-            # get all defeated in other case which are in other case but not this case
-            defeated = other_case.reason - self.defeated()
-
-        return reasons, defeated
+            # get all reasons for other case which are in other case but not in this one
+            reasons = other_case.reason - self.defeated()
+            # get all defeated in this case which are in other case but not in this case
+            defeated = self.reason - other_case.defeated()
+        return reasons | defeated
 
     def __str__(self):
         """

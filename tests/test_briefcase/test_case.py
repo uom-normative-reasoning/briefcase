@@ -14,21 +14,20 @@ def test_cases():
         return yaml.safe_load(file)
 
 
-# Define the tests using the loaded test cases
-# @pytest.mark.parametrize(
-#     "test_case_name",
-#     [
-#         "small_same_outcome",
-#         "small_different_outcome",
-#         "big_same_outcome",
-#         "big_different_outcome"
-#     ],
-# )
-# def test_relevant_differences(test_cases, test_case_name):
-#     cs = test_cases[test_case_name]
-#     case1 = Case.from_dict(cs["case1"])
-#     factors = {Factor(name, decision_enum[polarity]) for name, polarity in cs["diff"].items()}
-#     assert case1.relevant_diff_from(Case.from_dict(cs["case2"])) == frozenset(factors)
+@pytest.mark.parametrize(
+    "test_case_name",
+    [
+        "small_same_outcome",
+        "small_different_outcome",
+        "big_same_outcome",
+        "big_different_outcome"
+    ],
+)
+def test_relevant_differences(test_cases, test_case_name):
+    cs = test_cases[test_case_name]
+    case1 = Case.from_dict(cs["case1"])
+    factors = {Factor(name, decision_enum[polarity]) for name, polarity in cs["diff"].items()}
+    assert frozenset(case1.relevant_diff_from(Case.from_dict(cs["case2"]))) == frozenset(factors)
 
 
 
