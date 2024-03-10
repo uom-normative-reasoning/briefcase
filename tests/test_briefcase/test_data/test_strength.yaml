@@ -1,0 +1,86 @@
+test_factor_add:
+   cases:
+      -
+         pi: [p1,p2,p3,p4]
+         delta: [d1, d2, d3]
+         decision: pi
+         reason: [p1, p3]
+      -
+         pi: [p1,p3,p7]
+         delta: [d5, d2, d3]
+         decision: delta
+         reason: [d5, d2, d3]
+      -
+         pi: [p1,p3,p7]
+         delta: [d5, d2, d3]
+         decision: pi
+         reason: [p1,p3,p7]
+   pi: [p1,p3,p7]
+   delta: [d1,d2,d3,d5]
+
+test_strength: # assume case base of p1,p2,p3,p4 and d1,d2,d3,d4
+   historic_case:
+      -
+         pi: [p1,p2,p3,p4]
+         delta: [d1, d2, d3,d4]
+         decision: pi
+         reason: [p1, p2,p3,p4]
+   cases:
+      -
+         pi: [ p1,p2,p3,p4 ]
+         delta: [ d1, d2, d3,d4 ]
+         decision: pi
+         reason: [ p1, p2,p3,p4 ]
+      - pi: [ p1 ]
+        delta: [ ]
+        decision: delta
+        reason: [ ]
+      - pi: [ ]
+        delta: [d2 ]
+        decision: delta
+        reason: [ d2 ]
+      -
+         pi: [p1,p2,p3]
+         delta: [d1, d2, d3]
+         decision: pi
+         reason: [p1, p3]
+      -
+         pi: [p1,p3]
+         delta: [d4, d2, d3]
+         decision: delta
+         reason: [d4, d2, d3]
+      -
+         pi: [p1]
+         delta: [d2]
+         decision: delta
+         reason: [d2]
+      - pi: [ p1 ]
+        delta: [ d1, d2, d3,d4 ]
+        decision: pi
+        reason: [ p1]
+   strengths:
+      - 15
+      - 0
+      - 0
+      - 28
+      - 6
+      - 8
+      - 120
+
+test_cb_strength_small:
+   cases:
+#      - pi: [ p1 ]
+#        delta: [ d1]
+#        decision: pi
+#        reason: [ p1 ]
+      - pi: [ p1, p2 ]
+        delta: [ d2, d3 ]
+        decision: pi
+        reason: [ p1, p2 ]
+      - pi: [ p1 ]
+        delta: [ d2, d3 ]
+        decision: pi
+        reason: [ p1]
+   strength_cumulative:
+      - 3
+      - 6

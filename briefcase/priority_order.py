@@ -1,7 +1,8 @@
 from collections import defaultdict
-
+from itertools import combinations
+from briefcase.power_detector import PowerDetector
 from briefcase.admissibility_constraints import AdmissibilityConstraints
-from briefcase.enums import incons_enum
+from briefcase.enums import incons_enum, decision_enum
 
 
 class PriorityOrder:
@@ -10,10 +11,12 @@ class PriorityOrder:
     Key is a frozenset of the stronger factors, value is a frozenset of the weaker factors.
     """
 
-    def __init__(self):
+    def __init__(self, empty_sides=False):
         self.order = defaultdict(set)
         self.defeated_factor_index = defaultdict(set)
         self.admissibility_constraints = AdmissibilityConstraints(self)
+        self.PD = PowerDetector(self)
+        self.empty_sides=empty_sides
 
     def get_incons_pairs_with_case(self, new_reason, new_defeated):
         """
@@ -140,35 +143,17 @@ class PriorityOrder:
         """
         return self.is_consistent(case.reason, case.defeated())
 
-    def add_pair_as_appropriate(self, r1, r2):
-        """
-        @param r1: first reason
-        @param r2: second reason
-        Adds pairs of reasons to the priority order dictionary, where stronger reason : weaker reason
-        within the dictionary 'order'
-        """
-        if r1 == r2:
-            return
-        if r1.issubset(r2):  # then r2 is at least as strong as r1
-            # Potentially a bit slow for large reasons? could check for polarity first.
-            self.add_order_with_subsets(r2, r1)
-        elif r2.issubset(r1):
-            self.add_order_with_subsets(r1, r2)
-
     def unsafe_add_case(self, case):
         """
         @param case: the new case to be added to the priority order
         Adds a new case to order dict with no safety checks for inconsistency
         """
         # case 1: we know the winning reason is at least as strong as the defeated factors, since it won
-        self.add_order_with_subsets(case.reason, case.defeated())
-        for r, ds in list(self.order.items()):
-            # case 2: check if winning reason is stronger than other winning reasons in the dictionary
-            self.add_pair_as_appropriate(case.reason, r)
-            # Because we don't do a polarity check, we have to test *all* ds...boo)
-            for d in ds:
-                # case 3: check if winning reason is stronger than other defeated reasons in the dictionary
-                self.add_pair_as_appropriate(case.reason, d)
+        if (case.reason and case.defeated()) or self.empty_sides: # cannot have an empty side
+            self.add_order_with_subsets(case.reason, case.defeated())
+            self.PD.add_factor_list(case)
+            return True
+        return False
 
     def safe_add_case(self, case, incons):
         """

@@ -1,12 +1,14 @@
-from briefcase.enums import incons_enum
+from briefcase.enums import incons_enum, decision_enum
 from briefcase.priority_order import PriorityOrder
 
 
 class CaseBase:
-    def __init__(self, caselist=[]):
-        self.cases = caselist
-        self.order = PriorityOrder()
-        self.add_unsafe_cases(self.cases)
+    def __init__(self, caselist=[], empty_sides=False):
+        self.cases = []
+        self.order = PriorityOrder(empty_sides)
+        self.factor_list = {decision_enum.pi: set(),
+                            decision_enum.delta: set()}
+        self.add_unsafe_cases(caselist)
 
     def check_incons_value(self, incons):
         # Check inconsistency is valid
@@ -20,8 +22,12 @@ class CaseBase:
         return incons_value
 
     def add_unsafe_cases(self, cases):
+        filtered_cases = []
         for case in cases:
-            self.order.unsafe_add_case(case)
+            if self.order.unsafe_add_case(case):
+                filtered_cases.append(case)
+        self.cases.extend(filtered_cases)
+
 
     def add_cases(self, cases, incons="ALL"):
         for case in cases:
@@ -33,6 +39,7 @@ class CaseBase:
             return True
         else:
             return False
+
 
     def is_cb_consistent(self):
         return self.order.is_cb_consistent()
@@ -56,9 +63,13 @@ class CaseBase:
     def metrics(self):
         size = len(self.cases)
         inconsistencies = self.count_tainted_cases()
-
+        max_edges_pi, max_edges_delta = self.order.PD.max_edges()
         print("Number of cases: ", size)
-        print("Number of tainted cases: ", inconsistencies)
+        print("Number of cases associated with inconsistency: ", inconsistencies)
+        print(f"Maximum number of edges on a pi case: {max_edges_pi}")
+        print(f"Maximum number of edges on a delta case: {max_edges_delta}")
+        print(f"Factors for pi: {len(self.order.PD.factor_list[decision_enum.pi])}")
+        print(f"Factors for delta: {len(self.order.PD.factor_list[decision_enum.delta])}")
         return size, inconsistencies
 
     def __str__(self):
