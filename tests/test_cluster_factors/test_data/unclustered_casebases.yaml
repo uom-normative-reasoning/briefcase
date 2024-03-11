@@ -18,6 +18,14 @@ CB1:
       f1: "un"
       f2: "un"
       f3: "un"
+   answer_rand:
+      f1: "delta"
+      f2: "pi"
+      f3: "pi"
+   answer_rand_un:
+      f1: "delta"
+      f2: "pi"
+      f3: "pi"
 
 CB2:
    cb:

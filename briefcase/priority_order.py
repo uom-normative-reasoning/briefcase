@@ -42,6 +42,7 @@ class PriorityOrder:
 
         return incons_pairs
 
+
     def is_existing_claim(self, new_reason, new_defeated):
         """Checks priority order remains the same"""
         # if there exists a case with a stronger than or equal to defeated
@@ -65,31 +66,31 @@ class PriorityOrder:
             return supersets
         return []
 
-    def get_weaker_defeats(self, factor_set):
-        # Retrieve all entries in defeated_factor_index which are weaker than a given factor set
-        # This any factor sets containing any number of the factors in the factor set
-
-        """
-        How do I find all subsets of a factorset e.g. {d1, d2, d3},
-        d1 ={{d1, d3}, {d1, d2}}
-        d2 = {{d1, d2}, {d2, d5}}
-        d3 = {{d1, d3}, {d4}}
-        d4 = {{d4}}
-
-        I don't think you can efficiently. Let's just loop through
-        """
-
-        # Initialize an empty set to store the union of all sets
-        weaker_defeats = set()
-
-        # Iterate through each factor in factor_set and update the union
-        for factor in factor_set:
-            candidate_weaker_defeats = self.defeated_factor_index[factor]
-            for candidate in candidate_weaker_defeats:
-                if candidate.issubset(factor_set):
-                    weaker_defeats.add(candidate)
-
-        return weaker_defeats
+    # def get_weaker_defeats(self, factor_set):
+    #     # Retrieve all entries in defeated_factor_index which are weaker than a given factor set
+    #     # This any factor sets containing any number of the factors in the factor set
+    #
+    #     """
+    #     How do I find all subsets of a factorset e.g. {d1, d2, d3},
+    #     d1 ={{d1, d3}, {d1, d2}}
+    #     d2 = {{d1, d2}, {d2, d5}}
+    #     d3 = {{d1, d3}, {d4}}
+    #     d4 = {{d4}}
+    #
+    #     I don't think you can efficiently. Let's just loop through
+    #     """
+    #
+    #     # Initialize an empty set to store the union of all sets
+    #     weaker_defeats = set()
+    #
+    #     # Iterate through each factor in factor_set and update the union
+    #     for factor in factor_set:
+    #         candidate_weaker_defeats = self.defeated_factor_index[factor]
+    #         for candidate in candidate_weaker_defeats:
+    #             if candidate.issubset(factor_set):
+    #                 weaker_defeats.add(candidate)
+    #
+    #     return weaker_defeats
 
     def add_order_with_subsets(self, reason, defeated):
         """

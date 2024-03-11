@@ -6,8 +6,6 @@ class CaseBase:
     def __init__(self, caselist=[], empty_sides=False):
         self.cases = []
         self.order = PriorityOrder(empty_sides)
-        self.factor_list = {decision_enum.pi: set(),
-                            decision_enum.delta: set()}
         self.add_unsafe_cases(caselist)
 
     def check_incons_value(self, incons):
@@ -55,7 +53,7 @@ class CaseBase:
         # loop through all cases in order
         count = 0
         for case in self.cases:
-            if self.is_consistent_with(case):
+            if not self.is_consistent_with(case):
                 count = count + 1
 
         return count
