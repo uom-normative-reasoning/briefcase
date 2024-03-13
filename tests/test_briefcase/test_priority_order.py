@@ -97,3 +97,4 @@ def test_get_incons_pairs_with_case(test_cases, test_case_name):
     answer = [(cases[v].reason, cases[v].defeated()) for v in test_cases[test_case_name]['answer']]
     expected = cb1.order.get_incons_pairs_with_case(inconsistent_case.reason, inconsistent_case.defeated())
     assert Counter(expected) == Counter(answer)
+

@@ -81,10 +81,6 @@ class Case:
             return self.delta_factors
         elif self.decision == decision_enum.delta:
             return self.pi_factors
-        else:
-            return (
-                frozenset()
-            )  # TODO: Throw error? ... Already happens further up, ths code would never be reached
 
     def relevant_diff_from(self, other_case):
         """
