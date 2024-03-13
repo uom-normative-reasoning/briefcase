@@ -80,17 +80,10 @@ class AdmissibilityConstraints:
         min_case_size = 99999999999999999999
         best_case = current_case
         for case in self.priority_order.get_cases():
-            print(case)
             if case.decision == current_case.decision:
-                print(current_case.relevant_diff_from(case))
                 diffs = len(current_case.relevant_diff_from(case))
-                print(diffs)
             else:
-                print("opposing case")
-                print(opposing_case)
-                print(opposing_case.relevant_diff_from(case))
                 diffs = len(opposing_case.relevant_diff_from(case))
-                print(diffs)
             if min_case_size >= diffs:
                 if min_case_size == diffs and best_case.decision == current_case.decision:
                     continue
