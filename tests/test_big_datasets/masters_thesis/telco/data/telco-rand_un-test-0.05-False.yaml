@@ -1,0 +1,3785 @@
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id001
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id001
+- decision: delta
+  delta: &id002 []
+  pi:
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id002
+- decision: delta
+  delta: &id003
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  reason: *id003
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id004
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id004
+- decision: delta
+  delta: &id005
+  - MultipleLines_No
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  reason: *id005
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  pi: &id006
+  - gender_Female
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id006
+- decision: delta
+  delta: &id007
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  reason: *id007
+- decision: delta
+  delta: &id008
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - TechSupport_True
+  - StreamingTV_False
+  reason: *id008
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - StreamingTV_True
+  pi: &id009
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id009
+- decision: pi
+  delta:
+  - MultipleLines_No
+  pi: &id010
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id010
+- decision: delta
+  delta: &id011
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id011
+- decision: delta
+  delta: &id012
+  - MultipleLines_No
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id012
+- decision: delta
+  delta: &id013
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id013
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id014
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id014
+- decision: delta
+  delta: &id015
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id015
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  pi: &id016
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id016
+- decision: pi
+  delta:
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id017
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id017
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id018
+  - Dependents
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id018
+- decision: delta
+  delta: &id019
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - gender_Female
+  - Contract_Month-to-month
+  reason: *id019
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id020
+  - Dependents
+  - Contract_Month-to-month
+  reason: *id020
+- decision: delta
+  delta: &id021
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id021
+- decision: delta
+  delta: &id022
+  - MultipleLines_No
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id022
+- decision: delta
+  delta: &id023
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id023
+- decision: delta
+  delta: &id024
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id024
+- decision: delta
+  delta: &id025
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id025
+- decision: pi
+  delta:
+  - DeviceProtection_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi: &id026
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - Contract_Month-to-month
+  reason: *id026
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi: &id027
+  - gender_Female
+  - Contract_Month-to-month
+  reason: *id027
+- decision: delta
+  delta: &id028
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id028
+- decision: delta
+  delta: &id029
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id029
+- decision: delta
+  delta: &id030
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id030
+- decision: delta
+  delta: &id031
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id031
+- decision: delta
+  delta: &id032
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  reason: *id032
+- decision: delta
+  delta: &id033
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id033
+- decision: delta
+  delta: &id034
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id034
+- decision: delta
+  delta: &id035
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  pi:
+  - gender_Female
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id035
+- decision: delta
+  delta: &id036
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  reason: *id036
+- decision: delta
+  delta: &id037
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  reason: *id037
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id038
+  - gender_Female
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id038
+- decision: delta
+  delta: &id039
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - gender_Female
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id039
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id040
+  - Dependents
+  - gender_Female
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id040
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id041
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id041
+- decision: delta
+  delta: &id042
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id042
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id043
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id043
+- decision: delta
+  delta: &id044
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id044
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  pi: &id045
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id045
+- decision: delta
+  delta: &id046
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  - Contract_One year
+  reason: *id046
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi: &id047
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id047
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id048
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id048
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  pi: &id049
+  - gender_Female
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id049
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi: &id050
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id050
+- decision: delta
+  delta: &id051
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id051
+- decision: delta
+  delta: &id052
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id052
+- decision: delta
+  delta: &id053
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id053
+- decision: delta
+  delta: &id054
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - StreamingMovies_True
+  reason: *id054
+- decision: delta
+  delta: &id055
+  - OnlineBackup_True
+  - DeviceProtection_False
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id055
+- decision: delta
+  delta: &id056
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id056
+- decision: delta
+  delta: &id057
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - TechSupport_True
+  reason: *id057
+- decision: delta
+  delta: &id058
+  - MultipleLines_No
+  - DeviceProtection_True
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id058
+- decision: delta
+  delta: &id059 []
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id059
+- decision: delta
+  delta: &id060
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id060
+- decision: delta
+  delta: &id061
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id061
+- decision: delta
+  delta: &id062
+  - MultipleLines_No
+  - DeviceProtection_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id062
+- decision: delta
+  delta: &id063
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id063
+- decision: delta
+  delta: &id064
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  pi:
+  - StreamingTV_False
+  - StreamingMovies_True
+  reason: *id064
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi: &id065
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id065
+- decision: delta
+  delta: &id066
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  reason: *id066
+- decision: delta
+  delta: &id067
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  reason: *id067
+- decision: delta
+  delta: &id068
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - StreamingMovies_True
+  reason: *id068
+- decision: delta
+  delta: &id069
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_One year
+  reason: *id069
+- decision: delta
+  delta: &id070
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - TechSupport_True
+  - StreamingTV_False
+  reason: *id070
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id071
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id071
+- decision: delta
+  delta: &id072
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id072
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id073
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id073
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi: &id074
+  - Dependents
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id074
+- decision: delta
+  delta: &id075
+  - MultipleLines_No
+  - DeviceProtection_True
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id075
+- decision: delta
+  delta: &id076
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id076
+- decision: delta
+  delta: &id077
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id077
+- decision: delta
+  delta: &id078
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id078
+- decision: delta
+  delta: &id079
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id079
+- decision: delta
+  delta: &id080
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_One year
+  reason: *id080
+- decision: delta
+  delta: &id081
+  - MultipleLines_No
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id081
+- decision: pi
+  delta:
+  - DeviceProtection_True
+  - TechSupport_False
+  pi: &id082
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id082
+- decision: delta
+  delta: &id083
+  - MultipleLines_No
+  - DeviceProtection_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id083
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi: &id084
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id084
+- decision: delta
+  delta: &id085
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  reason: *id085
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id086
+  - Dependents
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id086
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi: &id087
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id087
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  pi: &id088
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id088
+- decision: delta
+  delta: &id089 []
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_One year
+  reason: *id089
+- decision: delta
+  delta: &id090
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  reason: *id090
+- decision: delta
+  delta: &id091
+  - DeviceProtection_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id091
+- decision: delta
+  delta: &id092
+  - MultipleLines_No
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id092
+- decision: delta
+  delta: &id093
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id093
+- decision: delta
+  delta: &id094
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  reason: *id094
+- decision: delta
+  delta: &id095
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  reason: *id095
+- decision: delta
+  delta: &id096
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  reason: *id096
+- decision: delta
+  delta: &id097
+  - DeviceProtection_True
+  - TechSupport_False
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id097
+- decision: delta
+  delta: &id098
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id098
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id099
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id099
+- decision: delta
+  delta: &id100
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id100
+- decision: delta
+  delta: &id101
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id101
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  pi: &id102
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id102
+- decision: delta
+  delta: &id103
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_One year
+  reason: *id103
+- decision: delta
+  delta: &id104 []
+  pi:
+  - Dependents
+  - InternetService_No
+  reason: *id104
+- decision: delta
+  delta: &id105
+  - MultipleLines_No
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id105
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id106
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id106
+- decision: delta
+  delta: &id107
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingMovies_False
+  pi:
+  - TechSupport_True
+  - StreamingTV_False
+  reason: *id107
+- decision: delta
+  delta: &id108
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - StreamingTV_False
+  reason: *id108
+- decision: delta
+  delta: &id109
+  - DeviceProtection_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - TechSupport_True
+  - Contract_Month-to-month
+  reason: *id109
+- decision: delta
+  delta: &id110
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id110
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi: &id111
+  - gender_Female
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id111
+- decision: delta
+  delta: &id112
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - Contract_One year
+  reason: *id112
+- decision: delta
+  delta: &id113
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id113
+- decision: delta
+  delta: &id114
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - Contract_Month-to-month
+  reason: *id114
+- decision: delta
+  delta: &id115
+  - MultipleLines_No
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id115
+- decision: delta
+  delta: &id116
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - Contract_Month-to-month
+  reason: *id116
+- decision: delta
+  delta: &id117
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id117
+- decision: delta
+  delta: &id118
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id118
+- decision: delta
+  delta: &id119
+  - DeviceProtection_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - Contract_Month-to-month
+  reason: *id119
+- decision: delta
+  delta: &id120
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - TechSupport_True
+  reason: *id120
+- decision: delta
+  delta: &id121
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id121
+- decision: delta
+  delta: &id122
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id122
+- decision: delta
+  delta: &id123
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  reason: *id123
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id124
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id124
+- decision: delta
+  delta: &id125
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id125
+- decision: delta
+  delta: &id126
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id126
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id127
+  - gender_Female
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id127
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi: &id128
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id128
+- decision: delta
+  delta: &id129
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  reason: *id129
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi: &id130
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id130
+- decision: delta
+  delta: &id131
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Contract_One year
+  reason: *id131
+- decision: pi
+  delta:
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi: &id132
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id132
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id133
+  - Dependents
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id133
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id134
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id134
+- decision: delta
+  delta: &id135
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id135
+- decision: delta
+  delta: &id136
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id136
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id137
+  - Dependents
+  - OnlineBackup_False
+  - Contract_One year
+  reason: *id137
+- decision: delta
+  delta: &id138
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  - Contract_One year
+  reason: *id138
+- decision: delta
+  delta: &id139
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  reason: *id139
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id140
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id140
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  pi: &id141
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id141
+- decision: delta
+  delta: &id142 []
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  - Contract_One year
+  reason: *id142
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi: &id143
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id143
+- decision: delta
+  delta: &id144
+  - MultipleLines_No
+  - DeviceProtection_True
+  - TechSupport_False
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id144
+- decision: delta
+  delta: &id145
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  reason: *id145
+- decision: delta
+  delta: &id146
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id146
+- decision: delta
+  delta: &id147
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - Contract_One year
+  reason: *id147
+- decision: delta
+  delta: &id148
+  - DeviceProtection_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - TechSupport_True
+  - Contract_Month-to-month
+  reason: *id148
+- decision: delta
+  delta: &id149
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id149
+- decision: delta
+  delta: &id150
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  reason: *id150
+- decision: delta
+  delta: &id151
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id151
+- decision: delta
+  delta: &id152
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id152
+- decision: delta
+  delta: &id153
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id153
+- decision: delta
+  delta: &id154
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id154
+- decision: delta
+  delta: &id155
+  - DeviceProtection_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - OnlineBackup_False
+  - TechSupport_True
+  - Contract_Month-to-month
+  reason: *id155
+- decision: delta
+  delta: &id156
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id156
+- decision: delta
+  delta: &id157
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingTV_True
+  pi:
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id157
+- decision: pi
+  delta:
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id158
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id158
+- decision: delta
+  delta: &id159
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id159
+- decision: delta
+  delta: &id160
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingMovies_False
+  pi:
+  - TechSupport_True
+  - StreamingTV_False
+  reason: *id160
+- decision: delta
+  delta: &id161
+  - MultipleLines_No
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id161
+- decision: delta
+  delta: &id162
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id162
+- decision: delta
+  delta: &id163
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id163
+- decision: delta
+  delta: &id164
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - TechSupport_True
+  reason: *id164
+- decision: delta
+  delta: &id165
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  reason: *id165
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  pi: &id166
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id166
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi: &id167
+  - OnlineBackup_False
+  - TechSupport_True
+  - Contract_Month-to-month
+  reason: *id167
+- decision: delta
+  delta: &id168
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id168
+- decision: delta
+  delta: &id169
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Contract_One year
+  reason: *id169
+- decision: delta
+  delta: &id170
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  - Contract_One year
+  reason: *id170
+- decision: delta
+  delta: &id171
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id171
+- decision: pi
+  delta:
+  - MultipleLines_No
+  pi: &id172
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id172
+- decision: delta
+  delta: &id173 []
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  - Contract_One year
+  reason: *id173
+- decision: delta
+  delta: &id174
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  - Contract_One year
+  reason: *id174
+- decision: delta
+  delta: &id175
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id175
+- decision: delta
+  delta: &id176
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id176
+- decision: delta
+  delta: &id177
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - TechSupport_True
+  - Contract_One year
+  reason: *id177
+- decision: delta
+  delta: &id178
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id178
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id179
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id179
+- decision: delta
+  delta: &id180
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id180
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  pi: &id181
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id181
+- decision: delta
+  delta: &id182
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  reason: *id182
+- decision: delta
+  delta: &id183
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id183
+- decision: delta
+  delta: &id184
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  reason: *id184
+- decision: delta
+  delta: &id185
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  reason: *id185
+- decision: delta
+  delta: &id186 []
+  pi:
+  - Dependents
+  - InternetService_No
+  reason: *id186
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi: &id187
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id187
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id188
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id188
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id189
+  - gender_Female
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id189
+- decision: delta
+  delta: &id190
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id190
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - PaymentMethod_Electronic check
+  pi: &id191
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id191
+- decision: delta
+  delta: &id192
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - StreamingMovies_True
+  reason: *id192
+- decision: delta
+  delta: &id193
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id193
+- decision: delta
+  delta: &id194
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id194
+- decision: delta
+  delta: &id195
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id195
+- decision: delta
+  delta: &id196
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id196
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id197
+  - Dependents
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id197
+- decision: delta
+  delta: &id198
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - TechSupport_True
+  reason: *id198
+- decision: delta
+  delta: &id199
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id199
+- decision: delta
+  delta: &id200
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - TechSupport_True
+  reason: *id200
+- decision: delta
+  delta: &id201
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id201
+- decision: delta
+  delta: &id202
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id202
+- decision: delta
+  delta: &id203
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id203
+- decision: delta
+  delta: &id204
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id204
+- decision: delta
+  delta: &id205
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id205
+- decision: pi
+  delta:
+  - MultipleLines_No
+  pi: &id206
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id206
+- decision: delta
+  delta: &id207
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id207
+- decision: delta
+  delta: &id208
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  pi:
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id208
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id209
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id209
+- decision: delta
+  delta: &id210
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id210
+- decision: delta
+  delta: &id211 []
+  pi:
+  - Dependents
+  - InternetService_No
+  reason: *id211
+- decision: delta
+  delta: &id212
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id212
+- decision: delta
+  delta: &id213
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id213
+- decision: delta
+  delta: &id214
+  - MultipleLines_No
+  - DeviceProtection_True
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id214
+- decision: pi
+  delta:
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id215
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id215
+- decision: delta
+  delta: &id216
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  reason: *id216
+- decision: delta
+  delta: &id217
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - TechSupport_True
+  - Contract_Month-to-month
+  reason: *id217
+- decision: delta
+  delta: &id218
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id218
+- decision: delta
+  delta: &id219
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Contract_One year
+  reason: *id219
+- decision: delta
+  delta: &id220
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id220
+- decision: delta
+  delta: &id221
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id221
+- decision: delta
+  delta: &id222
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id222
+- decision: delta
+  delta: &id223
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  - Contract_One year
+  reason: *id223
+- decision: delta
+  delta: &id224
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id224
+- decision: delta
+  delta: &id225
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  reason: *id225
+- decision: delta
+  delta: &id226
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - StreamingMovies_True
+  reason: *id226
+- decision: delta
+  delta: &id227
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  reason: *id227
+- decision: delta
+  delta: &id228
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  reason: *id228
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi: &id229
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id229
+- decision: delta
+  delta: &id230
+  - MultipleLines_No
+  - DeviceProtection_True
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id230
+- decision: delta
+  delta: &id231
+  - MultipleLines_No
+  - DeviceProtection_True
+  - TechSupport_False
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id231
+- decision: delta
+  delta: &id232
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  pi:
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  reason: *id232
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id233
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id233
+- decision: delta
+  delta: &id234
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id234
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id235
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id235
+- decision: delta
+  delta: &id236
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - StreamingTV_False
+  reason: *id236
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi: &id237
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id237
+- decision: delta
+  delta: &id238
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id238
+- decision: delta
+  delta: &id239
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id239
+- decision: delta
+  delta: &id240 []
+  pi:
+  - InternetService_No
+  reason: *id240
+- decision: delta
+  delta: &id241
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - OnlineBackup_False
+  - StreamingMovies_True
+  reason: *id241
+- decision: delta
+  delta: &id242
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_One year
+  reason: *id242
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  pi: &id243
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id243
+- decision: delta
+  delta: &id244
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id244
+- decision: delta
+  delta: &id245
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id245
+- decision: delta
+  delta: &id246
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id246
+- decision: delta
+  delta: &id247
+  - MultipleLines_No
+  - DeviceProtection_True
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id247
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id248
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id248
+- decision: delta
+  delta: &id249
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  reason: *id249
+- decision: delta
+  delta: &id250
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id250
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id251
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id251
+- decision: delta
+  delta: &id252
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - gender_Female
+  - Contract_Month-to-month
+  reason: *id252
+- decision: delta
+  delta: &id253
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  pi:
+  - Dependents
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  reason: *id253
+- decision: delta
+  delta: &id254
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id254
+- decision: delta
+  delta: &id255
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id255
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id256
+  - gender_Female
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id256
+- decision: delta
+  delta: &id257
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - TechSupport_True
+  - StreamingTV_False
+  reason: *id257
+- decision: delta
+  delta: &id258
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id258
+- decision: delta
+  delta: &id259 []
+  pi:
+  - gender_Female
+  - InternetService_No
+  reason: *id259
+- decision: delta
+  delta: &id260
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  reason: *id260
+- decision: delta
+  delta: &id261
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - Contract_One year
+  reason: *id261
+- decision: pi
+  delta:
+  - MultipleLines_No
+  pi: &id262
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id262
+- decision: delta
+  delta: &id263
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id263
+- decision: delta
+  delta: &id264
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id264
+- decision: delta
+  delta: &id265
+  - MultipleLines_No
+  - DeviceProtection_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - TechSupport_True
+  - Contract_Month-to-month
+  reason: *id265
+- decision: delta
+  delta: &id266
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - gender_Female
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id266
+- decision: delta
+  delta: &id267
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id267
+- decision: delta
+  delta: &id268
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id268
+- decision: delta
+  delta: &id269
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id269
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi: &id270
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id270
+- decision: delta
+  delta: &id271
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  reason: *id271
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  pi: &id272
+  - Dependents
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id272
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi: &id273
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id273
+- decision: pi
+  delta:
+  - MultipleLines_No
+  pi: &id274
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  - Contract_One year
+  reason: *id274
+- decision: delta
+  delta: &id275 []
+  pi:
+  - gender_Female
+  - InternetService_No
+  reason: *id275
+- decision: delta
+  delta: &id276
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id276
+- decision: delta
+  delta: &id277
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id277
+- decision: delta
+  delta: &id278
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id278
+- decision: delta
+  delta: &id279
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - Contract_Month-to-month
+  reason: *id279
+- decision: delta
+  delta: &id280
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  reason: *id280
+- decision: delta
+  delta: &id281
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id281
+- decision: delta
+  delta: &id282
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id282
+- decision: delta
+  delta: &id283
+  - MultipleLines_No
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id283
+- decision: delta
+  delta: &id284
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_One year
+  reason: *id284
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id285
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  reason: *id285
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id286
+  - gender_Female
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id286
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id287
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id287
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id288
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id288
+- decision: delta
+  delta: &id289
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id289
+- decision: delta
+  delta: &id290
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id290
+- decision: delta
+  delta: &id291
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id291
+- decision: delta
+  delta: &id292
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  reason: *id292
+- decision: delta
+  delta: &id293
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  reason: *id293
+- decision: delta
+  delta: &id294
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id294
+- decision: delta
+  delta: &id295
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id295
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  pi: &id296
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id296
+- decision: delta
+  delta: &id297
+  - MultipleLines_No
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id297
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id298
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id298
+- decision: delta
+  delta: &id299
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id299
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  pi: &id300
+  - gender_Female
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id300
+- decision: delta
+  delta: &id301
+  - MultipleLines_No
+  - DeviceProtection_True
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id301
+- decision: delta
+  delta: &id302
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id302
+- decision: delta
+  delta: &id303
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id303
+- decision: delta
+  delta: &id304
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Contract_Month-to-month
+  reason: *id304
+- decision: delta
+  delta: &id305
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  reason: *id305
+- decision: delta
+  delta: &id306
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - InternetService_No
+  reason: *id306
+- decision: delta
+  delta: &id307
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  reason: *id307
+- decision: delta
+  delta: &id308
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id308
+- decision: delta
+  delta: &id309
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id309
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  pi: &id310
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id310
+- decision: delta
+  delta: &id311
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id311
+- decision: delta
+  delta: &id312
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  reason: *id312
+- decision: delta
+  delta: &id313
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_One year
+  reason: *id313
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi: &id314
+  - gender_Female
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id314
+- decision: delta
+  delta: &id315
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  reason: *id315
+- decision: pi
+  delta:
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi: &id316
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id316
+- decision: delta
+  delta: &id317
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  reason: *id317
+- decision: delta
+  delta: &id318
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_One year
+  reason: *id318
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id319
+  - gender_Female
+  - TechSupport_True
+  - Contract_Month-to-month
+  reason: *id319
+- decision: delta
+  delta: &id320
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  reason: *id320
+- decision: delta
+  delta: &id321
+  - MultipleLines_No
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id321
+- decision: delta
+  delta: &id322
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingTV_True
+  pi:
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id322
+- decision: delta
+  delta: &id323
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id323
+- decision: delta
+  delta: &id324
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id324
+- decision: delta
+  delta: &id325
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id325
+- decision: delta
+  delta: &id326
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  reason: *id326
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  pi: &id327
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id327
+- decision: delta
+  delta: &id328
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  - StreamingTV_False
+  reason: *id328
+- decision: delta
+  delta: &id329
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - Contract_Month-to-month
+  reason: *id329
+- decision: delta
+  delta: &id330
+  - MultipleLines_No
+  pi:
+  - Dependents
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id330
+- decision: delta
+  delta: &id331
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id331
+- decision: delta
+  delta: &id332
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id332
+- decision: pi
+  delta:
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi: &id333
+  - gender_Female
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id333
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id334
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id334
+- decision: delta
+  delta: &id335
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - gender_Female
+  - StreamingTV_False
+  - Contract_One year
+  reason: *id335
+- decision: delta
+  delta: &id336
+  - MultipleLines_No
+  pi:
+  - InternetService_No
+  reason: *id336
+- decision: delta
+  delta: &id337
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - TechSupport_True
+  - Contract_Month-to-month
+  reason: *id337
+- decision: delta
+  delta: &id338
+  - MultipleLines_No
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_Month-to-month
+  reason: *id338
+- decision: delta
+  delta: &id339
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id339
+- decision: delta
+  delta: &id340
+  - OnlineSecurity_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - StreamingMovies_False
+  pi:
+  - Dependents
+  - OnlineBackup_False
+  reason: *id340
+- decision: delta
+  delta: &id341
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - TechSupport_True
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id341
+- decision: delta
+  delta: &id342
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi:
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id342
+- decision: delta
+  delta: &id343
+  - MultipleLines_No
+  pi:
+  - gender_Female
+  - InternetService_No
+  - Contract_One year
+  reason: *id343
+- decision: pi
+  delta:
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id344
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id344
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id345
+  - Dependents
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id345
+- decision: delta
+  delta: &id346
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - TechSupport_True
+  - StreamingMovies_True
+  - Contract_One year
+  reason: *id346
+- decision: delta
+  delta: &id347
+  - DeviceProtection_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  pi:
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id347
+- decision: delta
+  delta: &id348
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id348
+- decision: delta
+  delta: &id349
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingMovies_False
+  pi:
+  - OnlineBackup_False
+  - StreamingTV_False
+  - Contract_Month-to-month
+  reason: *id349
+- decision: delta
+  delta: &id350
+  - OnlineSecurity_True
+  - OnlineBackup_True
+  - DeviceProtection_True
+  - StreamingTV_True
+  pi:
+  - Dependents
+  - gender_Female
+  - TechSupport_True
+  - StreamingMovies_True
+  reason: *id350
+- decision: delta
+  delta: &id351
+  - DeviceProtection_False
+  - TechSupport_False
+  - PaymentMethod_Electronic check
+  pi:
+  - OnlineBackup_False
+  - StreamingTV_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id351
+- decision: pi
+  delta:
+  - MultipleLines_No
+  - OnlineSecurity_True
+  - DeviceProtection_False
+  - TechSupport_False
+  - StreamingTV_True
+  - PaymentMethod_Electronic check
+  pi: &id352
+  - gender_Female
+  - OnlineBackup_False
+  - StreamingMovies_True
+  - Contract_Month-to-month
+  reason: *id352

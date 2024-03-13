@@ -1,7 +1,9 @@
 from pathlib import Path
 import pytest
 import yaml
-from briefcase import Case, CaseBase, PriorityOrder
+from briefcase.case import Case
+from briefcase.case_base import CaseBase
+from briefcase.priority_order import PriorityOrder
 from collections import Counter
 
 
@@ -19,6 +21,7 @@ def test_cases():
         "all",
         "no_new",
         "no_involvement",
+        "horty",
         "no_corruption"
     ],
 )
@@ -30,17 +33,17 @@ def test_is_case_admissible(test_cases, test_case_name):
 
     cases = [Case.from_dict(c) for c in cs]
     adds = [Case.from_dict(c) for c in ads]
-    fails = [Case.from_dict(c) for c in fs]
+
+    if fs:
+        fails = [Case.from_dict(c) for c in fs]
+    else:
+        fails = []
 
     cb1 = CaseBase(cases)
     fails_results = []
-    i = 0
+
     for case in adds:
         if not cb1.add_case(case, constraint):
             fails_results.append(case)
-            print(case)
-            print()
-            print(fails[i])
-            i = i + 1
 
     assert fails == fails_results
