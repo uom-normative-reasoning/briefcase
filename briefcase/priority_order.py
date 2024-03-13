@@ -122,7 +122,7 @@ class PriorityOrder:
         reasons_sets = [self.order[superset] for superset in supersets]
 
         # If for any of the existing reasons sets retrieved, if the new defeated is a superset of one of
-        # the sets of old reasons, return False (consistent)
+        # the sets of old reasons, return False (inconsistent)
         return not any(any(reason.issubset(new_defeated) for reason in reasons) for reasons in reasons_sets)
 
     def is_cb_consistent(self):
