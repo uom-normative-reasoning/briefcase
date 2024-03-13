@@ -248,3 +248,4 @@ test_get_incons_pairs_with_case:
    answer:
       - 1
       - 2
+

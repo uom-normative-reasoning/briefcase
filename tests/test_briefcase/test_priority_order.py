@@ -1,14 +1,17 @@
 from pathlib import Path
 import pytest
 import yaml
-from briefcase import Case, CaseBase, PriorityOrder
+from briefcase.case import Case
+from briefcase.priority_order import PriorityOrder
+from briefcase.case_base import CaseBase
+
 from collections import Counter
 
 
 # Define a fixture to load test cases from the YAML file
 @pytest.fixture
 def test_cases():
-    test_data_path = Path(__file__).parent / 'test_data' / 'test_consistency.yaml'
+    test_data_path = Path(__file__).parent / 'test_data' / 'test_priority_order.yaml'
     with open(test_data_path, 'r') as file:
         return yaml.safe_load(file)
 
@@ -94,3 +97,4 @@ def test_get_incons_pairs_with_case(test_cases, test_case_name):
     answer = [(cases[v].reason, cases[v].defeated()) for v in test_cases[test_case_name]['answer']]
     expected = cb1.order.get_incons_pairs_with_case(inconsistent_case.reason, inconsistent_case.defeated())
     assert Counter(expected) == Counter(answer)
+

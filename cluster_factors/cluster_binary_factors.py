@@ -19,6 +19,18 @@ argument in this casebase).
 """
 
 
+def reduce_df(df):
+    """
+    This is used specifically for the telecoms dataset, since there are many high powered cases
+    """
+    # Filter the DataFrame
+    filtered_df = df[
+        (df.sum(axis=1) > 0.25 * df.shape[1]) &  # Number of true values > 25% of columns
+        (df.sum(axis=1) < 0.5 * df.shape[1])  # Number of true values < 75% of columns
+        ]
+    return filtered_df
+
+
 def cluster_factors_corr(df, y_name):
     """
     Clusters the factors (column names) in the dataset by the correlation of
@@ -28,7 +40,7 @@ def cluster_factors_corr(df, y_name):
     """
     # take the correlations with y
     cor_dict = zip(df.columns, df.corr()[y_name].astype(float))
-    factors = {key: "pi" if value > 0 else ("delta" if value < 0 else "un") for key, value in cor_dict}
+    factors = {key: "pi" if value > 0.1 else ("delta" if value < -0.1 else "un") for key, value in cor_dict}
     factors.pop(y_name)
     return factors
 
@@ -38,12 +50,27 @@ def cluster_factors_voting(df, y_name):
     Clusters the factors (column names) in the dataset with a voting mechanism,
     where a factor which appears in the dataset with a certain outcome more times is assigned that polarity.
     Returns: a dictionary of factor names and their polarities clustered using voting.
-    """
-    true_votes = {column: ((df[column] == True) & (df[y_name] == True)).sum() for column in df.columns}
-    false_votes = {column: ((df[column] == True) & (df[y_name] == False)).sum() for column in df.columns}
 
-    factors = {key: "pi" if value > false_votes[key] else ("un" if value == false_votes[key] else "delta")
-               for key, value in true_votes.items()}
+    The dataframe needs to be balanced between the two classes, otherwise this will favour the more prominent class.
+    """
+    pi_samples = df[df[y_name] == True]
+    delta_samples = df[df[y_name] == False]
+    min_samples = min(len(pi_samples), len(delta_samples))
+    pi_samples = pi_samples.sample(n=min_samples, random_state=42)
+    delta_samples = delta_samples.sample(n=min_samples, random_state=42)
+    balanced_df = pd.concat([pi_samples, delta_samples])
+
+    # Count true votes for "pi" and "delta" classes separately
+    true_pi_votes = {column: (balanced_df[column] & (balanced_df[y_name] == True)).sum() for column in
+                     balanced_df.columns}
+    true_delta_votes = {column: (balanced_df[column] & (balanced_df[y_name] == False)).sum() for column in
+                        balanced_df.columns}
+
+    # Determine the polarity based on the majority of votes
+    factors = {key: "pi" if true_pi_votes[key] > true_delta_votes[key] else
+    ("delta" if true_pi_votes[key] < true_delta_votes[key] else "un")
+               for key in balanced_df.columns}
+
     factors.pop(y_name)
     return factors
 
