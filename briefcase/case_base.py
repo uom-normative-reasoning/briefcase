@@ -1,3 +1,4 @@
+from briefcase.admissibility_constraints import AdmissibilityConstraints
 from briefcase.enums import incons_enum
 from briefcase.priority_order import PriorityOrder
 
@@ -5,7 +6,7 @@ from briefcase.priority_order import PriorityOrder
 class CaseBase:
     def __init__(self, caselist=[]):
         self.cases = caselist
-        self.order = PriorityOrder()
+        self.order = PriorityOrder(self)
         self.add_unsafe_cases(self.cases)
 
     def check_incons_value(self, incons):

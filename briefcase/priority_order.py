@@ -10,10 +10,14 @@ class PriorityOrder:
     Key is a frozenset of the stronger factors, value is a frozenset of the weaker factors.
     """
 
-    def __init__(self):
+    def __init__(self, cb):
+        self.cb = cb
         self.order = defaultdict(set)
         self.defeated_factor_index = defaultdict(set)
         self.admissibility_constraints = AdmissibilityConstraints(self)
+
+    def get_cases(self):
+        return self.cb.cases
 
     def get_incons_pairs_with_case(self, new_reason, new_defeated):
         """

@@ -1,3 +1,4 @@
+from briefcase.case import Case
 from briefcase.enums import incons_enum
 
 
@@ -17,6 +18,7 @@ class AdmissibilityConstraints:
             incons_enum.NO_INVOLVEMENT: self.no_involvement_incons,
             incons_enum.HORTY: self.horty_incons,
             incons_enum.NO_CORRUPTION: self.no_corruption_incons,
+            incons_enum.MRD: self.mrd,
             incons_enum.ALL: lambda *args: True,
         }
 
@@ -73,4 +75,28 @@ class AdmissibilityConstraints:
         """Minimal relevant differences admissibility constraint
          4. For all cases in the CB the new case must be minimally relevant different to
             a case with the same polarity"""
-        pass
+        current_case = Case.from_reason_defeated(new_reason, new_defeated)
+        opposing_case = current_case.polar_opposite()
+        min_case_size = 99999999999999999999
+        best_case = current_case
+        for case in self.priority_order.get_cases():
+            print(case)
+            if case.decision == current_case.decision:
+                print(current_case.relevant_diff_from(case))
+                diffs = len(current_case.relevant_diff_from(case))
+                print(diffs)
+            else:
+                print("opposing case")
+                print(opposing_case)
+                print(opposing_case.relevant_diff_from(case))
+                diffs = len(opposing_case.relevant_diff_from(case))
+                print(diffs)
+            if min_case_size >= diffs:
+                if min_case_size == diffs and best_case.decision == current_case.decision:
+                    continue
+                min_case_size = diffs
+                best_case = case
+        if best_case.decision != current_case.decision:
+            return False
+        else:
+            return True
