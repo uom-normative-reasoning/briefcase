@@ -93,3 +93,9 @@ class AdmissibilityConstraints:
             return False
         else:
             return True
+
+    def edge_intersects(self, new_reason, new_defeated):
+        """Intersecting Edges Admissibility Constraint
+         6. For all cases in the CB the new case must have the minimal edge intersections to
+            a case with the same polarity"""
+        pass
