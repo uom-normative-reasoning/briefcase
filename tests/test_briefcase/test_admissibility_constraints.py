@@ -21,7 +21,8 @@ def test_cases():
         "no_involvement",
         "horty",
         "no_corruption",
-        'mrd'
+        'mrd',
+        'intersecting_edges'
     ],
 )
 def test_is_case_admissible(test_cases, test_case_name):

@@ -300,3 +300,33 @@ mrd:
         delta: [ d5, d2 ]
         decision: delta
         reason: [ d5, d2 ]
+
+intersecting_edges:
+   name: INTERSECTING_EDGES
+   cases:
+      - pi: [ p1,p2,p3,p4 ] # case 1
+        delta: [ d1, d2, d3 ]
+        decision: pi
+        reason: [ p1, p3 ]
+      - pi: [ p1,p3,p7, p8] # case 2
+        delta: [ d5, d2, d3 ]
+        decision: delta
+        reason: [ d5, d2, d3 ]
+      - pi: [ p1,p3,p7 ] # case 3
+        delta: [ d5, d2, d3 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+   adds:
+      - pi: [ p1,p3,p7 ] # same as case 3, admit
+        delta: [ d5, d2, d3 ]
+        decision: pi
+        reason: [ p1,p3,p7 ]
+      - pi: [ p1,p3,p7 ] # closest to case 2, admit
+        delta: [ d5, d2, d3 ]
+        decision: delta
+        reason: [ d5, d2, d3  ]
+      - pi: [ p1,p3,p7] # closest to case 2,
+        delta: [ d5, d2 ]
+        decision: delta
+        reason: [ d5, d2]
+   fails:
