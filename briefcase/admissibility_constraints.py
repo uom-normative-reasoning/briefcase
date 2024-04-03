@@ -13,7 +13,7 @@ class AdmissibilityConstraints:
         @return: True when admissible, and False when admission should be denied
         """
         method_map = {
-            incons_enum.NO: self.no_incons,
+            incons_enum.NO_INCONSISTENCY: self.no_incons,
             incons_enum.NO_NEW: self.no_new_incons,
             incons_enum.NO_INVOLVEMENT: self.no_involvement_incons,
             incons_enum.HORTY: self.horty_incons,
@@ -26,8 +26,6 @@ class AdmissibilityConstraints:
         admissible_method = method_map.get(incons, None)
         if admissible_method:
             return admissible_method(new_reason, new_defeated)
-        else:
-            raise ValueError("Invalid inconsistency value")
 
     def no_incons(self, new_reason, new_defeated):
         """A) admissibility constraint
