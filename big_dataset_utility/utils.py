@@ -250,7 +250,7 @@ def factors_descriptive_stats(data):
     plt.figure(figsize=(10, 5))
     plt.hist([pi_counts, delta_counts], bins=range(max(max(pi_counts), max(delta_counts)) + 2),
              color=['skyblue', 'lightgreen'], label=['Pi Factors', 'Delta Factors'], edgecolor='black', align='left',
-             stacked=True)
+             stacked=False)
 
     plt.xlabel('Number of Factors')
     plt.ylabel('Frequency')
@@ -287,6 +287,23 @@ def factors_descriptive_stats(data):
     plt.ylim(0, max(pi_counts))
 
     plt.show()
+
+    # Calculate averages
+    avg_pi_factors = np.mean(pi_counts)
+    avg_delta_factors = np.mean(delta_counts)
+    avg_combined_factors = np.mean([pi + delta for pi, delta in zip(pi_counts, delta_counts)])
+
+    # Calculate medians
+    median_pi_factors = np.median(pi_counts)
+    median_delta_factors = np.median(delta_counts)
+    median_combined_factors = np.median([pi + delta for pi, delta in zip(pi_counts, delta_counts)])
+
+    print("Average number of Pi factors:", avg_pi_factors)
+    print("Median number of Pi factors:", median_pi_factors)
+    print("Average number of Delta factors:", avg_delta_factors)
+    print("Median number of Delta factors:", median_delta_factors)
+    print("Average combined number of factors:", avg_combined_factors)
+    print("Median combined number of factors:", median_combined_factors)
 
 
 def incons_percentage(pi_df, delta_df):

@@ -14,9 +14,9 @@ class AdmissibilityConstraints:
         """
         method_map = {
             incons_enum.NO_INCONSISTENCY: self.no_incons,
-            incons_enum.NO_NEW: self.no_new_incons,
+            incons_enum.NO_CHANGED_ORDER: self.no_changed_priority_order,
             incons_enum.NO_INVOLVEMENT: self.no_involvement_incons,
-            incons_enum.HORTY: self.horty_incons,
+            incons_enum.NO_NEW: self.no_new_icons,
             incons_enum.NO_CORRUPTION: self.no_corruption_incons,
             incons_enum.MRD: self.mrd,
             incons_enum.INTERSECTING_EDGES: self.edge_intersects,
@@ -44,17 +44,17 @@ class AdmissibilityConstraints:
                 otherwise False"""
         return self.priority_order.is_consistent(new_reason, new_defeated)
 
-    def no_new_incons(self, new_reason, new_defeated):
+    def no_changed_priority_order(self, new_reason, new_defeated):
         """B part 2) admissibility constraint
         3. Priority order remains the same
         @return: True when the new case is an existing claim in the priority order,
                 otherwise False"""
         return self.priority_order.is_existing_claim(new_reason, new_defeated)
 
-    def horty_incons(self, new_reason, new_defeated):
+    def no_new_icons(self, new_reason, new_defeated):
         """B admissibility constraint / HORTY admissibility
         @return: True when new case does not alter the priority order, or it is consistent with case base"""
-        return self.no_involvement_incons(new_reason, new_defeated) or self.no_new_incons(new_reason, new_defeated)
+        return self.no_involvement_incons(new_reason, new_defeated) or self.no_changed_priority_order(new_reason, new_defeated)
 
     def no_corruption_incons(self, new_reason, new_defeated):
         """C admissibility constraint

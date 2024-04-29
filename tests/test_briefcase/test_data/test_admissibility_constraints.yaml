@@ -120,8 +120,8 @@ no_inconsistency:
         decision: pi
         reason: [ p1,p3,p7,p8 ]
 
-no_new:
-   name: NO_NEW
+no_changed_order:
+   name: NO_CHANGED_ORDER
    cases:
       - pi: [ p1,p2,p3,p4 ] # case 1
         delta: [ d1, d2, d3 ]
@@ -233,8 +233,8 @@ no_involvement:
         decision: pi
         reason: [ p1,p3,p7 ]
 
-horty:
-   name: HORTY
+no_new:
+   name: NO_NEW
    cases:
       - pi: [ p1,p2,p3,p4 ] # case 1
         delta: [ d1, d2, d3 ]

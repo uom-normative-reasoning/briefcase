@@ -19,9 +19,9 @@ def test_cases():
         "all",
         "no_inconsistency",
         "no_inconsistency_true",
-        "no_new",
+        "no_changed_order",
         "no_involvement",
-        "horty",
+        "no_new",
         "no_corruption",
         'mrd',
         'intersecting_edges'
