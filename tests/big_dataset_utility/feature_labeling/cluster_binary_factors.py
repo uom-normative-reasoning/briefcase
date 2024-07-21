@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 """
-This modules contains methods for clustering binary factors in an unannotated dataset based on 
+These modules contains methods for clustering binary factors in an unannotated dataset based on 
 different clustering strategies
 
 1. Corr - correlations 
