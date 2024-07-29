@@ -70,7 +70,6 @@ def shuffle_data(data, repeats=51):
 
     return shuffled_data
 
-
 def incons_percentage(pi_df, delta_df):
     # Count the number of inconsistent factors for each factor name
     inconsistent_counts_pi = pi_df.transpose().apply(pd.Series.value_counts).fillna(0).astype(int).transpose()

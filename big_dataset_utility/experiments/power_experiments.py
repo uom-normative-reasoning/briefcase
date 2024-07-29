@@ -1,3 +1,6 @@
+import random
+import sys
+
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -207,5 +210,76 @@ def cb_power_before_incons_experiment(data, repeats=100):
     plt.ylabel('Frequency')
     plt.grid(True)
     plt.show()
+
+def max_consistent_subset(data, repeats=10):
+    """
+    EXPERIMENT
+    For n (default 10) trials, shuffle the data, and try to add all cases under the no_inconsistency regime
+    Generate a percentage of the case base which is consistent
+    """
+    shuffles = shuffle_data(data, repeats)
+    sizes_max_cons_subsets = []
+    for data in shuffles:
+        print("new shuffle")
+        print(f"Adding {len(data)} cases")
+        cb = CaseBase()
+        for c in data:
+            cb.add_case(Case.from_dict(c), "NO_INCONSISTENCY")
+        size = cb.size()
+        print(f"Accepted {size} cases")
+        sizes_max_cons_subsets.append(size)
+
+    print(sizes_max_cons_subsets)
+
+def divergence_experiment(data, repeats=10):
+    """
+    EXPERIMENT
+    For n (default 10) trials, shuffle the data, try to create consistent subsets of the data (100 entries)
+    Add a new case which causes inconsistency, measure how much inconsistency it induces (case power vs cases tainted)
+    """
+    shuffles = shuffle_data(data, repeats)
+    case_bases = []
+    incons_adds = []
+
+    while shuffles:
+        cb = CaseBase()
+        incons_with = []
+
+        for c in shuffles.pop():
+            case = Case.from_dict(c)
+            if not incons_with:
+                if not cb.order.is_cb_consistent_with(case):
+                    incons_with.append(case)
+            if cb.size() < 100:
+                cb.add_case(case, "NO_INCONSISTENCY")
+            elif cb.size() == 100 and incons_with:
+                print("A case base complete")
+                case_bases.append(cb)
+                incons_adds.append(incons_with)
+                break
+        else:
+            shuffles.extend(shuffle_data(data, 1))
+
+    print("finished with shuffles")
+
+    # Find inconsistent case with this case
+    for i in range(len(case_bases)):
+        cb = case_bases[i]
+        incons_with = incons_adds[i]
+        for case in incons_with:
+            if not cb.is_consistent_with(case):
+                print("")
+                print(cb.metrics())
+                print(f"Previous (consistent) CB power is {cb.order.PD.cb_power()}")
+                print(f"Previous (consistent) CB tainted cases are {cb.count_tainted_cases()}")
+                print(f"Inconsistent case power is {cb.order.PD.case_power(case)}")
+                print("Adding case")
+                cb.add_case(case)
+                print(f"New CB power is {cb.order.PD.cb_power()}")
+                print(f"New CB tainted cases are {cb.count_tainted_cases()}")
+                break
+        else:
+            print("WARNING: no cases inconsistent with this case base")
+
 
 
